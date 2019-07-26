@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* RSN R&D Team LHS(GUNI) 20141010 */
+
+/* DEFAULT */
+*{margin:0;padding:0;font-family:맑은 고딕,Malgun Gothic,돋움,Dotum,AppleGothic,Sans-serif,Tahoma;-webkit-text-size-adjust:none}
+header,footer,section,article,aside,nav,hgroup,details,menu,figure,figcaption{display:block}
+html{width:100%;height:100%;padding:0;margin:0;border:0}
+body{width:100%;height:100%;color:#666666;font-size:12px;line-height:1}
+ul,ol{list-style:none}
+h1{font-size:2em}
+h2{font-size:1.5em}
+h3{font-size:1.333em}
+h4{font-size:1.167em}
+h5{font-size:1.083em}
+h6{font-size:11px}
+a{color:inherit;text-overflow:ellipsis;-o-text-overflow:ellipsis}
+a:link{color:inherit;text-decoration:none}
+a:visited{color:inherit;text-decoration:none}
+a:focus,a:active{color:inherit;text-decoration:none}
+a:hover{color:inherit;text-decoration:none}
+button,input,img{vertical-align:top}
+img,fieldset,iframe{border:0}
+hr{display:none}
+em,address,cite{font-style:normal}
+table{border-collapse:separate;*border-collapse:collapse;border-spacing:0;table-layout:fixed}
+caption,legend{display:none;width:0;height:0;overflow:hidden;font-size:0;line-height:0;text-indent:-9999px}
+input{color:#666666;padding:0;margin:0}
+select{-webkit-appearance:menu-list;align-items:center;white-space:pre;vertical-align:top;color:#666666}
+textarea{display:block;padding:0;margin:0;font-size:11px;line-height:16px;resize:none}
+label{color:#666666}
+
+/* COMMON */
+.disabled{opacity:0.4;cursor:default !important;pointer-events:none !important}
+.invisible{position:absolute;width:0;height:0;font-size:0;overflow:hidden;visibility:hidden}
+.al{text-align:left !important}
+.ac{text-align:center !important}
+.ar{text-align:right !important}
+.floatbox{position:relative}
+.floatbox:after{display:block;clear:both;content:''}
+.floatbox_left{position:relative;float:left}
+.floatbox_right{position:relative;float:right}
+.valign_m{vertical-align:middle !important}
+.valign_t{vertical-align:top !important}
+.valign_b{vertical-align:bottom !important}
+.nowrap{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fs11{font-size:11px !important;line-height:1 !important}
+*::-webkit-input-placeholder{color:#cccccc}
+*:-moz-placeholder{color:#cccccc;opacity:1}
+*::-moz-placeholder{color:#cccccc;opacity:1}
+*:-ms-input-placeholder{color:#cccccc !important}
+
+
+/* SNB */
+#snb{padding-left:5px}
+#snb h2{padding-bottom:5px}
+#snb .snb{}
+#snb .snb > ul{}
+#snb .snb > ul > li{}
+#snb .snb > ul > li > a{display:block;height:32px;overflow:hidden;border:1px solid #d6d6d6;background:url(../images/left/bg_snb.gif);background-repeat:repeat;color:#3f3f3f;font-size:13px;font-weight:bold;line-height:33px;letter-spacing:-1px}
+#snb .snb > ul > li > a > span.icon{display:inline-block;*display:inline;*zoom:1;width:33px;height:32px;background:url(../images/left/icon_snb.gif) no-repeat;text-indent:-9999px}
+#snb .snb > ul > li > a:hover,#snb .snb > ul > li > a.active{border:1px solid #686868;background:url(../images/left/bg_snb_a.gif);color:#ffffff}
+#snb .snb > ul > li > a:hover > span.icon,#snb .snb > ul > li > a.active > span.icon{background:url(../images/left/icon_snb_a.gif) no-repeat}
+#snb .snb > ul > li > iframe{display:block;width:295px;height:0;border:none}
+#snb .snb > ul > li > ul{border:1px solid #d6d6d6;border-bottom:none}
+#snb .snb > ul > li > ul > li{padding:0 18px}
+#snb .snb > ul > li > ul > li > a{display:block;height:31px;overflow:hidden;border-bottom:1px dotted #d6d6d6;line-height:32px}
+#snb .snb > ul > li > ul > li.last_child > a{border:none}
+#snb .snb > ul > li > ul > li > a > span.icon{display:inline-block;*display:inline;*zoom:1;width:16px;height:31px;background:url(../images/left/icon_snb_2d.gif) no-repeat;text-indent:-9999px}
+#snb .snb > ul > li > ul > li > a:hover,#snb .snb > ul > li > ul > li > a.active{color:#024da0;font-weight:bold}
+#snb .snb > ul > li > ul > li > a:hover > span.icon,#snb .snb > ul > li > ul > li > a.active > span.icon{background:url(../images/left/icon_snb_2d_a.gif) no-repeat}
+

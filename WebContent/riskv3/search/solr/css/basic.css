@@ -1,0 +1,99 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #f2f2f2; SCROLLBAR-HIGHLIGHT-COLOR: #999999; SCROLLBAR-SHADOW-COLOR: #999999; SCROLLBAR-3DLIGHT-COLOR: #ffffff; SCROLLBAR-ARROW-COLOR: #333333; SCROLLBAR-TRACK-COLOR: #f2f2f2; FONT-FAMILY: "gulim"; SCROLLBAR-DARKSHADOW-COLOR: #ffffff; HEIGHT: 100%
+}
+A:link {
+	COLOR: #818181; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #818181; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #818181; TEXT-DECORATION: underline
+}
+A:active {
+	TEXT-DECORATION: none
+}
+A.sch_title:link {
+	color: #923158; text-decoration: none; FONT-SIZE: 14px; FONT-FAMILY: "gulim"
+}
+A.sch_title:visited {
+	color: #923158; text-decoration: none; FONT-SIZE: 14px; FONT-FAMILY: "gulim"
+}
+A.sch_title:hover {
+	color: #923158; text-decoration: underline; FONT-SIZE: 14px; FONT-FAMILY: "gulim"
+}
+A.sch_title:active {
+	text-decoration: none
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 17px; FONT-FAMILY: "gulim"
+}
+INPUT {
+	BORDER-RIGHT: #cfcfcf 0px solid; BORDER-TOP: #cfcfcf 0px solid; FONT-SIZE: 12px; BORDER-LEFT: #cfcfcf 0px solid; COLOR: #767676; BORDER-BOTTOM: #cfcfcf 0px solid; HEIGHT: 16px
+}
+INPUT.txtbox {
+	BORDER-RIGHT: #cfcfcf 1px solid; BORDER-TOP: #cfcfcf 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #cfcfcf 1px solid; COLOR: #767676; BORDER-BOTTOM: #cfcfcf 1px solid; HEIGHT: 20px ;PADDING-TOP: 4px
+}
+INPUT.txtbox01 {
+	BORDER-RIGHT: #4181B5 1px solid; BORDER-TOP: #4181B5 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #4181B5 1px solid; COLOR: #767676; BORDER-BOTTOM: #4181B5 1px solid; HEIGHT: 19px ;PADDING-TOP: 4px
+}
+INPUT.txtbox02 {
+	BORDER-RIGHT: #C8CACA 1px solid; BORDER-TOP: #C8CACA 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #C8CACA 1px solid; COLOR: #767676; BORDER-BOTTOM: #C8CACA 1px solid; HEIGHT: 19px ;PADDING-TOP: 4px
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: #333333; FONT-FAMILY: "gulim"; HEIGHT: 16px; BACKGROUND-COLOR: white
+}
+IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+.menu_black {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_blue {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #3d679c; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_gray {
+	FONT-SIZE: 12px; COLOR: #818181; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_gray_s {
+	FONT-SIZE: 11px; COLOR: #818181; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_gray_ss {
+	FONT-SIZE: 11px; COLOR: #ADADAD; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_white_s {
+	FONT-SIZE: 11px; COLOR: #ffffff; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_pp_s {
+	FONT-SIZE: 11px; COLOR: #D17591; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_white {
+	FONT-SIZE: 11px; COLOR: #ffffff; LINE-HEIGHT: 16px; FONT-FAMILY: "Tahoma"
+}
+.menu_tt {
+	FONT-SIZE: 11px; COLOR: #929292; LINE-HEIGHT: 16px; FONT-FAMILY: "Tahoma"
+}
+.menu_black_s {
+	FONT-SIZE: 11px; COLOR: #333333; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_blue_b {
+	FONT-SIZE: 12px; COLOR: #1C73BA; LINE-HEIGHT: 16px; FONT-FAMILY: "Gulim"
+}
+.menu_gray00 {
+	FONT-SIZE: 12px; COLOR: #4A4A4A; LINE-HEIGHT: 17px; FONT-FAMILY: "Dotum"
+}
+.menu_red_b{
+	FONT-SIZE: 14px; COLOR: #923158; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_red{
+	FONT-SIZE: 12px; COLOR: #923158; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_red_s{
+	FONT-SIZE: 11px; COLOR: #B74373; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_orange{
+	FONT-SIZE: 12px; COLOR: #EE8926; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}
+.menu_gray_01{
+	FONT-SIZE: 12px; COLOR: #818181; LINE-HEIGHT: 16px; FONT-FAMILY: "Dotum"
+}

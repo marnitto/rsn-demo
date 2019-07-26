@@ -1,0 +1,26 @@
+﻿@charset "utf-8";
+/* -----------------------------------------------------
+
+- Title : AutoText Layout
+
+- Author :  임승철
+
+- Date : 2010-01-22
+
+- Description : Mobile Layout Cascading Style Sheets
+------------------------------------------------------- */
+
+
+/* ---------------- default      ----------------- */
+	div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0; padding:0;}
+	ol,ul,li {list-style: none; cursor:hand; font-family:"돋움"; font-size:12px;}
+		
+/* ---------------- Tag:AutoText ----------------- */
+	#AutoTextView {width:168px; border:#e1e1e1 solid 1px; background-color:#ffffff; display:none; overflow-y:auto; position:absolute; top:525;left:144}	
+	#AutoTextView .selected {background-color:#f0f0f0;}
+
+/* ---------------- Tag:SearchText ----------------- */
+	#SearchTextView {width:178px; border:#e1e1e1 solid 1px; background-color:#ffffff; display:none; overflow-y:auto; position:absolute; top:410;left:447}	
+	#SearchTextView .selected {background-color:#f0f0f0;}
+		
+	

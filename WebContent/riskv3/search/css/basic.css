@@ -1,0 +1,64 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	SCROLLBAR-face-color: #F2F2F2;
+	SCROLLBAR-shadow-color: #999999;
+	SCROLLBAR-highlight-color: #999999;
+	SCROLLBAR-3dlight-color: #FFFFFF;
+	SCROLLBAR-darkshadow-color: #FFFFFF;
+	SCROLLBAR-track-color: #F2F2F2;
+	SCROLLBAR-arrow-color: #333333;
+     }
+.menu_black {  font-family: "??", "???"; font-size: 12px; line-height: 16px; color: #000000}
+.textw { font-family: "??", "???"; font-size: 12px; line-height: normal; color: #FFFFFF; font-weight: normal}
+
+.menu_blue {
+	font-family: "??", "???";
+	font-size: 12px;
+	line-height: 16px;
+	color: #3D679C;
+	font-weight: normal;
+}
+.menu_gray {
+font-family: "??", "???"; font-size: 12px; line-height: 16px; color: #4B4B4B
+}
+.menu_red {
+font-family: "??", "???"; font-size: 12px; line-height: 16px; color: #CC0000
+}
+.menu_blueOver {
+
+	font-family: Tahoma;
+	font-size: 11px;
+	line-height: 16px;
+	color: #3D679C;
+	font-weight: normal;
+}
+.menu_blueTEXTover {
+
+
+	font-family: "??", "???";
+	font-size: 12px;
+	line-height: 16px;
+	color: #3366CC;
+	font-weight: normal;
+}
+.textwbig {
+font-family: "µ¸¿ò", "µ¸¿òÃ¼"; font-size: 14px; line-height: normal; color: #FFFFFF; font-weight: normal
+}
+.textBbig {
+
+font-family: "??", "???"; font-size: 14px; line-height: normal; color: #000000; font-weight: normal
+}
+.menu_grayline {
+	font-family: "??", "???";
+	font-size: 12px;
+	line-height: 16px;
+	color: #4B4B4B;
+	text-decoration: underline;
+}
+.menu_grayS {
+
+font-family: "??", "???"; font-size: 11px; line-height: 16px; color: #4B4B4B
+}

@@ -1,0 +1,3880 @@
+[2019년04월02일 10시08분23초] 
+[SEND]http://api1.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=0&search_day=20190311&list_count=500
+[2019년04월02일 10시08분24초] 
+IOException :java.net.ConnectException: Connection refused: connect
+[2019년04월02일 10시08분24초] 
+[RECEIVE]
+[2019년04월02일 10시08분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=0&search_day=20190311&list_count=500
+[2019년04월02일 10시08분58초] 
+[RECEIVE]
+[2019년04월02일 10시08분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=0&search_day=20190311&list_count=500
+[2019년04월02일 10시08분58초] 
+[RECEIVE]
+[2019년04월02일 10시08분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=0&search_day=20190311&list_count=500
+[2019년04월02일 10시08분59초] 
+[RECEIVE]
+[2019년04월02일 10시08분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=934e9fde3078c9bd&max_seq=0&search_day=20190311&s_seq=2300475,2300476,2300477,2300478,2300479&list_count=500
+[2019년04월02일 10시08분59초] 
+[RECEIVE]
+[2019년04월02일 10시09분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205955207&search_day=20190311&list_count=500
+[2019년04월02일 10시09분00초] 
+[RECEIVE]
+[2019년04월02일 10시09분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433723731&search_day=20190311&list_count=500
+[2019년04월02일 10시09분03초] 
+[RECEIVE]
+[2019년04월02일 10시09분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433724593&search_day=20190311&list_count=500
+[2019년04월02일 10시09분05초] 
+[RECEIVE]
+[2019년04월02일 10시09분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433725390&search_day=20190311&list_count=500
+[2019년04월02일 10시09분08초] 
+[RECEIVE]
+[2019년04월02일 10시09분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433726296&search_day=20190311&list_count=500
+[2019년04월02일 10시09분11초] 
+[RECEIVE]
+[2019년04월02일 10시09분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433727386&search_day=20190311&list_count=500
+[2019년04월02일 10시09분13초] 
+[RECEIVE]
+[2019년04월02일 10시09분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205955707&search_day=20190311&list_count=500
+[2019년04월02일 10시09분14초] 
+[RECEIVE]
+[2019년04월02일 10시09분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205956207&search_day=20190311&list_count=500
+[2019년04월02일 10시09분15초] 
+[RECEIVE]
+[2019년04월02일 10시09분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205956707&search_day=20190311&list_count=500
+[2019년04월02일 10시09분15초] 
+[RECEIVE]
+[2019년04월02일 10시09분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205957207&search_day=20190311&list_count=500
+[2019년04월02일 10시09분16초] 
+[RECEIVE]
+[2019년04월02일 10시09분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205957707&search_day=20190311&list_count=500
+[2019년04월02일 10시09분17초] 
+[RECEIVE]
+[2019년04월02일 10시09분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205958207&search_day=20190311&list_count=500
+[2019년04월02일 10시09분17초] 
+[RECEIVE]
+[2019년04월02일 10시09분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205958707&search_day=20190311&list_count=500
+[2019년04월02일 10시09분19초] 
+[RECEIVE]
+[2019년04월02일 10시09분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205959207&search_day=20190311&list_count=500
+[2019년04월02일 10시09분20초] 
+[RECEIVE]
+[2019년04월02일 10시09분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205959707&search_day=20190311&list_count=500
+[2019년04월02일 10시09분20초] 
+[RECEIVE]
+[2019년04월02일 10시09분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205960207&search_day=20190311&list_count=500
+[2019년04월02일 10시09분21초] 
+[RECEIVE]
+[2019년04월02일 10시09분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205960707&search_day=20190311&list_count=500
+[2019년04월02일 10시09분21초] 
+[RECEIVE]
+[2019년04월02일 10시09분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205961207&search_day=20190311&list_count=500
+[2019년04월02일 10시09분23초] 
+[RECEIVE]
+[2019년04월02일 10시09분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433728224&search_day=20190311&list_count=500
+[2019년04월02일 10시09분23초] 
+[RECEIVE]
+[2019년04월02일 10시09분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433728783&search_day=20190311&list_count=500
+[2019년04월02일 10시26분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433850017&search_day=20190311&list_count=500
+[2019년04월02일 10시26분39초] 
+[RECEIVE]
+[2019년04월02일 10시26분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206274207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분39초] 
+[RECEIVE]
+[2019년04월02일 10시26분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=260458689&search_day=20190311&list_count=500
+[2019년04월02일 10시26분39초] 
+[RECEIVE]
+[2019년04월02일 10시26분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=934e9fde3078c9bd&max_seq=0&search_day=20190311&s_seq=2300475,2300476,2300477,2300478,2300479&list_count=500
+[2019년04월02일 10시26분40초] 
+[RECEIVE]
+[2019년04월02일 10시26분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206274707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분41초] 
+[RECEIVE]
+[2019년04월02일 10시26분41초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206275207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분41초] 
+[RECEIVE]
+[2019년04월02일 10시26분41초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206275707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분42초] 
+[RECEIVE]
+[2019년04월02일 10시26분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206276207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분42초] 
+[RECEIVE]
+[2019년04월02일 10시26분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206276707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분43초] 
+[RECEIVE]
+[2019년04월02일 10시26분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206277207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분43초] 
+[RECEIVE]
+[2019년04월02일 10시26분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206277707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분43초] 
+[RECEIVE]
+[2019년04월02일 10시26분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206278207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분44초] 
+[RECEIVE]
+[2019년04월02일 10시26분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206278707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분44초] 
+[RECEIVE]
+[2019년04월02일 10시26분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206279207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분45초] 
+[RECEIVE]
+[2019년04월02일 10시26분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206279707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분45초] 
+[RECEIVE]
+[2019년04월02일 10시26분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206280207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분46초] 
+[RECEIVE]
+[2019년04월02일 10시26분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206280707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분46초] 
+[RECEIVE]
+[2019년04월02일 10시26분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206281207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분47초] 
+[RECEIVE]
+[2019년04월02일 10시26분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206281707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분47초] 
+[RECEIVE]
+[2019년04월02일 10시26분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206282207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분48초] 
+[RECEIVE]
+[2019년04월02일 10시26분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206282707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분48초] 
+[RECEIVE]
+[2019년04월02일 10시26분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206283207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분49초] 
+[RECEIVE]
+[2019년04월02일 10시26분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206283707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분49초] 
+[RECEIVE]
+[2019년04월02일 10시26분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206284207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분50초] 
+[RECEIVE]
+[2019년04월02일 10시26분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206284707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분50초] 
+[RECEIVE]
+[2019년04월02일 10시26분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206282207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분51초] 
+[RECEIVE]
+[2019년04월02일 10시26분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206282707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분51초] 
+[RECEIVE]
+[2019년04월02일 10시26분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206283207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분51초] 
+[RECEIVE]
+[2019년04월02일 10시26분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206283707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분52초] 
+[RECEIVE]
+[2019년04월02일 10시26분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206284207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분52초] 
+[RECEIVE]
+[2019년04월02일 10시26분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206284707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분53초] 
+[RECEIVE]
+[2019년04월02일 10시26분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206285207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분53초] 
+[RECEIVE]
+[2019년04월02일 10시26분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206285707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분54초] 
+[RECEIVE]
+[2019년04월02일 10시26분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206286207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분54초] 
+[RECEIVE]
+[2019년04월02일 10시26분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206286707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분54초] 
+[RECEIVE]
+[2019년04월02일 10시26분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206287207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분55초] 
+[RECEIVE]
+[2019년04월02일 10시26분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206287707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분55초] 
+[RECEIVE]
+[2019년04월02일 10시26분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206288207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분56초] 
+[RECEIVE]
+[2019년04월02일 10시26분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433852437&search_day=20190311&list_count=500
+[2019년04월02일 10시26분56초] 
+[RECEIVE]
+[2019년04월02일 10시26분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433852986&search_day=20190311&list_count=500
+[2019년04월02일 10시26분57초] 
+[RECEIVE]
+[2019년04월02일 10시26분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206288707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분57초] 
+[RECEIVE]
+[2019년04월02일 10시26분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206289207&search_day=20190311&list_count=500
+[2019년04월02일 10시26분57초] 
+[RECEIVE]
+[2019년04월02일 10시26분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433853570&search_day=20190311&list_count=500
+[2019년04월02일 10시26분58초] 
+[RECEIVE]
+[2019년04월02일 10시26분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206289707&search_day=20190311&list_count=500
+[2019년04월02일 10시26분59초] 
+[RECEIVE]
+[2019년04월02일 10시26분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206290207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분00초] 
+[RECEIVE]
+[2019년04월02일 10시27분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206290707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분00초] 
+[RECEIVE]
+[2019년04월02일 10시27분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206291207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분00초] 
+[RECEIVE]
+[2019년04월02일 10시27분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206291707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분01초] 
+[RECEIVE]
+[2019년04월02일 10시27분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206292207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분01초] 
+[RECEIVE]
+[2019년04월02일 10시27분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206292707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분02초] 
+[RECEIVE]
+[2019년04월02일 10시27분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206293207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분02초] 
+[RECEIVE]
+[2019년04월02일 10시27분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206293707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분04초] 
+[RECEIVE]
+[2019년04월02일 10시27분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206294207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분05초] 
+[RECEIVE]
+[2019년04월02일 10시27분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206294707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분06초] 
+[RECEIVE]
+[2019년04월02일 10시27분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206295207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분07초] 
+[RECEIVE]
+[2019년04월02일 10시27분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206295707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분08초] 
+[RECEIVE]
+[2019년04월02일 10시27분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206296207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분09초] 
+[RECEIVE]
+[2019년04월02일 10시27분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206296707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분10초] 
+[RECEIVE]
+[2019년04월02일 10시27분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206297207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분11초] 
+[RECEIVE]
+[2019년04월02일 10시27분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206297707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분12초] 
+[RECEIVE]
+[2019년04월02일 10시27분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206298207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분13초] 
+[RECEIVE]
+[2019년04월02일 10시27분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206298707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분14초] 
+[RECEIVE]
+[2019년04월02일 10시27분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=260459189&search_day=20190311&list_count=500
+[2019년04월02일 10시27분15초] 
+[RECEIVE]
+[2019년04월02일 10시27분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206299207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분15초] 
+[RECEIVE]
+[2019년04월02일 10시27분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206299707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분16초] 
+[RECEIVE]
+[2019년04월02일 10시27분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206300207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분17초] 
+[RECEIVE]
+[2019년04월02일 10시27분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206300707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분17초] 
+[RECEIVE]
+[2019년04월02일 10시27분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433855950&search_day=20190311&list_count=500
+[2019년04월02일 10시27분18초] 
+[RECEIVE]
+[2019년04월02일 10시27분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433858444&search_day=20190311&list_count=500
+[2019년04월02일 10시27분19초] 
+[RECEIVE]
+[2019년04월02일 10시27분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206301207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분20초] 
+[RECEIVE]
+[2019년04월02일 10시27분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206301707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분21초] 
+[RECEIVE]
+[2019년04월02일 10시27분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206302207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분21초] 
+[RECEIVE]
+[2019년04월02일 10시27분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206302707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분22초] 
+[RECEIVE]
+[2019년04월02일 10시27분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206303207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분22초] 
+[RECEIVE]
+[2019년04월02일 10시27분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206303707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분23초] 
+[RECEIVE]
+[2019년04월02일 10시27분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206304207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분23초] 
+[RECEIVE]
+[2019년04월02일 10시27분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206304707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분24초] 
+[RECEIVE]
+[2019년04월02일 10시27분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206305207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분24초] 
+[RECEIVE]
+[2019년04월02일 10시27분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206305707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분24초] 
+[RECEIVE]
+[2019년04월02일 10시27분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206306207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분25초] 
+[RECEIVE]
+[2019년04월02일 10시27분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206306707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분25초] 
+[RECEIVE]
+[2019년04월02일 10시27분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206307207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분26초] 
+[RECEIVE]
+[2019년04월02일 10시27분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206307707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분26초] 
+[RECEIVE]
+[2019년04월02일 10시27분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206308207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분27초] 
+[RECEIVE]
+[2019년04월02일 10시27분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206308707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분27초] 
+[RECEIVE]
+[2019년04월02일 10시27분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206309207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분27초] 
+[RECEIVE]
+[2019년04월02일 10시27분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206309707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분28초] 
+[RECEIVE]
+[2019년04월02일 10시27분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433859597&search_day=20190311&list_count=500
+[2019년04월02일 10시27분28초] 
+[RECEIVE]
+[2019년04월02일 10시27분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433860530&search_day=20190311&list_count=500
+[2019년04월02일 10시27분30초] 
+[RECEIVE]
+[2019년04월02일 10시27분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206310207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분31초] 
+[RECEIVE]
+[2019년04월02일 10시27분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206310707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분32초] 
+[RECEIVE]
+[2019년04월02일 10시27분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206311207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분33초] 
+[RECEIVE]
+[2019년04월02일 10시27분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206311707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분33초] 
+[RECEIVE]
+[2019년04월02일 10시27분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206312207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분33초] 
+[RECEIVE]
+[2019년04월02일 10시27분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206312707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분34초] 
+[RECEIVE]
+[2019년04월02일 10시27분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206313207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분34초] 
+[RECEIVE]
+[2019년04월02일 10시27분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206313707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분35초] 
+[RECEIVE]
+[2019년04월02일 10시27분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206314207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분35초] 
+[RECEIVE]
+[2019년04월02일 10시27분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206314707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분35초] 
+[RECEIVE]
+[2019년04월02일 10시27분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206315207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분36초] 
+[RECEIVE]
+[2019년04월02일 10시27분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206315707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분36초] 
+[RECEIVE]
+[2019년04월02일 10시27분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206316207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분37초] 
+[RECEIVE]
+[2019년04월02일 10시27분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433863322&search_day=20190311&list_count=500
+[2019년04월02일 10시27분37초] 
+[RECEIVE]
+[2019년04월02일 10시27분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206316707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분37초] 
+[RECEIVE]
+[2019년04월02일 10시27분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433864183&search_day=20190311&list_count=500
+[2019년04월02일 10시27분38초] 
+[RECEIVE]
+[2019년04월02일 10시27분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206317207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분39초] 
+[RECEIVE]
+[2019년04월02일 10시27분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206317707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분39초] 
+[RECEIVE]
+[2019년04월02일 10시27분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433866198&search_day=20190311&list_count=500
+[2019년04월02일 10시27분40초] 
+[RECEIVE]
+[2019년04월02일 10시27분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433866726&search_day=20190311&list_count=500
+[2019년04월02일 10시27분41초] 
+[RECEIVE]
+[2019년04월02일 10시27분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433868126&search_day=20190311&list_count=500
+[2019년04월02일 10시27분43초] 
+[RECEIVE]
+[2019년04월02일 10시27분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206318207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분44초] 
+[RECEIVE]
+[2019년04월02일 10시27분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206318707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분45초] 
+[RECEIVE]
+[2019년04월02일 10시27분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206319207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분45초] 
+[RECEIVE]
+[2019년04월02일 10시27분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206319707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분45초] 
+[RECEIVE]
+[2019년04월02일 10시27분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433869810&search_day=20190311&list_count=500
+[2019년04월02일 10시27분46초] 
+[RECEIVE]
+[2019년04월02일 10시27분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206320207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분47초] 
+[RECEIVE]
+[2019년04월02일 10시27분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206320707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분47초] 
+[RECEIVE]
+[2019년04월02일 10시27분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206321207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분48초] 
+[RECEIVE]
+[2019년04월02일 10시27분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206321707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분48초] 
+[RECEIVE]
+[2019년04월02일 10시27분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206322207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분48초] 
+[RECEIVE]
+[2019년04월02일 10시27분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206322707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분49초] 
+[RECEIVE]
+[2019년04월02일 10시27분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206323207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분49초] 
+[RECEIVE]
+[2019년04월02일 10시27분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206323707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분49초] 
+[RECEIVE]
+[2019년04월02일 10시27분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206324207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분50초] 
+[RECEIVE]
+[2019년04월02일 10시27분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206324707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분50초] 
+[RECEIVE]
+[2019년04월02일 10시27분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206325207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분51초] 
+[RECEIVE]
+[2019년04월02일 10시27분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206325707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분51초] 
+[RECEIVE]
+[2019년04월02일 10시27분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206326207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분51초] 
+[RECEIVE]
+[2019년04월02일 10시27분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206326707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분52초] 
+[RECEIVE]
+[2019년04월02일 10시27분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206327207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분52초] 
+[RECEIVE]
+[2019년04월02일 10시27분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206327707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분52초] 
+[RECEIVE]
+[2019년04월02일 10시27분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206328207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분53초] 
+[RECEIVE]
+[2019년04월02일 10시27분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206328707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분53초] 
+[RECEIVE]
+[2019년04월02일 10시27분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433870981&search_day=20190311&list_count=500
+[2019년04월02일 10시27분54초] 
+[RECEIVE]
+[2019년04월02일 10시27분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433872542&search_day=20190311&list_count=500
+[2019년04월02일 10시27분55초] 
+[RECEIVE]
+[2019년04월02일 10시27분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206329207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분56초] 
+[RECEIVE]
+[2019년04월02일 10시27분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206329707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분56초] 
+[RECEIVE]
+[2019년04월02일 10시27분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206330207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분57초] 
+[RECEIVE]
+[2019년04월02일 10시27분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206330707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분57초] 
+[RECEIVE]
+[2019년04월02일 10시27분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206331207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분57초] 
+[RECEIVE]
+[2019년04월02일 10시27분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206331707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분58초] 
+[RECEIVE]
+[2019년04월02일 10시27분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206332207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분58초] 
+[RECEIVE]
+[2019년04월02일 10시27분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206332707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분58초] 
+[RECEIVE]
+[2019년04월02일 10시27분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206333207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분59초] 
+[RECEIVE]
+[2019년04월02일 10시27분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206333707&search_day=20190311&list_count=500
+[2019년04월02일 10시27분59초] 
+[RECEIVE]
+[2019년04월02일 10시27분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206334207&search_day=20190311&list_count=500
+[2019년04월02일 10시27분59초] 
+[RECEIVE]
+[2019년04월02일 10시28분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206334707&search_day=20190311&list_count=500
+[2019년04월02일 10시28분00초] 
+[RECEIVE]
+[2019년04월02일 10시28분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206335207&search_day=20190311&list_count=500
+[2019년04월02일 10시28분00초] 
+[RECEIVE]
+[2019년04월02일 10시28분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206335707&search_day=20190311&list_count=500
+[2019년04월02일 10시28분01초] 
+[RECEIVE]
+[2019년04월02일 10시28분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206336207&search_day=20190311&list_count=500
+[2019년04월02일 10시28분01초] 
+[RECEIVE]
+[2019년04월02일 10시28분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206336707&search_day=20190311&list_count=500
+[2019년04월02일 10시28분02초] 
+[RECEIVE]
+[2019년04월02일 10시28분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206337207&search_day=20190311&list_count=500
+[2019년04월02일 10시28분02초] 
+[RECEIVE]
+[2019년04월02일 10시28분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206337707&search_day=20190311&list_count=500
+[2019년04월02일 10시28분02초] 
+[RECEIVE]
+[2019년04월02일 10시28분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206338207&search_day=20190311&list_count=500
+[2019년04월02일 10시28분03초] 
+[RECEIVE]
+[2019년04월02일 10시28분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206338707&search_day=20190311&list_count=500
+[2019년04월02일 10시28분03초] 
+[RECEIVE]
+[2019년04월02일 10시28분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206339207&search_day=20190311&list_count=500
+[2019년04월02일 10시28분03초] 
+[RECEIVE]
+[2019년04월02일 10시28분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206339707&search_day=20190311&list_count=500
+[2019년04월02일 10시28분04초] 
+[RECEIVE]
+[2019년04월02일 10시28분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206340207&search_day=20190311&list_count=500
+[2019년04월02일 10시28분04초] 
+[RECEIVE]
+[2019년04월02일 10시28분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=260459689&search_day=20190311&list_count=500
+[2019년04월02일 10시34분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433940699&search_day=20190311&list_count=500
+[2019년04월02일 10시34분10초] 
+[RECEIVE]
+[2019년04월02일 10시34분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206529207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분10초] 
+[RECEIVE]
+[2019년04월02일 10시34분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=0&search_day=20190402&list_count=500
+[2019년04월02일 10시34분10초] 
+[RECEIVE]
+[2019년04월02일 10시34분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=934e9fde3078c9bd&max_seq=0&search_day=20190402&s_seq=2300475,2300476,2300477,2300478,2300479&list_count=500
+[2019년04월02일 10시34분11초] 
+[RECEIVE]
+[2019년04월02일 10시34분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433941369&search_day=20190311&list_count=500
+[2019년04월02일 10시34분13초] 
+[RECEIVE]
+[2019년04월02일 10시34분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206529707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분14초] 
+[RECEIVE]
+[2019년04월02일 10시34분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433942734&search_day=20190311&list_count=500
+[2019년04월02일 10시34분16초] 
+[RECEIVE]
+[2019년04월02일 10시34분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206530207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분18초] 
+[RECEIVE]
+[2019년04월02일 10시34분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206530707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분18초] 
+[RECEIVE]
+[2019년04월02일 10시34분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206531207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분19초] 
+[RECEIVE]
+[2019년04월02일 10시34분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206531707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분20초] 
+[RECEIVE]
+[2019년04월02일 10시34분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206532207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분21초] 
+[RECEIVE]
+[2019년04월02일 10시34분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206532707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분21초] 
+[RECEIVE]
+[2019년04월02일 10시34분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206533207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분22초] 
+[RECEIVE]
+[2019년04월02일 10시34분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206533707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분22초] 
+[RECEIVE]
+[2019년04월02일 10시34분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206534207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분23초] 
+[RECEIVE]
+[2019년04월02일 10시34분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206534707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분23초] 
+[RECEIVE]
+[2019년04월02일 10시34분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206535207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분24초] 
+[RECEIVE]
+[2019년04월02일 10시34분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206535707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분24초] 
+[RECEIVE]
+[2019년04월02일 10시34분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206536207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분25초] 
+[RECEIVE]
+[2019년04월02일 10시34분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206536707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분25초] 
+[RECEIVE]
+[2019년04월02일 10시34분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206537207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분25초] 
+[RECEIVE]
+[2019년04월02일 10시34분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206537707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분26초] 
+[RECEIVE]
+[2019년04월02일 10시34분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206538207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분26초] 
+[RECEIVE]
+[2019년04월02일 10시34분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206538707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분27초] 
+[RECEIVE]
+[2019년04월02일 10시34분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433944329&search_day=20190311&list_count=500
+[2019년04월02일 10시34분27초] 
+[RECEIVE]
+[2019년04월02일 10시34분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433944981&search_day=20190311&list_count=500
+[2019년04월02일 10시34분28초] 
+[RECEIVE]
+[2019년04월02일 10시34분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206539207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분29초] 
+[RECEIVE]
+[2019년04월02일 10시34분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206539707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분29초] 
+[RECEIVE]
+[2019년04월02일 10시34분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206540207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분29초] 
+[RECEIVE]
+[2019년04월02일 10시34분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206540707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분30초] 
+[RECEIVE]
+[2019년04월02일 10시34분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206541207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분30초] 
+[RECEIVE]
+[2019년04월02일 10시34분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433946658&search_day=20190311&list_count=500
+[2019년04월02일 10시34분31초] 
+[RECEIVE]
+[2019년04월02일 10시34분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206541707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분31초] 
+[RECEIVE]
+[2019년04월02일 10시34분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206542207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분32초] 
+[RECEIVE]
+[2019년04월02일 10시34분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206542707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분32초] 
+[RECEIVE]
+[2019년04월02일 10시34분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206543207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분33초] 
+[RECEIVE]
+[2019년04월02일 10시34분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206543707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분33초] 
+[RECEIVE]
+[2019년04월02일 10시34분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206544207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분34초] 
+[RECEIVE]
+[2019년04월02일 10시34분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206544707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분34초] 
+[RECEIVE]
+[2019년04월02일 10시34분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206545207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분35초] 
+[RECEIVE]
+[2019년04월02일 10시34분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206545707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분35초] 
+[RECEIVE]
+[2019년04월02일 10시34분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206546207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분36초] 
+[RECEIVE]
+[2019년04월02일 10시34분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206546707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분36초] 
+[RECEIVE]
+[2019년04월02일 10시34분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206547207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분36초] 
+[RECEIVE]
+[2019년04월02일 10시34분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206547707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분37초] 
+[RECEIVE]
+[2019년04월02일 10시34분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206548207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분37초] 
+[RECEIVE]
+[2019년04월02일 10시34분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206548707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분38초] 
+[RECEIVE]
+[2019년04월02일 10시34분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206549207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분38초] 
+[RECEIVE]
+[2019년04월02일 10시34분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206549707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분39초] 
+[RECEIVE]
+[2019년04월02일 10시34분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206550207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분39초] 
+[RECEIVE]
+[2019년04월02일 10시34분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206550707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분39초] 
+[RECEIVE]
+[2019년04월02일 10시34분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206551207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분40초] 
+[RECEIVE]
+[2019년04월02일 10시34분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206551707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분40초] 
+[RECEIVE]
+[2019년04월02일 10시34분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206552207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분41초] 
+[RECEIVE]
+[2019년04월02일 10시34분41초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206552707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분41초] 
+[RECEIVE]
+[2019년04월02일 10시34분41초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206553207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분41초] 
+[RECEIVE]
+[2019년04월02일 10시34분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206553707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분42초] 
+[RECEIVE]
+[2019년04월02일 10시34분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206554207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분42초] 
+[RECEIVE]
+[2019년04월02일 10시34분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206554707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분43초] 
+[RECEIVE]
+[2019년04월02일 10시34분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206555207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분43초] 
+[RECEIVE]
+[2019년04월02일 10시34분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206555707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분44초] 
+[RECEIVE]
+[2019년04월02일 10시34분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206556207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분44초] 
+[RECEIVE]
+[2019년04월02일 10시34분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433947701&search_day=20190311&list_count=500
+[2019년04월02일 10시34분45초] 
+[RECEIVE]
+[2019년04월02일 10시34분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433948248&search_day=20190311&list_count=500
+[2019년04월02일 10시34분46초] 
+[RECEIVE]
+[2019년04월02일 10시34분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206556707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분46초] 
+[RECEIVE]
+[2019년04월02일 10시34분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206557207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분46초] 
+[RECEIVE]
+[2019년04월02일 10시34분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206557707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분47초] 
+[RECEIVE]
+[2019년04월02일 10시34분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206558207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분47초] 
+[RECEIVE]
+[2019년04월02일 10시34분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206558707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분48초] 
+[RECEIVE]
+[2019년04월02일 10시34분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206559207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분48초] 
+[RECEIVE]
+[2019년04월02일 10시34분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206559707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분48초] 
+[RECEIVE]
+[2019년04월02일 10시34분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206560207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분49초] 
+[RECEIVE]
+[2019년04월02일 10시34분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206560707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분49초] 
+[RECEIVE]
+[2019년04월02일 10시34분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206561207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분50초] 
+[RECEIVE]
+[2019년04월02일 10시34분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206561707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분50초] 
+[RECEIVE]
+[2019년04월02일 10시34분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206562207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분51초] 
+[RECEIVE]
+[2019년04월02일 10시34분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206562707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분51초] 
+[RECEIVE]
+[2019년04월02일 10시34분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206563207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분51초] 
+[RECEIVE]
+[2019년04월02일 10시34분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433950510&search_day=20190311&list_count=500
+[2019년04월02일 10시34분53초] 
+[RECEIVE]
+[2019년04월02일 10시34분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206563707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분53초] 
+[RECEIVE]
+[2019년04월02일 10시34분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433952161&search_day=20190311&list_count=500
+[2019년04월02일 10시34분55초] 
+[RECEIVE]
+[2019년04월02일 10시34분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433953562&search_day=20190311&list_count=500
+[2019년04월02일 10시34분57초] 
+[RECEIVE]
+[2019년04월02일 10시34분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206564207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분58초] 
+[RECEIVE]
+[2019년04월02일 10시34분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206564707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분58초] 
+[RECEIVE]
+[2019년04월02일 10시34분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206565207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분59초] 
+[RECEIVE]
+[2019년04월02일 10시34분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206565707&search_day=20190311&list_count=500
+[2019년04월02일 10시34분59초] 
+[RECEIVE]
+[2019년04월02일 10시34분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206566207&search_day=20190311&list_count=500
+[2019년04월02일 10시34분59초] 
+[RECEIVE]
+[2019년04월02일 10시35분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206566707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분00초] 
+[RECEIVE]
+[2019년04월02일 10시35분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433954840&search_day=20190311&list_count=500
+[2019년04월02일 10시35분00초] 
+[RECEIVE]
+[2019년04월02일 10시35분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206567207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분01초] 
+[RECEIVE]
+[2019년04월02일 10시35분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206567707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분01초] 
+[RECEIVE]
+[2019년04월02일 10시35분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206568207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분02초] 
+[RECEIVE]
+[2019년04월02일 10시35분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433955729&search_day=20190311&list_count=500
+[2019년04월02일 10시35분03초] 
+[RECEIVE]
+[2019년04월02일 10시35분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206568707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분04초] 
+[RECEIVE]
+[2019년04월02일 10시35분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206569207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분04초] 
+[RECEIVE]
+[2019년04월02일 10시35분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206569707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분05초] 
+[RECEIVE]
+[2019년04월02일 10시35분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433957097&search_day=20190311&list_count=500
+[2019년04월02일 10시35분06초] 
+[RECEIVE]
+[2019년04월02일 10시35분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206570207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분07초] 
+[RECEIVE]
+[2019년04월02일 10시35분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206570707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분07초] 
+[RECEIVE]
+[2019년04월02일 10시35분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206571207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분08초] 
+[RECEIVE]
+[2019년04월02일 10시35분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206571707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분08초] 
+[RECEIVE]
+[2019년04월02일 10시35분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206572207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분08초] 
+[RECEIVE]
+[2019년04월02일 10시35분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206572707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분09초] 
+[RECEIVE]
+[2019년04월02일 10시35분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206573207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분09초] 
+[RECEIVE]
+[2019년04월02일 10시35분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206573707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분10초] 
+[RECEIVE]
+[2019년04월02일 10시35분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206574207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분10초] 
+[RECEIVE]
+[2019년04월02일 10시35분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206574707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분11초] 
+[RECEIVE]
+[2019년04월02일 10시35분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206575207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분11초] 
+[RECEIVE]
+[2019년04월02일 10시35분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206575707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분12초] 
+[RECEIVE]
+[2019년04월02일 10시35분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206576207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분12초] 
+[RECEIVE]
+[2019년04월02일 10시35분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206576707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분13초] 
+[RECEIVE]
+[2019년04월02일 10시35분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206577207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분13초] 
+[RECEIVE]
+[2019년04월02일 10시35분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206577707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분13초] 
+[RECEIVE]
+[2019년04월02일 10시35분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206578207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분14초] 
+[RECEIVE]
+[2019년04월02일 10시35분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206578707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분14초] 
+[RECEIVE]
+[2019년04월02일 10시35분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206579207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분15초] 
+[RECEIVE]
+[2019년04월02일 10시35분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433957920&search_day=20190311&list_count=500
+[2019년04월02일 10시35분16초] 
+[RECEIVE]
+[2019년04월02일 10시35분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433959250&search_day=20190311&list_count=500
+[2019년04월02일 10시35분18초] 
+[RECEIVE]
+[2019년04월02일 10시35분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206579707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분18초] 
+[RECEIVE]
+[2019년04월02일 10시35분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433961198&search_day=20190311&list_count=500
+[2019년04월02일 10시35분19초] 
+[RECEIVE]
+[2019년04월02일 10시35분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206580207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분20초] 
+[RECEIVE]
+[2019년04월02일 10시35분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433962679&search_day=20190311&list_count=500
+[2019년04월02일 10시35분21초] 
+[RECEIVE]
+[2019년04월02일 10시35분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206580707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분21초] 
+[RECEIVE]
+[2019년04월02일 10시35분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206581207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분22초] 
+[RECEIVE]
+[2019년04월02일 10시35분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206581707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분22초] 
+[RECEIVE]
+[2019년04월02일 10시35분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206582207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분22초] 
+[RECEIVE]
+[2019년04월02일 10시35분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206582707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분23초] 
+[RECEIVE]
+[2019년04월02일 10시35분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206583207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분23초] 
+[RECEIVE]
+[2019년04월02일 10시35분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206583707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분24초] 
+[RECEIVE]
+[2019년04월02일 10시35분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206584207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분24초] 
+[RECEIVE]
+[2019년04월02일 10시35분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206584707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분25초] 
+[RECEIVE]
+[2019년04월02일 10시35분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206585207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분25초] 
+[RECEIVE]
+[2019년04월02일 10시35분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433964230&search_day=20190311&list_count=500
+[2019년04월02일 10시35분26초] 
+[RECEIVE]
+[2019년04월02일 10시35분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206585707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분27초] 
+[RECEIVE]
+[2019년04월02일 10시35분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206586207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분27초] 
+[RECEIVE]
+[2019년04월02일 10시35분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206586707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분27초] 
+[RECEIVE]
+[2019년04월02일 10시35분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206587207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분28초] 
+[RECEIVE]
+[2019년04월02일 10시35분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206587707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분28초] 
+[RECEIVE]
+[2019년04월02일 10시35분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206588207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분29초] 
+[RECEIVE]
+[2019년04월02일 10시35분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206588707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분29초] 
+[RECEIVE]
+[2019년04월02일 10시35분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206589207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분29초] 
+[RECEIVE]
+[2019년04월02일 10시35분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206589707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분30초] 
+[RECEIVE]
+[2019년04월02일 10시35분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206590207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분30초] 
+[RECEIVE]
+[2019년04월02일 10시35분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206590707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분31초] 
+[RECEIVE]
+[2019년04월02일 10시35분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206591207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분31초] 
+[RECEIVE]
+[2019년04월02일 10시35분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206591707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분31초] 
+[RECEIVE]
+[2019년04월02일 10시35분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206592207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분32초] 
+[RECEIVE]
+[2019년04월02일 10시35분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206592707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분32초] 
+[RECEIVE]
+[2019년04월02일 10시35분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206593207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분33초] 
+[RECEIVE]
+[2019년04월02일 10시35분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206593707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분33초] 
+[RECEIVE]
+[2019년04월02일 10시35분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206594207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분34초] 
+[RECEIVE]
+[2019년04월02일 10시35분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206594707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분34초] 
+[RECEIVE]
+[2019년04월02일 10시35분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206595207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분34초] 
+[RECEIVE]
+[2019년04월02일 10시35분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206595707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분35초] 
+[RECEIVE]
+[2019년04월02일 10시35분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206596207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분35초] 
+[RECEIVE]
+[2019년04월02일 10시35분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206596707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분36초] 
+[RECEIVE]
+[2019년04월02일 10시35분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206597207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분36초] 
+[RECEIVE]
+[2019년04월02일 10시35분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206597707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분36초] 
+[RECEIVE]
+[2019년04월02일 10시35분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206598207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분37초] 
+[RECEIVE]
+[2019년04월02일 10시35분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206598707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분37초] 
+[RECEIVE]
+[2019년04월02일 10시35분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433966065&search_day=20190311&list_count=500
+[2019년04월02일 10시35분38초] 
+[RECEIVE]
+[2019년04월02일 10시35분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433966617&search_day=20190311&list_count=500
+[2019년04월02일 10시35분38초] 
+[RECEIVE]
+[2019년04월02일 10시35분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433967256&search_day=20190311&list_count=500
+[2019년04월02일 10시35분39초] 
+[RECEIVE]
+[2019년04월02일 10시35분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433968784&search_day=20190311&list_count=500
+[2019년04월02일 10시35분40초] 
+[RECEIVE]
+[2019년04월02일 10시35분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206599207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분41초] 
+[RECEIVE]
+[2019년04월02일 10시35분41초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206599707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분41초] 
+[RECEIVE]
+[2019년04월02일 10시35분41초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206600207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분41초] 
+[RECEIVE]
+[2019년04월02일 10시35분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206600707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분42초] 
+[RECEIVE]
+[2019년04월02일 10시35분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433971113&search_day=20190311&list_count=500
+[2019년04월02일 10시35분43초] 
+[RECEIVE]
+[2019년04월02일 10시35분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206601207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분43초] 
+[RECEIVE]
+[2019년04월02일 10시35분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206601707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분44초] 
+[RECEIVE]
+[2019년04월02일 10시35분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206602207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분44초] 
+[RECEIVE]
+[2019년04월02일 10시35분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206602707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분45초] 
+[RECEIVE]
+[2019년04월02일 10시35분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206603207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분45초] 
+[RECEIVE]
+[2019년04월02일 10시35분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206603707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분45초] 
+[RECEIVE]
+[2019년04월02일 10시35분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206604207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분46초] 
+[RECEIVE]
+[2019년04월02일 10시35분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206604707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분46초] 
+[RECEIVE]
+[2019년04월02일 10시35분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206605207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분47초] 
+[RECEIVE]
+[2019년04월02일 10시35분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206605707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분47초] 
+[RECEIVE]
+[2019년04월02일 10시35분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206606207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분47초] 
+[RECEIVE]
+[2019년04월02일 10시35분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206606707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분48초] 
+[RECEIVE]
+[2019년04월02일 10시35분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206607207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분48초] 
+[RECEIVE]
+[2019년04월02일 10시35분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206607707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분49초] 
+[RECEIVE]
+[2019년04월02일 10시35분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206608207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분49초] 
+[RECEIVE]
+[2019년04월02일 10시35분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206608707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분50초] 
+[RECEIVE]
+[2019년04월02일 10시35분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206609207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분50초] 
+[RECEIVE]
+[2019년04월02일 10시35분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206609707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분50초] 
+[RECEIVE]
+[2019년04월02일 10시35분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206610207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분51초] 
+[RECEIVE]
+[2019년04월02일 10시35분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206610707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분51초] 
+[RECEIVE]
+[2019년04월02일 10시35분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206611207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분52초] 
+[RECEIVE]
+[2019년04월02일 10시35분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206611707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분52초] 
+[RECEIVE]
+[2019년04월02일 10시35분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433972954&search_day=20190311&list_count=500
+[2019년04월02일 10시35분53초] 
+[RECEIVE]
+[2019년04월02일 10시35분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206612207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분54초] 
+[RECEIVE]
+[2019년04월02일 10시35분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206612707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분54초] 
+[RECEIVE]
+[2019년04월02일 10시35분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206613207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분55초] 
+[RECEIVE]
+[2019년04월02일 10시35분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206613707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분56초] 
+[RECEIVE]
+[2019년04월02일 10시35분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206614207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분56초] 
+[RECEIVE]
+[2019년04월02일 10시35분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206614707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분57초] 
+[RECEIVE]
+[2019년04월02일 10시35분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206615207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분57초] 
+[RECEIVE]
+[2019년04월02일 10시35분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206615707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분57초] 
+[RECEIVE]
+[2019년04월02일 10시35분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206616207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분58초] 
+[RECEIVE]
+[2019년04월02일 10시35분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206616707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분58초] 
+[RECEIVE]
+[2019년04월02일 10시35분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206617207&search_day=20190311&list_count=500
+[2019년04월02일 10시35분59초] 
+[RECEIVE]
+[2019년04월02일 10시35분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206617707&search_day=20190311&list_count=500
+[2019년04월02일 10시35분59초] 
+[RECEIVE]
+[2019년04월02일 10시35분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433975119&search_day=20190311&list_count=500
+[2019년04월02일 10시35분59초] 
+[RECEIVE]
+[2019년04월02일 10시35분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433976023&search_day=20190311&list_count=500
+[2019년04월02일 10시36분01초] 
+[RECEIVE]
+[2019년04월02일 10시36분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206618207&search_day=20190311&list_count=500
+[2019년04월02일 10시36분02초] 
+[RECEIVE]
+[2019년04월02일 10시36분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433977610&search_day=20190311&list_count=500
+[2019년04월02일 10시36분03초] 
+[RECEIVE]
+[2019년04월02일 10시36분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206618707&search_day=20190311&list_count=500
+[2019년04월02일 10시36분03초] 
+[RECEIVE]
+[2019년04월02일 10시36분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206619207&search_day=20190311&list_count=500
+[2019년04월02일 10시36분04초] 
+[RECEIVE]
+[2019년04월02일 10시36분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206619707&search_day=20190311&list_count=500
+[2019년04월02일 10시36분04초] 
+[RECEIVE]
+[2019년04월02일 10시36분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206620207&search_day=20190311&list_count=500
+[2019년04월02일 10시36분05초] 
+[RECEIVE]
+[2019년04월02일 10시36분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206620707&search_day=20190311&list_count=500
+[2019년04월02일 10시36분06초] 
+[RECEIVE]
+[2019년04월02일 10시36분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206621207&search_day=20190311&list_count=500
+[2019년04월02일 10시36분07초] 
+[RECEIVE]
+[2019년04월02일 10시36분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206621707&search_day=20190311&list_count=500
+[2019년04월02일 10시36분08초] 
+[RECEIVE]
+[2019년04월02일 10시36분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206622207&search_day=20190311&list_count=500
+[2019년04월02일 10시36분08초] 
+[RECEIVE]
+[2019년04월02일 10시36분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206622707&search_day=20190311&list_count=500
+[2019년04월02일 10시36분09초] 
+[RECEIVE]
+[2019년04월02일 10시36분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206623207&search_day=20190311&list_count=500
+[2019년04월02일 10시36분09초] 
+[RECEIVE]
+[2019년04월02일 10시36분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206623707&search_day=20190311&list_count=500
+[2019년04월02일 10시36분10초] 
+[RECEIVE]
+[2019년04월02일 10시36분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206624207&search_day=20190311&list_count=500
+[2019년04월02일 10시36분10초] 
+[RECEIVE]
+[2019년04월02일 10시36분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206624707&search_day=20190311&list_count=500
+[2019년04월02일 10시36분11초] 
+[RECEIVE]
+[2019년04월02일 10시36분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206625207&search_day=20190311&list_count=500
+[2019년04월02일 10시36분11초] 
+[RECEIVE]
+[2019년04월02일 10시36분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206625707&search_day=20190311&list_count=500
+[2019년04월02일 10시36분13초] 
+[RECEIVE]
+[2019년04월02일 10시36분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206626207&search_day=20190311&list_count=500
+[2019년04월02일 10시36분14초] 
+[RECEIVE]
+[2019년04월02일 10시36분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433979178&search_day=20190311&list_count=500
+[2019년04월02일 10시36분16초] 
+[RECEIVE]
+[2019년04월02일 10시36분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206595207&search_day=20190311&list_count=500
+[2019년04월02일 10시36분17초] 
+[RECEIVE]
+[2019년04월02일 10시36분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206595707&search_day=20190311&list_count=500
+[2019년04월02일 10시36분19초] 
+[RECEIVE]
+[2019년04월02일 10시36분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206597707&search_day=20190311&list_count=500
+[2019년04월02일 10시36분21초] 
+[RECEIVE]
+[2019년04월02일 10시36분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206598207&search_day=20190311&list_count=500
+[2019년04월02일 10시36분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=&search_day=null&list_count=500
+[2019년04월02일 10시36분52초] 
+[RECEIVE]
+[2019년04월02일 10시38분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5539846752&search_day=20190311&list_count=500
+[2019년04월02일 10시38분14초] 
+[RECEIVE]
+[2019년04월02일 10시38분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=0&search_day=20190311&list_count=500
+[2019년04월02일 10시38분44초] 
+[RECEIVE]
+[2019년04월02일 10시38분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=0&search_day=20190311&list_count=500
+[2019년04월02일 10시38분44초] 
+[RECEIVE]
+[2019년04월02일 10시38분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=0&search_day=20190311&list_count=500
+[2019년04월02일 10시38분44초] 
+[RECEIVE]
+[2019년04월02일 10시38분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=934e9fde3078c9bd&max_seq=0&search_day=20190311&s_seq=2300475,2300476,2300477,2300478,2300479&list_count=500
+[2019년04월02일 10시38분44초] 
+[RECEIVE]
+[2019년04월02일 10시38분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205955207&search_day=20190311&list_count=500
+[2019년04월02일 10시38분45초] 
+[RECEIVE]
+[2019년04월02일 10시38분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433723731&search_day=20190311&list_count=500
+[2019년04월02일 10시38분46초] 
+[RECEIVE]
+[2019년04월02일 10시38분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433724593&search_day=20190311&list_count=500
+[2019년04월02일 10시38분48초] 
+[RECEIVE]
+[2019년04월02일 10시38분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433725390&search_day=20190311&list_count=500
+[2019년04월02일 10시38분49초] 
+[RECEIVE]
+[2019년04월02일 10시38분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433726296&search_day=20190311&list_count=500
+[2019년04월02일 10시38분51초] 
+[RECEIVE]
+[2019년04월02일 10시38분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433727386&search_day=20190311&list_count=500
+[2019년04월02일 10시38분52초] 
+[RECEIVE]
+[2019년04월02일 10시38분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205955707&search_day=20190311&list_count=500
+[2019년04월02일 10시38분53초] 
+[RECEIVE]
+[2019년04월02일 10시38분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205956207&search_day=20190311&list_count=500
+[2019년04월02일 10시38분53초] 
+[RECEIVE]
+[2019년04월02일 10시38분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205956707&search_day=20190311&list_count=500
+[2019년04월02일 10시38분53초] 
+[RECEIVE]
+[2019년04월02일 10시38분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205957207&search_day=20190311&list_count=500
+[2019년04월02일 10시38분54초] 
+[RECEIVE]
+[2019년04월02일 10시38분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205957707&search_day=20190311&list_count=500
+[2019년04월02일 10시38분54초] 
+[RECEIVE]
+[2019년04월02일 10시38분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205958207&search_day=20190311&list_count=500
+[2019년04월02일 10시38분54초] 
+[RECEIVE]
+[2019년04월02일 10시38분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205958707&search_day=20190311&list_count=500
+[2019년04월02일 10시38분55초] 
+[RECEIVE]
+[2019년04월02일 10시38분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205959207&search_day=20190311&list_count=500
+[2019년04월02일 10시38분55초] 
+[RECEIVE]
+[2019년04월02일 10시38분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205959707&search_day=20190311&list_count=500
+[2019년04월02일 10시38분55초] 
+[RECEIVE]
+[2019년04월02일 10시38분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205960207&search_day=20190311&list_count=500
+[2019년04월02일 10시38분56초] 
+[RECEIVE]
+[2019년04월02일 10시38분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205960707&search_day=20190311&list_count=500
+[2019년04월02일 10시38분56초] 
+[RECEIVE]
+[2019년04월02일 10시38분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205961207&search_day=20190311&list_count=500
+[2019년04월02일 10시38분56초] 
+[RECEIVE]
+[2019년04월02일 10시38분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433728224&search_day=20190311&list_count=500
+[2019년04월02일 10시38분57초] 
+[RECEIVE]
+[2019년04월02일 10시38분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433728783&search_day=20190311&list_count=500
+[2019년04월02일 10시38분57초] 
+[RECEIVE]
+[2019년04월02일 10시38분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205961707&search_day=20190311&list_count=500
+[2019년04월02일 10시38분58초] 
+[RECEIVE]
+[2019년04월02일 10시38분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205962207&search_day=20190311&list_count=500
+[2019년04월02일 10시38분58초] 
+[RECEIVE]
+[2019년04월02일 10시38분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205962707&search_day=20190311&list_count=500
+[2019년04월02일 10시38분58초] 
+[RECEIVE]
+[2019년04월02일 10시38분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433729558&search_day=20190311&list_count=500
+[2019년04월02일 10시38분59초] 
+[RECEIVE]
+[2019년04월02일 10시39분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205963207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분00초] 
+[RECEIVE]
+[2019년04월02일 10시39분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433730808&search_day=20190311&list_count=500
+[2019년04월02일 10시39분01초] 
+[RECEIVE]
+[2019년04월02일 10시39분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205963707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분02초] 
+[RECEIVE]
+[2019년04월02일 10시39분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205964207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분03초] 
+[RECEIVE]
+[2019년04월02일 10시39분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205964707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분03초] 
+[RECEIVE]
+[2019년04월02일 10시39분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205965207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분04초] 
+[RECEIVE]
+[2019년04월02일 10시39분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205965707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분04초] 
+[RECEIVE]
+[2019년04월02일 10시39분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205966207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분04초] 
+[RECEIVE]
+[2019년04월02일 10시39분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205966707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분05초] 
+[RECEIVE]
+[2019년04월02일 10시39분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205967207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분05초] 
+[RECEIVE]
+[2019년04월02일 10시39분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205967707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분06초] 
+[RECEIVE]
+[2019년04월02일 10시39분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205968207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분06초] 
+[RECEIVE]
+[2019년04월02일 10시39분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205968707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분06초] 
+[RECEIVE]
+[2019년04월02일 10시39분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205969207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분07초] 
+[RECEIVE]
+[2019년04월02일 10시39분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205969707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분07초] 
+[RECEIVE]
+[2019년04월02일 10시39분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205970207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분07초] 
+[RECEIVE]
+[2019년04월02일 10시39분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205970707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분08초] 
+[RECEIVE]
+[2019년04월02일 10시39분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205971207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분08초] 
+[RECEIVE]
+[2019년04월02일 10시39분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205971707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분08초] 
+[RECEIVE]
+[2019년04월02일 10시39분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433732285&search_day=20190311&list_count=500
+[2019년04월02일 10시39분10초] 
+[RECEIVE]
+[2019년04월02일 10시39분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433733715&search_day=20190311&list_count=500
+[2019년04월02일 10시39분11초] 
+[RECEIVE]
+[2019년04월02일 10시39분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205972207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분12초] 
+[RECEIVE]
+[2019년04월02일 10시39분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205972707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분13초] 
+[RECEIVE]
+[2019년04월02일 10시39분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205973207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분13초] 
+[RECEIVE]
+[2019년04월02일 10시39분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205973707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분14초] 
+[RECEIVE]
+[2019년04월02일 10시39분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205974207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분14초] 
+[RECEIVE]
+[2019년04월02일 10시39분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205974707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분15초] 
+[RECEIVE]
+[2019년04월02일 10시39분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205975207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분15초] 
+[RECEIVE]
+[2019년04월02일 10시39분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205975707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분16초] 
+[RECEIVE]
+[2019년04월02일 10시39분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205976207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분16초] 
+[RECEIVE]
+[2019년04월02일 10시39분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205976707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분17초] 
+[RECEIVE]
+[2019년04월02일 10시39분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205977207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분17초] 
+[RECEIVE]
+[2019년04월02일 10시39분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205977707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분18초] 
+[RECEIVE]
+[2019년04월02일 10시39분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205978207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분18초] 
+[RECEIVE]
+[2019년04월02일 10시39분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205978707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분18초] 
+[RECEIVE]
+[2019년04월02일 10시39분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433735721&search_day=20190311&list_count=500
+[2019년04월02일 10시39분19초] 
+[RECEIVE]
+[2019년04월02일 10시39분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205979207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분19초] 
+[RECEIVE]
+[2019년04월02일 10시39분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433736704&search_day=20190311&list_count=500
+[2019년04월02일 10시39분20초] 
+[RECEIVE]
+[2019년04월02일 10시39분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205979707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분20초] 
+[RECEIVE]
+[2019년04월02일 10시39분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433737254&search_day=20190311&list_count=500
+[2019년04월02일 10시39분21초] 
+[RECEIVE]
+[2019년04월02일 10시39분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433738558&search_day=20190311&list_count=500
+[2019년04월02일 10시39분23초] 
+[RECEIVE]
+[2019년04월02일 10시39분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205980207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분23초] 
+[RECEIVE]
+[2019년04월02일 10시39분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205980707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분24초] 
+[RECEIVE]
+[2019년04월02일 10시39분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205981207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분24초] 
+[RECEIVE]
+[2019년04월02일 10시39분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205981707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분24초] 
+[RECEIVE]
+[2019년04월02일 10시39분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205982207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분25초] 
+[RECEIVE]
+[2019년04월02일 10시39분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205982707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분25초] 
+[RECEIVE]
+[2019년04월02일 10시39분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205983207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분26초] 
+[RECEIVE]
+[2019년04월02일 10시39분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205983707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분26초] 
+[RECEIVE]
+[2019년04월02일 10시39분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205984207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분26초] 
+[RECEIVE]
+[2019년04월02일 10시39분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205984707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분27초] 
+[RECEIVE]
+[2019년04월02일 10시39분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205985207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분27초] 
+[RECEIVE]
+[2019년04월02일 10시39분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205985707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분27초] 
+[RECEIVE]
+[2019년04월02일 10시39분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205986207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분28초] 
+[RECEIVE]
+[2019년04월02일 10시39분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205986707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분28초] 
+[RECEIVE]
+[2019년04월02일 10시39분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205987207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분29초] 
+[RECEIVE]
+[2019년04월02일 10시39분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205987707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분29초] 
+[RECEIVE]
+[2019년04월02일 10시39분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205988207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분29초] 
+[RECEIVE]
+[2019년04월02일 10시39분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205988707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분30초] 
+[RECEIVE]
+[2019년04월02일 10시39분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205989207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분30초] 
+[RECEIVE]
+[2019년04월02일 10시39분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205989707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분30초] 
+[RECEIVE]
+[2019년04월02일 10시39분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205990207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분31초] 
+[RECEIVE]
+[2019년04월02일 10시39분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205990707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분31초] 
+[RECEIVE]
+[2019년04월02일 10시39분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205991207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분32초] 
+[RECEIVE]
+[2019년04월02일 10시39분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205991707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분32초] 
+[RECEIVE]
+[2019년04월02일 10시39분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205992207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분32초] 
+[RECEIVE]
+[2019년04월02일 10시39분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205992707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분33초] 
+[RECEIVE]
+[2019년04월02일 10시39분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205993207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분33초] 
+[RECEIVE]
+[2019년04월02일 10시39분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205993707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분33초] 
+[RECEIVE]
+[2019년04월02일 10시39분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205994207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분34초] 
+[RECEIVE]
+[2019년04월02일 10시39분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205994707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분34초] 
+[RECEIVE]
+[2019년04월02일 10시39분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205995207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분35초] 
+[RECEIVE]
+[2019년04월02일 10시39분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205995707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분35초] 
+[RECEIVE]
+[2019년04월02일 10시39분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205996207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분35초] 
+[RECEIVE]
+[2019년04월02일 10시39분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433740569&search_day=20190311&list_count=500
+[2019년04월02일 10시39분36초] 
+[RECEIVE]
+[2019년04월02일 10시39분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205996707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분36초] 
+[RECEIVE]
+[2019년04월02일 10시39분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433741426&search_day=20190311&list_count=500
+[2019년04월02일 10시39분37초] 
+[RECEIVE]
+[2019년04월02일 10시39분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205997207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분37초] 
+[RECEIVE]
+[2019년04월02일 10시39분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205997707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분38초] 
+[RECEIVE]
+[2019년04월02일 10시39분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205998207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분38초] 
+[RECEIVE]
+[2019년04월02일 10시39분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205998707&search_day=20190311&list_count=500
+[2019년04월02일 10시39분39초] 
+[RECEIVE]
+[2019년04월02일 10시39분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17205999207&search_day=20190311&list_count=500
+[2019년04월02일 10시39분39초] 
+[RECEIVE]
+[2019년04월02일 10시39분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433743680&search_day=20190311&list_count=500
+[2019년04월02일 10시40분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433749843&search_day=20190311&list_count=500
+[2019년04월02일 10시40분54초] 
+[RECEIVE]
+[2019년04월02일 10시40분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206023707&search_day=20190311&list_count=500
+[2019년04월02일 10시40분54초] 
+[RECEIVE]
+[2019년04월02일 10시40분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=260456189&search_day=20190311&list_count=500
+[2019년04월02일 10시40분54초] 
+[RECEIVE]
+[2019년04월02일 10시40분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=934e9fde3078c9bd&max_seq=0&search_day=20190311&s_seq=2300475,2300476,2300477,2300478,2300479&list_count=500
+[2019년04월02일 10시40분54초] 
+[RECEIVE]
+[2019년04월02일 10시40분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206024207&search_day=20190311&list_count=500
+[2019년04월02일 10시40분55초] 
+[RECEIVE]
+[2019년04월02일 10시40분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206024707&search_day=20190311&list_count=500
+[2019년04월02일 10시40분56초] 
+[RECEIVE]
+[2019년04월02일 10시40분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206025207&search_day=20190311&list_count=500
+[2019년04월02일 10시40분56초] 
+[RECEIVE]
+[2019년04월02일 10시40분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206025707&search_day=20190311&list_count=500
+[2019년04월02일 10시40분57초] 
+[RECEIVE]
+[2019년04월02일 10시40분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206026207&search_day=20190311&list_count=500
+[2019년04월02일 10시40분57초] 
+[RECEIVE]
+[2019년04월02일 10시40분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206026707&search_day=20190311&list_count=500
+[2019년04월02일 10시40분58초] 
+[RECEIVE]
+[2019년04월02일 10시40분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206027207&search_day=20190311&list_count=500
+[2019년04월02일 10시40분58초] 
+[RECEIVE]
+[2019년04월02일 10시40분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206027707&search_day=20190311&list_count=500
+[2019년04월02일 10시40분59초] 
+[RECEIVE]
+[2019년04월02일 10시40분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206028207&search_day=20190311&list_count=500
+[2019년04월02일 10시40분59초] 
+[RECEIVE]
+[2019년04월02일 10시40분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206028707&search_day=20190311&list_count=500
+[2019년04월02일 10시40분59초] 
+[RECEIVE]
+[2019년04월02일 10시41분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206029207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분00초] 
+[RECEIVE]
+[2019년04월02일 10시41분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206029707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분00초] 
+[RECEIVE]
+[2019년04월02일 10시41분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206030207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분01초] 
+[RECEIVE]
+[2019년04월02일 10시41분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206030707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분01초] 
+[RECEIVE]
+[2019년04월02일 10시41분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206031207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분01초] 
+[RECEIVE]
+[2019년04월02일 10시41분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206031707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분02초] 
+[RECEIVE]
+[2019년04월02일 10시41분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206032207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분02초] 
+[RECEIVE]
+[2019년04월02일 10시41분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206032707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분02초] 
+[RECEIVE]
+[2019년04월02일 10시41분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206033207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분03초] 
+[RECEIVE]
+[2019년04월02일 10시41분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206033707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분03초] 
+[RECEIVE]
+[2019년04월02일 10시41분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206034207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분04초] 
+[RECEIVE]
+[2019년04월02일 10시41분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206034707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분05초] 
+[RECEIVE]
+[2019년04월02일 10시41분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206035207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분05초] 
+[RECEIVE]
+[2019년04월02일 10시41분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206035707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분05초] 
+[RECEIVE]
+[2019년04월02일 10시41분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206036207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분06초] 
+[RECEIVE]
+[2019년04월02일 10시41분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433752668&search_day=20190311&list_count=500
+[2019년04월02일 10시41분06초] 
+[RECEIVE]
+[2019년04월02일 10시41분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206036707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분06초] 
+[RECEIVE]
+[2019년04월02일 10시41분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206037207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분07초] 
+[RECEIVE]
+[2019년04월02일 10시41분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206037707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분08초] 
+[RECEIVE]
+[2019년04월02일 10시41분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206038207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분08초] 
+[RECEIVE]
+[2019년04월02일 10시41분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433753428&search_day=20190311&list_count=500
+[2019년04월02일 10시41분09초] 
+[RECEIVE]
+[2019년04월02일 10시41분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433754490&search_day=20190311&list_count=500
+[2019년04월02일 10시41분09초] 
+[RECEIVE]
+[2019년04월02일 10시41분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206038707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분10초] 
+[RECEIVE]
+[2019년04월02일 10시41분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433755741&search_day=20190311&list_count=500
+[2019년04월02일 10시41분11초] 
+[RECEIVE]
+[2019년04월02일 10시41분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433758370&search_day=20190311&list_count=500
+[2019년04월02일 10시41분13초] 
+[RECEIVE]
+[2019년04월02일 10시41분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206039207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분13초] 
+[RECEIVE]
+[2019년04월02일 10시41분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206039707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분14초] 
+[RECEIVE]
+[2019년04월02일 10시41분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206040207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분15초] 
+[RECEIVE]
+[2019년04월02일 10시41분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206040707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분15초] 
+[RECEIVE]
+[2019년04월02일 10시41분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206041207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분16초] 
+[RECEIVE]
+[2019년04월02일 10시41분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206041707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분16초] 
+[RECEIVE]
+[2019년04월02일 10시41분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206042207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분17초] 
+[RECEIVE]
+[2019년04월02일 10시41분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206042707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분17초] 
+[RECEIVE]
+[2019년04월02일 10시41분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206043207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분18초] 
+[RECEIVE]
+[2019년04월02일 10시41분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206043707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분19초] 
+[RECEIVE]
+[2019년04월02일 10시41분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206044207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분19초] 
+[RECEIVE]
+[2019년04월02일 10시41분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206044707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분20초] 
+[RECEIVE]
+[2019년04월02일 10시41분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206045207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분20초] 
+[RECEIVE]
+[2019년04월02일 10시41분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206045707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분21초] 
+[RECEIVE]
+[2019년04월02일 10시41분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206046207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분22초] 
+[RECEIVE]
+[2019년04월02일 10시41분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433761190&search_day=20190311&list_count=500
+[2019년04월02일 10시41분23초] 
+[RECEIVE]
+[2019년04월02일 10시41분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206046707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분23초] 
+[RECEIVE]
+[2019년04월02일 10시41분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433761848&search_day=20190311&list_count=500
+[2019년04월02일 10시41분24초] 
+[RECEIVE]
+[2019년04월02일 10시41분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433762473&search_day=20190311&list_count=500
+[2019년04월02일 10시41분25초] 
+[RECEIVE]
+[2019년04월02일 10시41분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206047207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분26초] 
+[RECEIVE]
+[2019년04월02일 10시41분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206047707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분27초] 
+[RECEIVE]
+[2019년04월02일 10시41분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206048207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분27초] 
+[RECEIVE]
+[2019년04월02일 10시41분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206048707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분28초] 
+[RECEIVE]
+[2019년04월02일 10시41분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206049207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분29초] 
+[RECEIVE]
+[2019년04월02일 10시41분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206049707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분29초] 
+[RECEIVE]
+[2019년04월02일 10시41분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206050207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분29초] 
+[RECEIVE]
+[2019년04월02일 10시41분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206050707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분30초] 
+[RECEIVE]
+[2019년04월02일 10시41분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206051207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분31초] 
+[RECEIVE]
+[2019년04월02일 10시41분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206051707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분31초] 
+[RECEIVE]
+[2019년04월02일 10시41분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206052207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분32초] 
+[RECEIVE]
+[2019년04월02일 10시41분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206052707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분32초] 
+[RECEIVE]
+[2019년04월02일 10시41분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206053207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분33초] 
+[RECEIVE]
+[2019년04월02일 10시41분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206053707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분34초] 
+[RECEIVE]
+[2019년04월02일 10시41분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206054207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분34초] 
+[RECEIVE]
+[2019년04월02일 10시41분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206054707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분35초] 
+[RECEIVE]
+[2019년04월02일 10시41분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206055207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분35초] 
+[RECEIVE]
+[2019년04월02일 10시41분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206055707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분36초] 
+[RECEIVE]
+[2019년04월02일 10시41분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206056207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분37초] 
+[RECEIVE]
+[2019년04월02일 10시41분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206056707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분38초] 
+[RECEIVE]
+[2019년04월02일 10시41분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206057207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분39초] 
+[RECEIVE]
+[2019년04월02일 10시41분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206057707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분40초] 
+[RECEIVE]
+[2019년04월02일 10시41분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206058207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분41초] 
+[RECEIVE]
+[2019년04월02일 10시41분41초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206058707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분42초] 
+[RECEIVE]
+[2019년04월02일 10시41분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433762473&search_day=20190311&list_count=500
+[2019년04월02일 10시41분49초] 
+[RECEIVE]
+[2019년04월02일 10시41분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206058707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분50초] 
+[RECEIVE]
+[2019년04월02일 10시41분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=260456189&search_day=20190311&list_count=500
+[2019년04월02일 10시41분50초] 
+[RECEIVE]
+[2019년04월02일 10시41분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=934e9fde3078c9bd&max_seq=0&search_day=20190311&s_seq=2300475,2300476,2300477,2300478,2300479&list_count=500
+[2019년04월02일 10시41분50초] 
+[RECEIVE]
+[2019년04월02일 10시41분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206059207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분51초] 
+[RECEIVE]
+[2019년04월02일 10시41분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206059707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분52초] 
+[RECEIVE]
+[2019년04월02일 10시41분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206060207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분52초] 
+[RECEIVE]
+[2019년04월02일 10시41분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206060707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분53초] 
+[RECEIVE]
+[2019년04월02일 10시41분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206061207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분53초] 
+[RECEIVE]
+[2019년04월02일 10시41분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206061707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분54초] 
+[RECEIVE]
+[2019년04월02일 10시41분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206062207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분54초] 
+[RECEIVE]
+[2019년04월02일 10시41분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206062707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분55초] 
+[RECEIVE]
+[2019년04월02일 10시41분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206063207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분55초] 
+[RECEIVE]
+[2019년04월02일 10시41분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206063707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분56초] 
+[RECEIVE]
+[2019년04월02일 10시41분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206064207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분56초] 
+[RECEIVE]
+[2019년04월02일 10시41분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206064707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분57초] 
+[RECEIVE]
+[2019년04월02일 10시41분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206065207&search_day=20190311&list_count=500
+[2019년04월02일 10시41분57초] 
+[RECEIVE]
+[2019년04월02일 10시41분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206065707&search_day=20190311&list_count=500
+[2019년04월02일 10시41분57초] 
+[RECEIVE]
+[2019년04월02일 10시41분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433764947&search_day=20190311&list_count=500
+[2019년04월02일 10시41분59초] 
+[RECEIVE]
+[2019년04월02일 10시41분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433767144&search_day=20190311&list_count=500
+[2019년04월02일 10시42분00초] 
+[RECEIVE]
+[2019년04월02일 10시42분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206066207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분01초] 
+[RECEIVE]
+[2019년04월02일 10시42분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206066707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분02초] 
+[RECEIVE]
+[2019년04월02일 10시42분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206067207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분02초] 
+[RECEIVE]
+[2019년04월02일 10시42분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433768112&search_day=20190311&list_count=500
+[2019년04월02일 10시42분03초] 
+[RECEIVE]
+[2019년04월02일 10시42분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206067707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분04초] 
+[RECEIVE]
+[2019년04월02일 10시42분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206068207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분04초] 
+[RECEIVE]
+[2019년04월02일 10시42분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206068707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분04초] 
+[RECEIVE]
+[2019년04월02일 10시42분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206069207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분05초] 
+[RECEIVE]
+[2019년04월02일 10시42분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206069707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분06초] 
+[RECEIVE]
+[2019년04월02일 10시42분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206070207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분06초] 
+[RECEIVE]
+[2019년04월02일 10시42분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206070707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분07초] 
+[RECEIVE]
+[2019년04월02일 10시42분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=260456689&search_day=20190311&list_count=500
+[2019년04월02일 10시42분07초] 
+[RECEIVE]
+[2019년04월02일 10시42분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206071207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분08초] 
+[RECEIVE]
+[2019년04월02일 10시42분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206071707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분08초] 
+[RECEIVE]
+[2019년04월02일 10시42분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433768790&search_day=20190311&list_count=500
+[2019년04월02일 10시42분10초] 
+[RECEIVE]
+[2019년04월02일 10시42분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206072207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분10초] 
+[RECEIVE]
+[2019년04월02일 10시42분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433769346&search_day=20190311&list_count=500
+[2019년04월02일 10시42분11초] 
+[RECEIVE]
+[2019년04월02일 10시42분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433769923&search_day=20190311&list_count=500
+[2019년04월02일 10시42분16초] 
+[RECEIVE]
+[2019년04월02일 10시42분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433771133&search_day=20190311&list_count=500
+[2019년04월02일 10시42분22초] 
+[RECEIVE]
+[2019년04월02일 10시42분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206072707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분25초] 
+[RECEIVE]
+[2019년04월02일 10시42분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206073207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분27초] 
+[RECEIVE]
+[2019년04월02일 10시42분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206073707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분29초] 
+[RECEIVE]
+[2019년04월02일 10시42분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206074207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분32초] 
+[RECEIVE]
+[2019년04월02일 10시42분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206074707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분34초] 
+[RECEIVE]
+[2019년04월02일 10시42분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206075207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분35초] 
+[RECEIVE]
+[2019년04월02일 10시42분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206075707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분36초] 
+[RECEIVE]
+[2019년04월02일 10시42분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206076207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분37초] 
+[RECEIVE]
+[2019년04월02일 10시42분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206076707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분37초] 
+[RECEIVE]
+[2019년04월02일 10시42분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206077207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분38초] 
+[RECEIVE]
+[2019년04월02일 10시42분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206077707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분39초] 
+[RECEIVE]
+[2019년04월02일 10시42분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206078207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분41초] 
+[RECEIVE]
+[2019년04월02일 10시42분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206078707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분43초] 
+[RECEIVE]
+[2019년04월02일 10시42분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206079207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분45초] 
+[RECEIVE]
+[2019년04월02일 10시42분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206079707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분46초] 
+[RECEIVE]
+[2019년04월02일 10시42분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206080207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분48초] 
+[RECEIVE]
+[2019년04월02일 10시42분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206080707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분49초] 
+[RECEIVE]
+[2019년04월02일 10시42분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206081207&search_day=20190311&list_count=500
+[2019년04월02일 10시42분50초] 
+[RECEIVE]
+[2019년04월02일 10시42분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206081707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433771133&search_day=20190311&list_count=500
+[2019년04월02일 10시42분58초] 
+[RECEIVE]
+[2019년04월02일 10시42분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206081707&search_day=20190311&list_count=500
+[2019년04월02일 10시42분59초] 
+[RECEIVE]
+[2019년04월02일 10시42분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=260456689&search_day=20190311&list_count=500
+[2019년04월02일 10시42분59초] 
+[RECEIVE]
+[2019년04월02일 10시42분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=934e9fde3078c9bd&max_seq=0&search_day=20190311&s_seq=2300475,2300476,2300477,2300478,2300479&list_count=500
+[2019년04월02일 10시42분59초] 
+[RECEIVE]
+[2019년04월02일 10시43분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433772226&search_day=20190311&list_count=500
+[2019년04월02일 10시43분03초] 
+[RECEIVE]
+[2019년04월02일 10시43분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433773136&search_day=20190311&list_count=500
+[2019년04월02일 10시43분06초] 
+[RECEIVE]
+[2019년04월02일 10시43분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206082207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분08초] 
+[RECEIVE]
+[2019년04월02일 10시43분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206082707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분08초] 
+[RECEIVE]
+[2019년04월02일 10시43분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206083207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분09초] 
+[RECEIVE]
+[2019년04월02일 10시43분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206083707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분10초] 
+[RECEIVE]
+[2019년04월02일 10시43분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206084207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분11초] 
+[RECEIVE]
+[2019년04월02일 10시43분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433775270&search_day=20190311&list_count=500
+[2019년04월02일 10시43분13초] 
+[RECEIVE]
+[2019년04월02일 10시43분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206084707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분14초] 
+[RECEIVE]
+[2019년04월02일 10시43분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206085207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분15초] 
+[RECEIVE]
+[2019년04월02일 10시43분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206085707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분16초] 
+[RECEIVE]
+[2019년04월02일 10시43분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206086207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분17초] 
+[RECEIVE]
+[2019년04월02일 10시43분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206086707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분18초] 
+[RECEIVE]
+[2019년04월02일 10시43분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206087207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분19초] 
+[RECEIVE]
+[2019년04월02일 10시43분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206087707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분19초] 
+[RECEIVE]
+[2019년04월02일 10시43분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206088207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분20초] 
+[RECEIVE]
+[2019년04월02일 10시43분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206088707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분21초] 
+[RECEIVE]
+[2019년04월02일 10시43분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206089207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분21초] 
+[RECEIVE]
+[2019년04월02일 10시43분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206089707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분22초] 
+[RECEIVE]
+[2019년04월02일 10시43분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206090207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분23초] 
+[RECEIVE]
+[2019년04월02일 10시43분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433776908&search_day=20190311&list_count=500
+[2019년04월02일 10시43분25초] 
+[RECEIVE]
+[2019년04월02일 10시43분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206090707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분26초] 
+[RECEIVE]
+[2019년04월02일 10시43분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206091207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분26초] 
+[RECEIVE]
+[2019년04월02일 10시43분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206091707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분27초] 
+[RECEIVE]
+[2019년04월02일 10시43분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206092207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분27초] 
+[RECEIVE]
+[2019년04월02일 10시43분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206092707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분28초] 
+[RECEIVE]
+[2019년04월02일 10시43분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433780009&search_day=20190311&list_count=500
+[2019년04월02일 10시43분29초] 
+[RECEIVE]
+[2019년04월02일 10시43분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206093207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분29초] 
+[RECEIVE]
+[2019년04월02일 10시43분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206093707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분30초] 
+[RECEIVE]
+[2019년04월02일 10시43분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433780661&search_day=20190311&list_count=500
+[2019년04월02일 10시43분31초] 
+[RECEIVE]
+[2019년04월02일 10시43분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206094207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분32초] 
+[RECEIVE]
+[2019년04월02일 10시43분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206094707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분32초] 
+[RECEIVE]
+[2019년04월02일 10시43분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433782916&search_day=20190311&list_count=500
+[2019년04월02일 10시43분33초] 
+[RECEIVE]
+[2019년04월02일 10시43분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206095207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분34초] 
+[RECEIVE]
+[2019년04월02일 10시43분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206095707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분34초] 
+[RECEIVE]
+[2019년04월02일 10시43분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206096207&search_day=20190311&list_count=500
+[2019년04월02일 10시43분34초] 
+[RECEIVE]
+[2019년04월02일 10시43분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206096707&search_day=20190311&list_count=500
+[2019년04월02일 10시43분35초] 
+[RECEIVE]
+[2019년04월02일 10시43분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206097207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433819430&search_day=20190311&list_count=500
+[2019년04월02일 10시47분18초] 
+[RECEIVE]
+[2019년04월02일 10시47분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206206707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분18초] 
+[RECEIVE]
+[2019년04월02일 10시47분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=260458189&search_day=20190311&list_count=500
+[2019년04월02일 10시47분19초] 
+[RECEIVE]
+[2019년04월02일 10시47분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=934e9fde3078c9bd&max_seq=1097842420&search_day=20190311&s_seq=2300475,2300476,2300477,2300478,2300479&list_count=500
+[2019년04월02일 10시47분19초] 
+[RECEIVE]
+[2019년04월02일 10시47분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433820424&search_day=20190311&list_count=500
+[2019년04월02일 10시47분20초] 
+[RECEIVE]
+[2019년04월02일 10시47분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433821128&search_day=20190311&list_count=500
+[2019년04월02일 10시47분21초] 
+[RECEIVE]
+[2019년04월02일 10시47분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206207207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분22초] 
+[RECEIVE]
+[2019년04월02일 10시47분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433821924&search_day=20190311&list_count=500
+[2019년04월02일 10시47분23초] 
+[RECEIVE]
+[2019년04월02일 10시47분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433823072&search_day=20190311&list_count=500
+[2019년04월02일 10시47분24초] 
+[RECEIVE]
+[2019년04월02일 10시47분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206207707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분25초] 
+[RECEIVE]
+[2019년04월02일 10시47분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433824462&search_day=20190311&list_count=500
+[2019년04월02일 10시47분26초] 
+[RECEIVE]
+[2019년04월02일 10시47분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433825478&search_day=20190311&list_count=500
+[2019년04월02일 10시47분27초] 
+[RECEIVE]
+[2019년04월02일 10시47분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206208207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분27초] 
+[RECEIVE]
+[2019년04월02일 10시47분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206208707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분28초] 
+[RECEIVE]
+[2019년04월02일 10시47분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206209207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분28초] 
+[RECEIVE]
+[2019년04월02일 10시47분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206209707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분29초] 
+[RECEIVE]
+[2019년04월02일 10시47분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206210207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분29초] 
+[RECEIVE]
+[2019년04월02일 10시47분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206210707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분30초] 
+[RECEIVE]
+[2019년04월02일 10시47분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206211207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분30초] 
+[RECEIVE]
+[2019년04월02일 10시47분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206211707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분31초] 
+[RECEIVE]
+[2019년04월02일 10시47분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433827309&search_day=20190311&list_count=500
+[2019년04월02일 10시47분31초] 
+[RECEIVE]
+[2019년04월02일 10시47분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433827843&search_day=20190311&list_count=500
+[2019년04월02일 10시47분31초] 
+[RECEIVE]
+[2019년04월02일 10시47분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433828389&search_day=20190311&list_count=500
+[2019년04월02일 10시47분32초] 
+[RECEIVE]
+[2019년04월02일 10시47분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206212207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분33초] 
+[RECEIVE]
+[2019년04월02일 10시47분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206212707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분33초] 
+[RECEIVE]
+[2019년04월02일 10시47분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206213207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분33초] 
+[RECEIVE]
+[2019년04월02일 10시47분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206213707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분34초] 
+[RECEIVE]
+[2019년04월02일 10시47분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206214207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분34초] 
+[RECEIVE]
+[2019년04월02일 10시47분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206214707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분35초] 
+[RECEIVE]
+[2019년04월02일 10시47분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206215207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분35초] 
+[RECEIVE]
+[2019년04월02일 10시47분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206215707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분36초] 
+[RECEIVE]
+[2019년04월02일 10시47분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433830480&search_day=20190311&list_count=500
+[2019년04월02일 10시47분37초] 
+[RECEIVE]
+[2019년04월02일 10시47분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433832155&search_day=20190311&list_count=500
+[2019년04월02일 10시47분38초] 
+[RECEIVE]
+[2019년04월02일 10시47분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206216207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분39초] 
+[RECEIVE]
+[2019년04월02일 10시47분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206216707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분39초] 
+[RECEIVE]
+[2019년04월02일 10시47분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206217207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분39초] 
+[RECEIVE]
+[2019년04월02일 10시47분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206217707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분40초] 
+[RECEIVE]
+[2019년04월02일 10시47분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206218207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분40초] 
+[RECEIVE]
+[2019년04월02일 10시47분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206218707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분41초] 
+[RECEIVE]
+[2019년04월02일 10시47분41초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206219207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분41초] 
+[RECEIVE]
+[2019년04월02일 10시47분41초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206219707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분41초] 
+[RECEIVE]
+[2019년04월02일 10시47분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206220207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분42초] 
+[RECEIVE]
+[2019년04월02일 10시47분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206220707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분42초] 
+[RECEIVE]
+[2019년04월02일 10시47분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206221207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분43초] 
+[RECEIVE]
+[2019년04월02일 10시47분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206221707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분43초] 
+[RECEIVE]
+[2019년04월02일 10시47분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206222207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분43초] 
+[RECEIVE]
+[2019년04월02일 10시47분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206222707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분44초] 
+[RECEIVE]
+[2019년04월02일 10시47분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206223207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분44초] 
+[RECEIVE]
+[2019년04월02일 10시47분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206223707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분45초] 
+[RECEIVE]
+[2019년04월02일 10시47분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206224207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분45초] 
+[RECEIVE]
+[2019년04월02일 10시47분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206224707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분45초] 
+[RECEIVE]
+[2019년04월02일 10시47분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206225207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분46초] 
+[RECEIVE]
+[2019년04월02일 10시47분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206225707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분46초] 
+[RECEIVE]
+[2019년04월02일 10시47분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206226207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분47초] 
+[RECEIVE]
+[2019년04월02일 10시47분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206226707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분47초] 
+[RECEIVE]
+[2019년04월02일 10시47분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206227207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분47초] 
+[RECEIVE]
+[2019년04월02일 10시47분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206227707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분48초] 
+[RECEIVE]
+[2019년04월02일 10시47분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206228207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분48초] 
+[RECEIVE]
+[2019년04월02일 10시47분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206228707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분49초] 
+[RECEIVE]
+[2019년04월02일 10시47분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206229207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분49초] 
+[RECEIVE]
+[2019년04월02일 10시47분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206229707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분50초] 
+[RECEIVE]
+[2019년04월02일 10시47분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206230207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분50초] 
+[RECEIVE]
+[2019년04월02일 10시47분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206230707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분50초] 
+[RECEIVE]
+[2019년04월02일 10시47분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206231207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분51초] 
+[RECEIVE]
+[2019년04월02일 10시47분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206231707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분51초] 
+[RECEIVE]
+[2019년04월02일 10시47분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206232207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분52초] 
+[RECEIVE]
+[2019년04월02일 10시47분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206232707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분52초] 
+[RECEIVE]
+[2019년04월02일 10시47분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206233207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분52초] 
+[RECEIVE]
+[2019년04월02일 10시47분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206233707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분53초] 
+[RECEIVE]
+[2019년04월02일 10시47분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206234207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분53초] 
+[RECEIVE]
+[2019년04월02일 10시47분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206234707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분53초] 
+[RECEIVE]
+[2019년04월02일 10시47분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206235207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분54초] 
+[RECEIVE]
+[2019년04월02일 10시47분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206235707&search_day=20190311&list_count=500
+[2019년04월02일 10시47분54초] 
+[RECEIVE]
+[2019년04월02일 10시47분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206236207&search_day=20190311&list_count=500
+[2019년04월02일 10시47분55초] 
+[RECEIVE]
+[2019년04월02일 10시47분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206236707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433887294&search_day=20190311&list_count=500
+[2019년04월02일 10시53분03초] 
+[RECEIVE]
+[2019년04월02일 10시53분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206377207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분04초] 
+[RECEIVE]
+[2019년04월02일 10시53분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=260459689&search_day=20190311&list_count=500
+[2019년04월02일 10시53분04초] 
+[RECEIVE]
+[2019년04월02일 10시53분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=934e9fde3078c9bd&max_seq=1097842420&search_day=20190311&s_seq=2300475,2300476,2300477,2300478,2300479&list_count=500
+[2019년04월02일 10시53분04초] 
+[RECEIVE]
+[2019년04월02일 10시53분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206377707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분05초] 
+[RECEIVE]
+[2019년04월02일 10시53분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206378207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분06초] 
+[RECEIVE]
+[2019년04월02일 10시53분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206378707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분07초] 
+[RECEIVE]
+[2019년04월02일 10시53분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206379207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분07초] 
+[RECEIVE]
+[2019년04월02일 10시53분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206379707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분08초] 
+[RECEIVE]
+[2019년04월02일 10시53분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206380207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분08초] 
+[RECEIVE]
+[2019년04월02일 10시53분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206380707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분09초] 
+[RECEIVE]
+[2019년04월02일 10시53분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206381207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분09초] 
+[RECEIVE]
+[2019년04월02일 10시53분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206381707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분10초] 
+[RECEIVE]
+[2019년04월02일 10시53분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433889280&search_day=20190311&list_count=500
+[2019년04월02일 10시53분10초] 
+[RECEIVE]
+[2019년04월02일 10시53분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206382207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분11초] 
+[RECEIVE]
+[2019년04월02일 10시53분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206382707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분11초] 
+[RECEIVE]
+[2019년04월02일 10시53분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433890286&search_day=20190311&list_count=500
+[2019년04월02일 10시53분13초] 
+[RECEIVE]
+[2019년04월02일 10시53분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206383207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분14초] 
+[RECEIVE]
+[2019년04월02일 10시53분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433892953&search_day=20190311&list_count=500
+[2019년04월02일 10시53분15초] 
+[RECEIVE]
+[2019년04월02일 10시53분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206383707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분16초] 
+[RECEIVE]
+[2019년04월02일 10시53분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206384207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분16초] 
+[RECEIVE]
+[2019년04월02일 10시53분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206384707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분17초] 
+[RECEIVE]
+[2019년04월02일 10시53분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206385207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분18초] 
+[RECEIVE]
+[2019년04월02일 10시53분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206385707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분18초] 
+[RECEIVE]
+[2019년04월02일 10시53분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206386207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분19초] 
+[RECEIVE]
+[2019년04월02일 10시53분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206386707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분19초] 
+[RECEIVE]
+[2019년04월02일 10시53분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206387207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분20초] 
+[RECEIVE]
+[2019년04월02일 10시53분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206387707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분20초] 
+[RECEIVE]
+[2019년04월02일 10시53분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206388207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분21초] 
+[RECEIVE]
+[2019년04월02일 10시53분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206388707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분22초] 
+[RECEIVE]
+[2019년04월02일 10시53분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206389207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분22초] 
+[RECEIVE]
+[2019년04월02일 10시53분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206389707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분23초] 
+[RECEIVE]
+[2019년04월02일 10시53분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206390207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분23초] 
+[RECEIVE]
+[2019년04월02일 10시53분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=260460189&search_day=20190311&list_count=500
+[2019년04월02일 10시53분24초] 
+[RECEIVE]
+[2019년04월02일 10시53분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206390707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분24초] 
+[RECEIVE]
+[2019년04월02일 10시53분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206391207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분25초] 
+[RECEIVE]
+[2019년04월02일 10시53분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206391707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분25초] 
+[RECEIVE]
+[2019년04월02일 10시53분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206392207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분26초] 
+[RECEIVE]
+[2019년04월02일 10시53분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206392707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분27초] 
+[RECEIVE]
+[2019년04월02일 10시53분27초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206393207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분28초] 
+[RECEIVE]
+[2019년04월02일 10시53분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206393707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분28초] 
+[RECEIVE]
+[2019년04월02일 10시53분28초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206394207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분29초] 
+[RECEIVE]
+[2019년04월02일 10시53분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206394707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분29초] 
+[RECEIVE]
+[2019년04월02일 10시53분29초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206395207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분30초] 
+[RECEIVE]
+[2019년04월02일 10시53분30초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206395707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분30초] 
+[RECEIVE]
+[2019년04월02일 10시53분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206396207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분31초] 
+[RECEIVE]
+[2019년04월02일 10시53분31초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206396707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분31초] 
+[RECEIVE]
+[2019년04월02일 10시53분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206397207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분32초] 
+[RECEIVE]
+[2019년04월02일 10시53분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433894466&search_day=20190311&list_count=500
+[2019년04월02일 10시53분33초] 
+[RECEIVE]
+[2019년04월02일 10시53분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206397707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분34초] 
+[RECEIVE]
+[2019년04월02일 10시53분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206398207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분34초] 
+[RECEIVE]
+[2019년04월02일 10시53분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206398707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분35초] 
+[RECEIVE]
+[2019년04월02일 10시53분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206399207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분35초] 
+[RECEIVE]
+[2019년04월02일 10시53분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206399707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분36초] 
+[RECEIVE]
+[2019년04월02일 10시53분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206400207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분36초] 
+[RECEIVE]
+[2019년04월02일 10시53분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206400707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분37초] 
+[RECEIVE]
+[2019년04월02일 10시53분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206401207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분37초] 
+[RECEIVE]
+[2019년04월02일 10시53분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206401707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분38초] 
+[RECEIVE]
+[2019년04월02일 10시53분38초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206402207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분39초] 
+[RECEIVE]
+[2019년04월02일 10시53분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206402707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분39초] 
+[RECEIVE]
+[2019년04월02일 10시53분39초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206403207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분40초] 
+[RECEIVE]
+[2019년04월02일 10시53분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206403707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분40초] 
+[RECEIVE]
+[2019년04월02일 10시53분41초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206404207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분41초] 
+[RECEIVE]
+[2019년04월02일 10시53분41초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206404707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분41초] 
+[RECEIVE]
+[2019년04월02일 10시53분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206405207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분42초] 
+[RECEIVE]
+[2019년04월02일 10시53분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433896734&search_day=20190311&list_count=500
+[2019년04월02일 10시53분43초] 
+[RECEIVE]
+[2019년04월02일 10시53분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206405707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분43초] 
+[RECEIVE]
+[2019년04월02일 10시53분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206406207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분43초] 
+[RECEIVE]
+[2019년04월02일 10시53분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433897300&search_day=20190311&list_count=500
+[2019년04월02일 10시53분44초] 
+[RECEIVE]
+[2019년04월02일 10시53분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206406707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분45초] 
+[RECEIVE]
+[2019년04월02일 10시53분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206407207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분46초] 
+[RECEIVE]
+[2019년04월02일 10시53분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433898775&search_day=20190311&list_count=500
+[2019년04월02일 10시53분47초] 
+[RECEIVE]
+[2019년04월02일 10시53분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206407707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분47초] 
+[RECEIVE]
+[2019년04월02일 10시53분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206408207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분48초] 
+[RECEIVE]
+[2019년04월02일 10시53분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206408707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분48초] 
+[RECEIVE]
+[2019년04월02일 10시53분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206409207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분49초] 
+[RECEIVE]
+[2019년04월02일 10시53분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206409707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분50초] 
+[RECEIVE]
+[2019년04월02일 10시53분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206410207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분50초] 
+[RECEIVE]
+[2019년04월02일 10시53분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206410707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분51초] 
+[RECEIVE]
+[2019년04월02일 10시53분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206411207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분51초] 
+[RECEIVE]
+[2019년04월02일 10시53분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206411707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분52초] 
+[RECEIVE]
+[2019년04월02일 10시53분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206412207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분52초] 
+[RECEIVE]
+[2019년04월02일 10시53분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206412707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분53초] 
+[RECEIVE]
+[2019년04월02일 10시53분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206413207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분53초] 
+[RECEIVE]
+[2019년04월02일 10시53분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206413707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분54초] 
+[RECEIVE]
+[2019년04월02일 10시53분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206414207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분54초] 
+[RECEIVE]
+[2019년04월02일 10시53분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206414707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분55초] 
+[RECEIVE]
+[2019년04월02일 10시53분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206415207&search_day=20190311&list_count=500
+[2019년04월02일 10시53분55초] 
+[RECEIVE]
+[2019년04월02일 10시53분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433900635&search_day=20190311&list_count=500
+[2019년04월02일 10시53분58초] 
+[RECEIVE]
+[2019년04월02일 10시53분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206415707&search_day=20190311&list_count=500
+[2019년04월02일 10시53분59초] 
+[RECEIVE]
+[2019년04월02일 10시53분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206416207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분00초] 
+[RECEIVE]
+[2019년04월02일 10시54분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206416707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분00초] 
+[RECEIVE]
+[2019년04월02일 10시54분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206417207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분01초] 
+[RECEIVE]
+[2019년04월02일 10시54분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206417707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분01초] 
+[RECEIVE]
+[2019년04월02일 10시54분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206418207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분02초] 
+[RECEIVE]
+[2019년04월02일 10시54분02초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206418707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분03초] 
+[RECEIVE]
+[2019년04월02일 10시54분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206419207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분03초] 
+[RECEIVE]
+[2019년04월02일 10시54분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206419707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분05초] 
+[RECEIVE]
+[2019년04월02일 10시54분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206420207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분05초] 
+[RECEIVE]
+[2019년04월02일 10시54분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206420707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분07초] 
+[RECEIVE]
+[2019년04월02일 10시54분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206421207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분08초] 
+[RECEIVE]
+[2019년04월02일 10시54분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206421707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분09초] 
+[RECEIVE]
+[2019년04월02일 10시54분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206422207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분10초] 
+[RECEIVE]
+[2019년04월02일 10시54분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206422707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분10초] 
+[RECEIVE]
+[2019년04월02일 10시54분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206423207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분11초] 
+[RECEIVE]
+[2019년04월02일 10시54분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433902412&search_day=20190311&list_count=500
+[2019년04월02일 10시54분12초] 
+[RECEIVE]
+[2019년04월02일 10시54분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433902937&search_day=20190311&list_count=500
+[2019년04월02일 10시54분15초] 
+[RECEIVE]
+[2019년04월02일 10시54분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433904045&search_day=20190311&list_count=500
+[2019년04월02일 10시54분26초] 
+[RECEIVE]
+[2019년04월02일 10시54분26초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433905707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분31초] 
+[RECEIVE]
+[2019년04월02일 10시54분32초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206423707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분32초] 
+[RECEIVE]
+[2019년04월02일 10시54분33초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206424207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분33초] 
+[RECEIVE]
+[2019년04월02일 10시54분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206424707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분34초] 
+[RECEIVE]
+[2019년04월02일 10시54분34초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206425207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분35초] 
+[RECEIVE]
+[2019년04월02일 10시54분35초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206425707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분35초] 
+[RECEIVE]
+[2019년04월02일 10시54분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206426207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분36초] 
+[RECEIVE]
+[2019년04월02일 10시54분36초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206426707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분37초] 
+[RECEIVE]
+[2019년04월02일 10시54분37초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433907291&search_day=20190311&list_count=500
+[2019년04월02일 10시54분38초] 
+[RECEIVE]
+[2019년04월02일 10시54분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206427207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분40초] 
+[RECEIVE]
+[2019년04월02일 10시54분40초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433908787&search_day=20190311&list_count=500
+[2019년04월02일 10시54분41초] 
+[RECEIVE]
+[2019년04월02일 10시54분42초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433910363&search_day=20190311&list_count=500
+[2019년04월02일 10시54분42초] 
+[RECEIVE]
+[2019년04월02일 10시54분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206427707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분43초] 
+[RECEIVE]
+[2019년04월02일 10시54분43초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206428207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분43초] 
+[RECEIVE]
+[2019년04월02일 10시54분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206428707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분44초] 
+[RECEIVE]
+[2019년04월02일 10시54분44초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206429207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분44초] 
+[RECEIVE]
+[2019년04월02일 10시54분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206429707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분45초] 
+[RECEIVE]
+[2019년04월02일 10시54분45초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206430207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분45초] 
+[RECEIVE]
+[2019년04월02일 10시54분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206430707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분46초] 
+[RECEIVE]
+[2019년04월02일 10시54분46초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206431207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분47초] 
+[RECEIVE]
+[2019년04월02일 10시54분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206431707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분47초] 
+[RECEIVE]
+[2019년04월02일 10시54분47초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206432207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분48초] 
+[RECEIVE]
+[2019년04월02일 10시54분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206432707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분48초] 
+[RECEIVE]
+[2019년04월02일 10시54분48초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206433207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분49초] 
+[RECEIVE]
+[2019년04월02일 10시54분49초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206433707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분49초] 
+[RECEIVE]
+[2019년04월02일 10시54분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206434207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분50초] 
+[RECEIVE]
+[2019년04월02일 10시54분50초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206434707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분50초] 
+[RECEIVE]
+[2019년04월02일 10시54분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206435207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분51초] 
+[RECEIVE]
+[2019년04월02일 10시54분51초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206435707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분51초] 
+[RECEIVE]
+[2019년04월02일 10시54분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206436207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분52초] 
+[RECEIVE]
+[2019년04월02일 10시54분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206436707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분52초] 
+[RECEIVE]
+[2019년04월02일 10시54분52초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206437207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분53초] 
+[RECEIVE]
+[2019년04월02일 10시54분53초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206437707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분53초] 
+[RECEIVE]
+[2019년04월02일 10시54분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206438207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분54초] 
+[RECEIVE]
+[2019년04월02일 10시54분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=e0b721b2f6bb43f9&max_seq=260460689&search_day=20190311&list_count=500
+[2019년04월02일 10시54분54초] 
+[RECEIVE]
+[2019년04월02일 10시54분54초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206438707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분54초] 
+[RECEIVE]
+[2019년04월02일 10시54분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433911160&search_day=20190311&list_count=500
+[2019년04월02일 10시54분55초] 
+[RECEIVE]
+[2019년04월02일 10시54분55초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206439207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분55초] 
+[RECEIVE]
+[2019년04월02일 10시54분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206439707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분56초] 
+[RECEIVE]
+[2019년04월02일 10시54분56초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433911692&search_day=20190311&list_count=500
+[2019년04월02일 10시54분56초] 
+[RECEIVE]
+[2019년04월02일 10시54분57초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433912471&search_day=20190311&list_count=500
+[2019년04월02일 10시54분57초] 
+[RECEIVE]
+[2019년04월02일 10시54분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206440207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분58초] 
+[RECEIVE]
+[2019년04월02일 10시54분58초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206440707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분58초] 
+[RECEIVE]
+[2019년04월02일 10시54분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206441207&search_day=20190311&list_count=500
+[2019년04월02일 10시54분59초] 
+[RECEIVE]
+[2019년04월02일 10시54분59초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206441707&search_day=20190311&list_count=500
+[2019년04월02일 10시54분59초] 
+[RECEIVE]
+[2019년04월02일 10시55분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206442207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분00초] 
+[RECEIVE]
+[2019년04월02일 10시55분00초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206442707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분01초] 
+[RECEIVE]
+[2019년04월02일 10시55분01초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=8e8ca3bb18b522d5&max_seq=5433914498&search_day=20190311&list_count=500
+[2019년04월02일 10시55분03초] 
+[RECEIVE]
+[2019년04월02일 10시55분03초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206443207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분03초] 
+[RECEIVE]
+[2019년04월02일 10시55분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206443707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분04초] 
+[RECEIVE]
+[2019년04월02일 10시55분04초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206444207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분05초] 
+[RECEIVE]
+[2019년04월02일 10시55분05초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206444707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분06초] 
+[RECEIVE]
+[2019년04월02일 10시55분06초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206445207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분06초] 
+[RECEIVE]
+[2019년04월02일 10시55분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206445707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분07초] 
+[RECEIVE]
+[2019년04월02일 10시55분07초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206446207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분08초] 
+[RECEIVE]
+[2019년04월02일 10시55분08초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206446707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분09초] 
+[RECEIVE]
+[2019년04월02일 10시55분09초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206447207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분10초] 
+[RECEIVE]
+[2019년04월02일 10시55분10초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206447707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분11초] 
+[RECEIVE]
+[2019년04월02일 10시55분11초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206448207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분11초] 
+[RECEIVE]
+[2019년04월02일 10시55분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206448707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분12초] 
+[RECEIVE]
+[2019년04월02일 10시55분12초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206449207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분13초] 
+[RECEIVE]
+[2019년04월02일 10시55분13초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206449707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분13초] 
+[RECEIVE]
+[2019년04월02일 10시55분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206450207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분14초] 
+[RECEIVE]
+[2019년04월02일 10시55분14초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206450707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분15초] 
+[RECEIVE]
+[2019년04월02일 10시55분15초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206451207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분16초] 
+[RECEIVE]
+[2019년04월02일 10시55분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206451707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분16초] 
+[RECEIVE]
+[2019년04월02일 10시55분16초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206452207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분17초] 
+[RECEIVE]
+[2019년04월02일 10시55분17초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206452707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분17초] 
+[RECEIVE]
+[2019년04월02일 10시55분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206453207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분18초] 
+[RECEIVE]
+[2019년04월02일 10시55분18초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206453707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분19초] 
+[RECEIVE]
+[2019년04월02일 10시55분19초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206454207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분19초] 
+[RECEIVE]
+[2019년04월02일 10시55분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206454707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분20초] 
+[RECEIVE]
+[2019년04월02일 10시55분20초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206455207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분21초] 
+[RECEIVE]
+[2019년04월02일 10시55분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206455707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분21초] 
+[RECEIVE]
+[2019년04월02일 10시55분21초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206456207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분22초] 
+[RECEIVE]
+[2019년04월02일 10시55분22초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206456707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분22초] 
+[RECEIVE]
+[2019년04월02일 10시55분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206457207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분23초] 
+[RECEIVE]
+[2019년04월02일 10시55분23초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206457707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분24초] 
+[RECEIVE]
+[2019년04월02일 10시55분24초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206458207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분24초] 
+[RECEIVE]
+[2019년04월02일 10시55분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206458707&search_day=20190311&list_count=500
+[2019년04월02일 10시55분25초] 
+[RECEIVE]
+[2019년04월02일 10시55분25초] 
+[SEND]http://api.realsn.com:2025/json.php?api_key=57aae0b681bc736f&max_seq=17206459207&search_day=20190311&list_count=500
+[2019년04월02일 10시55분25초] 
+[RECEIVE]

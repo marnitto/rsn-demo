@@ -1,0 +1,176 @@
+[2019년04월15일 10시55분04초] 
+ SQLException
+Oracle Error Code [1146]
+SQLState          [42S02]
+<<-----------------------------------------------------------------------
+  ## 주요이슈 - LIST								
+ 	 SELECT 	 								
+ 	         IC13.IC_NAME	 					
+ 	        ,MI.CODE	 						
+ 	        ,DATE_FORMAT(MI.SDATE,'%Y-%m-%d') AS SDATE	
+ 	        ,DATE_FORMAT(MI.EDATE,'%Y-%m-%d') AS EDATE	
+ 	  FROM MAIN_ISSUE MI ,ISSUE_CODE IC7		
+ 	  WHERE MI.CODE = IC7.IC_CODE	 			
+ 	  AND IC7.IC_TYPE = 7	 					
+ 	  ORDER BY SDATE DESC 	 					
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'DAEGU_ASP.MAIN_ISSUE' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1031)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2537)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2466)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1383)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeQuery(DelegatingStatement.java:208)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeQuery(DelegatingStatement.java:208)
+	at risk.admin.mainissue.MainIssueMgr.getIssueList(MainIssueMgr.java:133)
+	at org.apache.jsp.riskv3.admin.mainissue.mainissue_005fmanager_jsp._jspService(mainissue_005fmanager_jsp.java:127)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2019년04월15일 10시55분47초] 
+ SQLException
+Oracle Error Code [1054]
+SQLState          [42S22]
+<<-----------------------------------------------------------------------
+  ## 주요이슈 - LIST								
+ 	 SELECT 	 								
+ 	         IC13.IC_NAME	 					
+ 	        ,MI.CODE	 						
+ 	        ,DATE_FORMAT(MI.SDATE,'%Y-%m-%d') AS SDATE	
+ 	        ,DATE_FORMAT(MI.EDATE,'%Y-%m-%d') AS EDATE	
+ 	  FROM MAIN_ISSUE MI ,ISSUE_CODE IC7		
+ 	  WHERE MI.CODE = IC7.IC_CODE	 			
+ 	  AND IC7.IC_TYPE = 7	 					
+ 	  ORDER BY SDATE DESC 	 					
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'IC13.IC_NAME' in 'field list'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1031)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2537)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2466)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1383)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeQuery(DelegatingStatement.java:208)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeQuery(DelegatingStatement.java:208)
+	at risk.admin.mainissue.MainIssueMgr.getIssueList(MainIssueMgr.java:133)
+	at org.apache.jsp.riskv3.admin.mainissue.mainissue_005fmanager_jsp._jspService(mainissue_005fmanager_jsp.java:127)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2019년04월15일 14시14분50초] 
+ SQLException
+Oracle Error Code [0]
+SQLState          [08S01]
+<<-----------------------------------------------------------------------
+## 공통 POPUP																										
+	SELECT																												
+	    A.ID_SEQ	 AS ID_SEQ																						
+	    , A.ID_TITLE																										
+	    , A.S_SEQ																											
+	    , A.ID_URL																										
+	    ,FN_GET_ISSUE_CODE_NAME(A.ID_SEQ, 6) AS SOURCE                            						
+		  ,FN_GET_ISSUE_CODE_NAME(A.ID_SEQ, 9) AS SENTI		 											
+	    , DATE_FORMAT(A.MD_DATE, '%y/%m/%d') AS DATE													
+	  FROM ISSUE_DATA A																																
+ WHERE A.MD_DATE BETWEEN ' 00:00:00' AND ' 23:59:59' 													
+  ORDER BY A.MD_DATE DESC				
+  LIMIT 0,10				
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 22153 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2873)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2763)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3299)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.popup.CmnPopupMgr.getPopupData(CmnPopupMgr.java:175)
+	at org.apache.jsp.dashboard.popup.rel_005finfo_jsp._jspService(rel_005finfo_jsp.java:93)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2332)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2774)
+	... 29 more
+

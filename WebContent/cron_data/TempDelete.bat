@@ -1,0 +1,1 @@
+java -classpath C:\web_root\MC\WebContent\WEB-INF\lib\sqljdbc.jar;C:\web_root\MC\WebContent\WEB-INF\lib\mysql-connector-java-5.1.5-bin.jar;C:\web_root\MC\WebContent\WEB-INF\lib\servlet-api.jar;C:\web_root\MC\WebContent\WEB-INF\lib\weblogic.jar;C:\web_root\MC\WebContent\WEB-INF\classes;C:\web_root\MC\WebContent\WEB-INF\lib; risk.demon.TempDelete

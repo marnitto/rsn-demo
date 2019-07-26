@@ -1,0 +1,198 @@
+/* 怨듯넻 */
+
+body, table, td, input, select {font-size:12px; font-family:Dotum;line-height: 18px; color: #666666}
+image {border:0px;}
+
+a:link    {color:#333333;text-decoration:none;}
+a:visited {color:#333333;text-decoration:none;}
+a:active  {color:#333333;text-decoration:none;}
+a:hover   {color:#333333;text-decoration:underline;}
+
+/* �띿뒪��*/ 
+
+.date_txt {
+	font-size: 12px;
+	color: #6F7D91;
+	line-height: normal;
+	font-family: Dotum;
+}
+.txt_01 {
+	font-size: 11px;
+	color: #333333;
+	line-height: normal;
+	font-family: Dotum;
+}
+.txt_02 {
+	font-size: 11px;
+	color: #147AD0;
+	line-height: normal;
+	font-family: Dotum;
+}
+.txt_03 {
+	font-size: 11px;
+	color: #A6A6A6;
+	line-height: normal;
+	font-family: Dotum;
+}
+.txt_04 {
+	font-size: 12px;
+	color: #FFFFFF;
+	line-height: normal;
+	font-family: Dotum;
+}
+.txt_05 {
+	font-size: 11px;
+	color: #6F7D91;
+	line-height: normal;
+	font-family: Dotum;
+}
+.txt_06 {
+	font-size: 11px;
+	color: #FFFFFF;
+	line-height: normal;
+	font-family: Dotum;
+}
+.txt_07 {
+	font-size: 11px;
+	color: #2A75DC;
+    line-height: 15px;
+	font-family: Dotum;
+	
+}
+.txt_08 {
+	font-size: 11px;
+	color: #5879AA;
+	line-height: 16px;
+	font-family: Dotum;
+}
+.txt_09 {
+	font-size: 14px;
+	color: #FFFFFF;
+	line-height: 18px;
+	font-family: Dotum;
+}
+.txt_10 {
+	font-size: 11px;
+	color: #000000;
+	line-height: 18px;
+	font-family: Dotum;
+}
+.txt_11 {
+	font-size: 11px;
+	color: #15E1E8;
+	line-height: 18px;
+	font-family: Dotum;
+}
+.txt_12 {
+	font-size: 11px;
+	color: #B47474;
+	line-height: 15px;
+	font-family: Dotum;
+}
+.txt_13 {
+	font-size: 12px;
+	color: #FFFFFF;
+	line-height: 15px;
+	font-family: Dotum;
+}
+.txt_14 {
+	font-size: 14px;
+	color: #656565;
+	line-height: 15px;
+	font-family: Dotum;
+}
+.txt_15 {
+	font-size: 17px;
+	color: #333333;
+	line-height: 15px;
+	font-family: Dinmed;
+}
+.txt_16 {
+	font-size: 12px;
+	color: #0B5FDC;
+	line-height: 15px;
+	font-family: arial;
+}
+.txt_17 {
+	font-size: 14px;
+	color: #333333;
+	line-height: 15px;
+	font-family: Calibri;
+}
+.txt_18 {
+	font-size: 12px;
+	color: #CA3B56;
+	line-height: 15px;
+	font-family: arial;
+}
+.txt_19 {
+	font-size: 16px;
+	color: #333333;
+	line-height: 15px;
+	font-family: Dotum;
+}
+.txt_20 {
+	font-size: 11px;
+	color: #80B837;
+	line-height: 15px;
+	font-family: Dotum;
+}
+.txt_21 {
+	font-size: 11px;
+	color: #CB3030;
+	line-height: 15px;
+	font-family: Dotum;
+}
+.txt_22 {
+	font-size: 11px;
+	color: #1D81AB;
+	line-height: 15px;
+	font-family: Dotum;
+}
+.yellow_b {
+	font-size: 14px;
+	color: #FDF873;
+	line-height: normal;
+	font-family: Dotum;
+}
+.white_s {
+	font-size: 11px;
+	color: #FFFFFF;
+	line-height: normal;
+	
+	font-family: Dotum;
+}
+.sky_s   {
+	font-size: 11px;
+	color: #319BD2;
+	line-height: normal;
+	font-family: Dotum;
+}
+.white {
+	font-size: 14px;
+	color: #FFFFFF;
+	line-height: normal;
+	font-family: Dotum;
+}
+
+/* ��*/
+
+.input_text {height:15px; border-top: 1px #AF9A50 solid; border-left: 1px #AF9A50 solid; border-right: 1px #AF9A50 solid; border-bottom: 1px #AF9A50 solid; background:#FFFFFF; font-size:12px; color:#666666;}
+.input {height:19px; border-top: 1px #AF9A50 solid; border-left: 1px #AF9A50 solid; border-right: 1px #AF9A50 solid; border-bottom: 1px #AF9A50 solid; background:#FFFFFF; font-size:12px; color:#666666;}
+
+
+/** 시간 버튼 스타일 추가 **/
+.time_Btn_01{
+	padding:0 4px;
+	border:1px solid #D0D0D0;
+	border-radius:3px;
+	background:#fff !important;
+	cursor:pointer;
+}
+.time_Btn_02{
+	padding:0 4px;
+	border:1px solid #6B6B6B;
+	border-radius:3px;
+	background:#8D8D8D;
+	cursor:pointer;
+}

@@ -1,0 +1,113 @@
+iframe.hide { 
+border:0px solid red;
+position:absolute;  
+top:0px;  
+left:0px;  
+z-index:-99;  
+width:210px;  
+height:140px;
+filter: alpha(opacity=0);
+}
+.calendar_box {
+	background-color: #FFF;
+	border: 3px solid #E1EDED;
+	position: absolute;
+	z-index: 32767;
+}
+
+.calendar_tbl {	background-color: #FFF; }
+
+.calendar_line { background-color: #BAD4D4; height: 1pt; line-height: 1pt}
+
+.calendar_head_tr {
+	background-color: #EDF4F4;
+	color:#555;	
+	font-family: "Tahoma";
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.calendar_head_td {
+	font-size: 11px; 
+	text-align: center;
+	color:#111; 
+	border:1px solid #FFFFFF;
+}
+
+.calendar_foot1 {
+	font-size: 11px; 
+	color:#111; 
+	cursor:pointer; 
+	border:1px solid #FFFFFF;
+	text-align: center;
+}
+.calendar_foot2 {
+	font-size: 11px; 
+	color:#111; 
+	cursor:pointer; 
+	border:1px solid #FFFFFF;
+	text-align: center;
+}
+
+.calendar_subhead {
+	font-family:"Tahoma"; 
+	font-Size: 11px ; 
+	text-align: center;
+	color:#135054; 
+	font-weight: bold; 
+	vertical-align:bottom
+}
+
+.calendar_cell_sun {
+	color: #A53439;
+	font-size: 11px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 5px;
+	cursor: pointer;
+	border:1px solid #FFFFFF;
+}
+.calendar_cell_sun:hover {	background-color: #BAD4D4; } /* hover code, won't IE */
+
+.calendar_cell_sat {
+	color: #0B4AAA;
+	font-size: 11px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 5px;
+	cursor: pointer;
+	border:1px solid #FFFFFF;
+}
+.calendar_cell_sat:hover {	background-color: #BAD4D4; } /* hover code, won't IE */
+
+.calendar_cell_num {
+	color: #000;
+	font-size: 11px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 5px;
+	cursor: pointer;
+	border:1px solid #FFFFFF;
+}
+.calendar_cell_num:hover {	background-color: #BAD4D4; } /* hover code, won't IE */
+
+.calendar_white {
+	FONT-SIZE: 11px; COLOR: #FFFFFF; LINE-HEIGHT: normal; FONT-FAMILY: "Dotum"
+}
+.calendar_blue {
+	FONT-SIZE: 11px; COLOR: #3F4AAA; LINE-HEIGHT: normal; FONT-FAMILY: "Dotum"
+}
+.calendar_gray {
+	FONT-SIZE: 11px; COLOR: #686868; LINE-HEIGHT: normal; FONT-FAMILY: "Dotum"
+}
+.calendar_red {
+	FONT-SIZE: 11px; COLOR: #A53439; LINE-HEIGHT: normal; FONT-FAMILY: "Dotum"
+}
+.white_b {
+	font-size: 12px;
+	color: #FFFFFF;
+	line-height: normal;
+	font-family: Dotum;
+}

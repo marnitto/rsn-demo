@@ -1,0 +1,64 @@
+[2019년03월20일 13시25분40초] 
+ SQLException
+Oracle Error Code [0]
+SQLState          [S0022]
+<<-----------------------------------------------------------------------
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3782439)	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3782439  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Column 'D_SEQ' not found.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+	at com.mysql.jdbc.ResultSetImpl.findColumn(ResultSetImpl.java:1080)
+	at com.mysql.jdbc.ResultSetImpl.getString(ResultSetImpl.java:5474)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingResultSet.getString(DelegatingResultSet.java:263)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingResultSet.getString(DelegatingResultSet.java:263)
+	at risk.search.MetaMgr.getMetaData(MetaMgr.java:375)
+	at risk.search.MetaMgr.getMetaData(MetaMgr.java:301)
+	at org.apache.jsp.riskv3.issue.new_005fpop_005fissueData_005fform_jsp._jspService(new_005fpop_005fissueData_005fform_jsp.java:177)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+

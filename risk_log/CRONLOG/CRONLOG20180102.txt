@@ -1,0 +1,364 @@
+[2018년01월02일 13시48분34초] 
+Start.....................
+[2018년01월02일 13시48분39초] 
+data size : 0
+[2018년01월02일 13시48분39초] 
+END.....................
+[2018년01월02일 13시49분07초] 
+Start.....................
+[2018년01월02일 13시49분12초] 
+data size : 0
+[2018년01월02일 13시49분12초] 
+END.....................
+[2018년01월02일 13시51분41초] 
+Start.....................
+[2018년01월02일 13시51분49초] 
+data size : 1000
+[2018년01월02일 13시51분49초] 
+data insert number : 1
+[2018년01월02일 13시51분57초] 
+data insert number : 2
+[2018년01월02일 14시24분42초] 
+Start.....................
+[2018년01월02일 14시24분46초] 
+data size : 1000
+[2018년01월02일 14시24분46초] 
+data insert number : 1
+[2018년01월02일 14시24분48초] 
+data insert number : 2
+[2018년01월02일 14시24분49초] 
+data insert number : 3
+[2018년01월02일 14시24분49초] 
+data insert number : 4
+[2018년01월02일 14시24분50초] 
+data insert number : 5
+[2018년01월02일 14시24분50초] 
+data insert number : 6
+[2018년01월02일 14시24분50초] 
+data insert number : 7
+[2018년01월02일 14시24분50초] 
+data insert number : 8
+[2018년01월02일 14시24분51초] 
+data insert number : 9
+[2018년01월02일 14시24분51초] 
+data insert number : 10
+[2018년01월02일 14시24분51초] 
+data insert number : 11
+[2018년01월02일 14시24분51초] 
+data insert number : 12
+[2018년01월02일 14시24분52초] 
+data insert number : 13
+[2018년01월02일 14시24분52초] 
+data insert number : 14
+[2018년01월02일 14시24분52초] 
+data insert number : 15
+[2018년01월02일 14시24분52초] 
+data insert number : 16
+[2018년01월02일 14시24분52초] 
+data insert number : 17
+[2018년01월02일 14시24분53초] 
+data insert number : 18
+[2018년01월02일 14시24분53초] 
+data insert number : 19
+[2018년01월02일 14시24분54초] 
+data insert number : 20
+[2018년01월02일 14시24분54초] 
+data insert number : 21
+[2018년01월02일 14시24분54초] 
+data insert number : 22
+[2018년01월02일 14시24분55초] 
+data insert number : 23
+[2018년01월02일 14시24분55초] 
+data insert number : 24
+[2018년01월02일 14시24분55초] 
+data insert number : 25
+[2018년01월02일 14시24분56초] 
+data insert number : 26
+[2018년01월02일 14시24분56초] 
+data insert number : 27
+[2018년01월02일 14시24분56초] 
+data insert number : 28
+[2018년01월02일 14시24분56초] 
+data insert number : 29
+[2018년01월02일 14시24분57초] 
+data insert number : 30
+[2018년01월02일 14시24분57초] 
+data insert number : 31
+[2018년01월02일 14시24분57초] 
+data insert number : 32
+[2018년01월02일 14시24분57초] 
+data insert number : 33
+[2018년01월02일 14시24분57초] 
+data insert number : 34
+[2018년01월02일 14시24분57초] 
+data insert number : 35
+[2018년01월02일 14시24분58초] 
+data insert number : 36
+[2018년01월02일 14시24분58초] 
+data insert number : 37
+[2018년01월02일 14시24분58초] 
+data insert number : 38
+[2018년01월02일 14시24분58초] 
+data insert number : 39
+[2018년01월02일 14시24분58초] 
+data insert number : 40
+[2018년01월02일 14시24분58초] 
+data insert number : 41
+[2018년01월02일 14시24분58초] 
+data insert number : 42
+[2018년01월02일 14시24분59초] 
+data insert number : 43
+[2018년01월02일 14시24분59초] 
+data insert number : 44
+[2018년01월02일 14시24분59초] 
+data insert number : 45
+[2018년01월02일 14시24분59초] 
+data insert number : 46
+[2018년01월02일 14시24분59초] 
+data insert number : 47
+[2018년01월02일 14시24분59초] 
+data insert number : 48
+[2018년01월02일 14시24분59초] 
+data insert number : 49
+[2018년01월02일 14시25분00초] 
+data insert number : 50
+[2018년01월02일 14시25분00초] 
+data insert number : 51
+[2018년01월02일 14시25분00초] 
+data insert number : 52
+[2018년01월02일 14시25분01초] 
+data insert number : 53
+[2018년01월02일 14시25분01초] 
+data insert number : 54
+[2018년01월02일 14시25분01초] 
+data insert number : 55
+[2018년01월02일 14시25분01초] 
+data insert number : 56
+[2018년01월02일 14시25분01초] 
+data insert number : 57
+[2018년01월02일 14시25분01초] 
+data insert number : 58
+[2018년01월02일 14시25분01초] 
+data insert number : 59
+[2018년01월02일 14시25분01초] 
+data insert number : 60
+[2018년01월02일 14시25분01초] 
+data insert number : 61
+[2018년01월02일 14시25분02초] 
+data insert number : 62
+[2018년01월02일 14시25분02초] 
+data insert number : 63
+[2018년01월02일 14시25분02초] 
+data insert number : 64
+[2018년01월02일 14시25분02초] 
+data insert number : 65
+[2018년01월02일 14시25분02초] 
+data insert number : 66
+[2018년01월02일 14시25분02초] 
+data insert number : 67
+[2018년01월02일 14시25분02초] 
+data insert number : 68
+[2018년01월02일 14시25분02초] 
+data insert number : 69
+[2018년01월02일 14시25분02초] 
+data insert number : 70
+[2018년01월02일 14시25분03초] 
+data insert number : 71
+[2018년01월02일 14시25분03초] 
+data insert number : 72
+[2018년01월02일 14시25분03초] 
+data insert number : 73
+[2018년01월02일 14시25분03초] 
+data insert number : 74
+[2018년01월02일 14시25분03초] 
+data insert number : 75
+[2018년01월02일 14시25분03초] 
+data insert number : 76
+[2018년01월02일 14시25분03초] 
+data insert number : 77
+[2018년01월02일 14시25분03초] 
+data insert number : 78
+[2018년01월02일 14시25분03초] 
+data insert number : 79
+[2018년01월02일 14시25분04초] 
+data insert number : 80
+[2018년01월02일 14시25분04초] 
+data insert number : 81
+[2018년01월02일 14시25분04초] 
+data insert number : 82
+[2018년01월02일 14시25분04초] 
+data insert number : 83
+[2018년01월02일 14시25분04초] 
+data insert number : 84
+[2018년01월02일 14시25분04초] 
+data insert number : 85
+[2018년01월02일 14시25분04초] 
+data insert number : 86
+[2018년01월02일 14시25분04초] 
+data insert number : 87
+[2018년01월02일 14시25분04초] 
+data insert number : 88
+[2018년01월02일 14시25분04초] 
+data insert number : 89
+[2018년01월02일 14시25분04초] 
+data insert number : 90
+[2018년01월02일 14시25분05초] 
+data insert number : 91
+[2018년01월02일 14시25분05초] 
+data insert number : 92
+[2018년01월02일 14시25분05초] 
+data insert number : 93
+[2018년01월02일 14시25분06초] 
+data insert number : 94
+[2018년01월02일 14시25분06초] 
+data insert number : 95
+[2018년01월02일 14시25분06초] 
+data insert number : 96
+[2018년01월02일 14시25분06초] 
+data insert number : 97
+[2018년01월02일 14시25분06초] 
+data insert number : 98
+[2018년01월02일 14시25분07초] 
+data insert number : 99
+[2018년01월02일 14시25분07초] 
+data insert number : 100
+[2018년01월02일 14시25분07초] 
+data insert number : 101
+[2018년01월02일 14시25분07초] 
+data insert number : 102
+[2018년01월02일 14시25분07초] 
+data insert number : 103
+[2018년01월02일 14시25분07초] 
+data insert number : 104
+[2018년01월02일 14시25분07초] 
+data insert number : 105
+[2018년01월02일 14시25분08초] 
+data insert number : 106
+[2018년01월02일 14시25분08초] 
+data insert number : 107
+[2018년01월02일 14시25분08초] 
+data insert number : 108
+[2018년01월02일 14시25분08초] 
+data insert number : 109
+[2018년01월02일 14시25분08초] 
+data insert number : 110
+[2018년01월02일 14시25분08초] 
+data insert number : 111
+[2018년01월02일 14시25분09초] 
+data insert number : 112
+[2018년01월02일 14시25분09초] 
+data insert number : 113
+[2018년01월02일 14시25분09초] 
+data insert number : 114
+[2018년01월02일 14시25분09초] 
+data insert number : 115
+[2018년01월02일 14시25분09초] 
+data insert number : 116
+[2018년01월02일 14시25분11초] 
+data insert number : 117
+[2018년01월02일 14시25분11초] 
+data insert number : 118
+[2018년01월02일 14시25분11초] 
+data insert number : 119
+[2018년01월02일 14시25분11초] 
+data insert number : 120
+[2018년01월02일 14시25분12초] 
+data insert number : 121
+[2018년01월02일 14시25분12초] 
+data insert number : 122
+[2018년01월02일 14시25분12초] 
+data insert number : 123
+[2018년01월02일 14시25분12초] 
+data insert number : 124
+[2018년01월02일 14시25분12초] 
+data insert number : 125
+[2018년01월02일 14시25분12초] 
+data insert number : 126
+[2018년01월02일 14시25분12초] 
+data insert number : 127
+[2018년01월02일 14시25분12초] 
+data insert number : 128
+[2018년01월02일 14시25분13초] 
+data insert number : 129
+[2018년01월02일 14시25분13초] 
+data insert number : 130
+[2018년01월02일 14시25분13초] 
+data insert number : 131
+[2018년01월02일 14시25분13초] 
+data insert number : 132
+[2018년01월02일 14시25분13초] 
+data insert number : 133
+[2018년01월02일 14시25분13초] 
+data insert number : 134
+[2018년01월02일 14시25분13초] 
+data insert number : 135
+[2018년01월02일 14시25분13초] 
+data insert number : 136
+[2018년01월02일 14시25분13초] 
+data insert number : 137
+[2018년01월02일 14시25분14초] 
+data insert number : 138
+[2018년01월02일 14시25분14초] 
+data insert number : 139
+[2018년01월02일 14시25분14초] 
+data insert number : 140
+[2018년01월02일 14시25분14초] 
+data insert number : 141
+[2018년01월02일 14시25분15초] 
+data insert number : 142
+[2018년01월02일 14시25분15초] 
+data insert number : 143
+[2018년01월02일 14시25분15초] 
+data insert number : 144
+[2018년01월02일 14시25분15초] 
+data insert number : 145
+[2018년01월02일 14시25분15초] 
+data insert number : 146
+[2018년01월02일 14시25분16초] 
+data insert number : 147
+[2018년01월02일 14시25분16초] 
+data insert number : 148
+[2018년01월02일 14시25분16초] 
+data insert number : 149
+[2018년01월02일 14시25분16초] 
+data insert number : 150
+[2018년01월02일 14시25분16초] 
+data insert number : 151
+[2018년01월02일 14시25분16초] 
+data insert number : 152
+[2018년01월02일 14시25분17초] 
+data insert number : 153
+[2018년01월02일 14시25분17초] 
+data insert number : 154
+[2018년01월02일 14시25분17초] 
+data insert number : 155
+[2018년01월02일 14시25분17초] 
+data insert number : 156
+[2018년01월02일 14시25분18초] 
+data insert number : 157
+[2018년01월02일 14시25분18초] 
+data insert number : 158
+[2018년01월02일 14시25분18초] 
+data insert number : 159
+[2018년01월02일 14시25분18초] 
+data insert number : 160
+[2018년01월02일 14시25분18초] 
+data insert number : 161
+[2018년01월02일 14시25분18초] 
+data insert number : 162
+[2018년01월02일 14시25분22초] 
+data insert number : 163
+[2018년01월02일 14시25분23초] 
+data insert number : 164
+[2018년01월02일 14시25분39초] 
+data insert number : 165
+[2018년01월02일 14시25분55초] 
+data insert number : 166
+[2018년01월02일 14시26분12초] 
+data insert number : 167
+[2018년01월02일 14시26분13초] 
+data insert number : 168
+[2018년01월02일 14시26분29초] 
+data insert number : 169
+[2018년01월02일 14시26분32초] 
+data insert number : 170

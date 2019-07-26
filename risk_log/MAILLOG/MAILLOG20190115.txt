@@ -1,0 +1,4 @@
+[2019년01월15일 10시31분06초] 
+SMTP setting :: smtp.gmail.com
+[2019년01월15일 15시37분45초] 
+SMTP setting :: smtp.gmail.com

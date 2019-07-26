@@ -1,0 +1,30 @@
+[2019년06월18일 09시45분53초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2019년06월18일 09시45분53초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+

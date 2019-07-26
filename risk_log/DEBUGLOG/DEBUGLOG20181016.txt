@@ -1,0 +1,1054 @@
+[2018년10월16일 09시13분13초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 09시13분13초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 09시20분44초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 09시20분44초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 09시59분09초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 09시59분09초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시00분53초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시00분53초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시01분33초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시01분33초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850405  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시01분48초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시01분48초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850405  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시01분59초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시01분59초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850405  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시02분34초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시02분34초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850405  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시38분05초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시38분05초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850405  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시38분16초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시38분16초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850405  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시38분50초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시38분50초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850405  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시39분56초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시39분56초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850405  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시40분11초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시40분11초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850405  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시41분05초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시41분05초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850405  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시43분02초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시43분02초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850405  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시46분09초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시46분09초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시46분38초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시46분38초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시47분22초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시47분22초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시47분46초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시47분47초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시47분52초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시47분52초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시50분50초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시50분50초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시51분18초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시51분18초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 10시51분27초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 10시51분27초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 11시12분05초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 11시12분05초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 11시24분52초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 11시24분52초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 11시24분58초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 11시24분58초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 11시27분08초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 11시27분08초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 11시29분45초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 11시29분45초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 11시29분59초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 11시29분59초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 11시35분33초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 11시35분33초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 11시38분59초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 11시38분59초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 11시39분54초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 11시39분54초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 11시40분38초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 11시40분38초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2018년10월16일 13시32분18초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2018년10월16일 13시32분18초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 2850407  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+

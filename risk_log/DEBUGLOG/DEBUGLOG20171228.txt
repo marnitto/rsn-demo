@@ -1,0 +1,2070 @@
+[2017년12월28일 09시48분00초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A,                   	
+       MEMBER_GROUP B				
+ WHERE A.M_SEQ   = 139 
+       AND B.MG_SEQ   = 9 
+
+[2017년12월28일 09시50분02초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'sms' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'sms' )  
+
+[2017년12월28일 09시50분02초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'sms' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'sms' )  
+
+[2017년12월28일 09시50분02초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 09시50분02초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 09시50분04초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 09시50분06초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 2,3,4,5,6,7,8,9,10,1 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 09시50분06초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(139,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ    
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 2,3,4,5,6,7,8,9,10,1 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,100                                 
+ )A      
+
+[2017년12월28일 09시50분45초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 09시50분51초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 09시50분51초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2017년12월28일 14시07분22초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A,                   	
+       MEMBER_GROUP B				
+ WHERE A.M_SEQ   = 139 
+       AND B.MG_SEQ   = 9 
+
+[2017년12월28일 14시12분58초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'sms' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'sms' )  
+
+[2017년12월28일 14시12분58초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시12분58초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시12분59초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시12분59초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 2,3,4,5,6,7,8,9,10,1 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시12분59초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(139,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ    
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 2,3,4,5,6,7,8,9,10,1 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,100                                 
+ )A      
+
+[2017년12월28일 14시13분03초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'sms' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'sms' )  
+
+[2017년12월28일 14시13분13초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시15분03초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'sms' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'sms' )  
+
+[2017년12월28일 14시15분03초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'sms' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'sms' )  
+
+[2017년12월28일 14시15분03초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시15분03초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시15분03초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시15분03초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 2,3,4,5,6,7,8,9,10,1 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시15분03초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(139,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ    
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 2,3,4,5,6,7,8,9,10,1 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,100                                 
+ )A      
+
+[2017년12월28일 14시15분03초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시15분04초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시15분04초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시15분04초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시15분04초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시15분04초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD2(A.MD_SEQ,1) AS K_VALUE  					
+     , FN_GET_COMFIRM(139,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ    
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,100                                 
+ )A      
+
+[2017년12월28일 14시15분04초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시15분06초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시15분06초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1)               
+                                 AND A.K_YP    = 1               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시15분06초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1)               
+                                 AND A.K_YP    = 1               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시15분06초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+        UNION                                                    
+        SELECT '' , K_VALUE MAIN , ''                            
+          FROM KEYWORD                                           
+         WHERE K_XP = 1                               
+           AND K_YP = 1                               
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시15분06초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD3(A.MD_SEQ,1,1) AS K_VALUE  					
+     , FN_GET_COMFIRM(139,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ    
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1 )               
+                                 AND A.K_YP    = 1               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,100                                 
+ )A      
+
+[2017년12월28일 14시15분06초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시15분06초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시15분06초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시15분06초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시15분06초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+        UNION                                                    
+        SELECT '' , K_VALUE MAIN , ''                            
+          FROM KEYWORD                                           
+         WHERE K_XP = 1                               
+           AND K_YP = 2                               
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시15분06초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD3(A.MD_SEQ,1,2) AS K_VALUE  					
+     , FN_GET_COMFIRM(139,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ    
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60709                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1 )               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,100                                 
+ )A      
+
+[2017년12월28일 14시15분06초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시15분47초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시15분47초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2017년12월28일 14시16분09초] 
+INSERT INTO KEYWORD(K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE, SG_SEQS) VALUES(11,0,0,1,11,0,'summary','2017-12-28 14:16:09', '17,18,19,25,42,45,47')  상위 키워드그룹 추가 :[139]
+[2017년12월28일 14시16분09초] 
+SELECT MAX(K_SEQ)AS PKEY FROM KEYWORD  상위 키워드그룹 추가 :[139]
+[2017년12월28일 14시16분09초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시16분09초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2017년12월28일 14시16분20초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT   K_XP, K_YP + 1, 0, 1, K_POS, 0, '대구광역시','2017-12-28 14:16:20' 
+   FROM (SELECT  K_XP, K_YP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 11 
+         	  
+   ORDER BY K_YP DESC LIMIT 1)m 
+  키워드그룹 추가 :[139]
+[2017년12월28일 14시16분20초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시16분20초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2017년12월28일 14시16분27초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT K_XP, K_YP, K_ZP + 1, 2, K_POS, 1, '대구시','2017-12-28 14:16:27' 
+   FROM (SELECT  K_XP, K_YP, K_ZP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 11 AND K_YP = 1  
+         ORDER BY K_ZP DESC LIMIT 1)m 
+  키워드 추가 :[139]
+[2017년12월28일 14시16분27초] 
+SELECT MAX(K_SEQ)AS PKEY FROM KEYWORD  키워드 추가 :[139]
+[2017년12월28일 14시16분27초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시16분27초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2017년12월28일 14시16분36초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT K_XP, K_YP, K_ZP + 1, 2, K_POS, 1, '대구광역시','2017-12-28 14:16:36' 
+   FROM (SELECT  K_XP, K_YP, K_ZP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 11 AND K_YP = 1  
+         ORDER BY K_ZP DESC LIMIT 1)m 
+  키워드 추가 :[139]
+[2017년12월28일 14시16분36초] 
+SELECT MAX(K_SEQ)AS PKEY FROM KEYWORD  키워드 추가 :[139]
+[2017년12월28일 14시16분36초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시16분36초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2017년12월28일 14시16분48초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT   K_XP, K_YP + 1, 0, 1, K_POS, 0, '대구시장','2017-12-28 14:16:48' 
+   FROM (SELECT  K_XP, K_YP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 11 
+         	  
+   ORDER BY K_YP DESC LIMIT 1)m 
+  키워드그룹 추가 :[139]
+[2017년12월28일 14시16분48초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시16분48초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2017년12월28일 14시16분55초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT K_XP, K_YP, K_ZP + 1, 2, K_POS, 1, '대구시장','2017-12-28 14:16:55' 
+   FROM (SELECT  K_XP, K_YP, K_ZP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 11 AND K_YP = 2  
+         ORDER BY K_ZP DESC LIMIT 1)m 
+  키워드 추가 :[139]
+[2017년12월28일 14시16분55초] 
+SELECT MAX(K_SEQ)AS PKEY FROM KEYWORD  키워드 추가 :[139]
+[2017년12월28일 14시16분55초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시16분55초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2017년12월28일 14시17분04초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT K_XP, K_YP, K_ZP + 1, 2, K_POS, 1, '권영진 대구시장','2017-12-28 14:17:04' 
+   FROM (SELECT  K_XP, K_YP, K_ZP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 11 AND K_YP = 2  
+         ORDER BY K_ZP DESC LIMIT 1)m 
+  키워드 추가 :[139]
+[2017년12월28일 14시17분04초] 
+SELECT MAX(K_SEQ)AS PKEY FROM KEYWORD  키워드 추가 :[139]
+[2017년12월28일 14시17분04초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시17분04초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2017년12월28일 14시17분09초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'sms' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'sms' )  
+
+[2017년12월28일 14시17분09초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'sms' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'sms' )  
+
+[2017년12월28일 14시17분09초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시17분09초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60841                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시17분09초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60841                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시17분09초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 2,3,4,5,6,7,8,9,10,1 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시17분09초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(139,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ    
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60841                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 2,3,4,5,6,7,8,9,10,1 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,100                                 
+ )A      
+
+[2017년12월28일 14시17분10초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시17분14초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분14초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분16초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분20초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분21초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분22초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분23초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분25초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분30초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분31초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분39초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분40초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분46초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분47초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분53초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분56초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시17분58초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2017년12월28일 14시18분01초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'sms' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'sms' )  
+
+[2017년12월28일 14시18분01초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'sms' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'sms' )  
+
+[2017년12월28일 14시18분01초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시18분01초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60881                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시18분01초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60881                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시18분01초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 2,3,4,5,6,7,8,9,10,1,11 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시18분01초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(139,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ    
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60881                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 2,3,4,5,6,7,8,9,10,1,11 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,100                                 
+ )A      
+
+[2017년12월28일 14시18분02초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시18분03초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시18분03초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60882                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시18분03초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60882                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시18분03초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 11 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시18분03초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시18분04초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시18분04초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60882                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 1               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시18분04초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60882                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 1               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시18분04초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 11 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+        UNION                                                    
+        SELECT '' , K_VALUE MAIN , ''                            
+          FROM KEYWORD                                           
+         WHERE K_XP = 11                               
+           AND K_YP = 1                               
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시18분04초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시18분05초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시18분05초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60882                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시18분05초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60882                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시18분05초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 11 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+        UNION                                                    
+        SELECT '' , K_VALUE MAIN , ''                            
+          FROM KEYWORD                                           
+         WHERE K_XP = 11                               
+           AND K_YP = 2                               
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시18분05초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시23분05초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시23분05초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.L_ALPHA = 'KOR'                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시23분05초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 60999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시23분05초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 11 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+        UNION                                                    
+        SELECT '' , K_VALUE MAIN , ''                            
+          FROM KEYWORD                                           
+         WHERE K_XP = 11                               
+           AND K_YP = 2                               
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시23분05초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시28분06초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시28분06초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 61248                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.L_ALPHA = 'KOR'                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시28분06초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 61248                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시28분06초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 11 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+        UNION                                                    
+        SELECT '' , K_VALUE MAIN , ''                            
+          FROM KEYWORD                                           
+         WHERE K_XP = 11                               
+           AND K_YP = 2                               
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시28분06초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시33분06초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시33분06초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 61508                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.L_ALPHA = 'KOR'                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시33분06초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 61508                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시33분06초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 11 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+        UNION                                                    
+        SELECT '' , K_VALUE MAIN , ''                            
+          FROM KEYWORD                                           
+         WHERE K_XP = 11                               
+           AND K_YP = 2                               
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시33분06초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시38분07초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시38분07초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 61700                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.L_ALPHA = 'KOR'                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시38분07초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 61700                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시38분07초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 11 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+        UNION                                                    
+        SELECT '' , K_VALUE MAIN , ''                            
+          FROM KEYWORD                                           
+         WHERE K_XP = 11                               
+           AND K_YP = 2                               
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시38분07초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시43분07초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2017-12-28 00:00:00' AND '2017-12-28 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2017년12월28일 14시43분07초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 61881                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.L_ALPHA = 'KOR'                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2017년12월28일 14시43분07초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 60695 AND 61881                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (11)               
+                                 AND A.K_YP    = 2               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 139)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2017년12월28일 14시43분07초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 11 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+        UNION                                                    
+        SELECT '' , K_VALUE MAIN , ''                            
+          FROM KEYWORD                                           
+         WHERE K_XP = 11                               
+           AND K_YP = 2                               
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2017년12월28일 14시43분07초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2017년12월28일 14시51분24초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A,                   	
+       MEMBER_GROUP B				
+ WHERE A.M_SEQ   = 139 
+       AND B.MG_SEQ   = 9 
+
+[2017년12월28일 14시52분15초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A,                   	
+       MEMBER_GROUP B				
+ WHERE A.M_SEQ   = 139 
+       AND B.MG_SEQ   = 9 
+

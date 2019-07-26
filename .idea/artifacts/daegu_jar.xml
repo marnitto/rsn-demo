@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="daegu:jar">
+    <output-path>$PROJECT_DIR$/classes/artifacts/daegu_jar</output-path>
+    <root id="archive" name="daegu.jar">
+      <element id="module-output" name="daegu" />
+    </root>
+  </artifact>
+</component>

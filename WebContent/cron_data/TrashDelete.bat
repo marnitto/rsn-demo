@@ -1,0 +1,1 @@
+java -classpath D:\WEB\vocdemo\WEB-INF\lib\sqljdbc.jar;D:\WEB\vocdemo\WEB-INF\lib\mysql-connector-java-5.1.5-bin.jar;D:\WEB\vocdemo\WEB-INF\lib\servlet-api.jar;D:\WEB\vocdemo\WEB-INF\lib\weblogic.jar;D:\WEB\vocdemo\WEB-INF\classes;D:\WEB\vocdemo\WEB-INF\lib; risk.demon.TrashDelete

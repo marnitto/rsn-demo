@@ -1,0 +1,1 @@
+start javaw -classpath D:\WEB\MCD\WEB-INF\lib\sqljdbc.jar;D:\WEB\MCD\WEB-INF\lib\mysql-connector-java-5.1.5-bin.jar;D:\WEB\MCD\WEB-INF\lib\servlet-api.jar;D:\WEB\MCD\WEB-INF\lib\weblogic.jar;D:\WEB\MCD\WEB-INF\classes;D:\WEB\MCD\WEB-INF\lib; risk.demon.migrationData

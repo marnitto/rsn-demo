@@ -1,0 +1,139 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #f2f2f2; SCROLLBAR-HIGHLIGHT-COLOR: #999999; SCROLLBAR-SHADOW-COLOR: #999999; SCROLLBAR-3DLIGHT-COLOR: #ffffff; SCROLLBAR-ARROW-COLOR: #333333; SCROLLBAR-TRACK-COLOR: #f2f2f2; FONT-FAMILY: "gulim"; SCROLLBAR-DARKSHADOW-COLOR: #ffffff; HEIGHT: 100%
+}
+A:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff9900; TEXT-DECORATION: none
+}
+A:active {
+	TEXT-DECORATION: none
+}
+A.sch_title:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.sch_title:visited {
+	COLOR: #aaaaaa; TEXT-DECORATION: none
+}
+A.sch_title:hover {
+	COLOR: #ff9900; TEXT-DECORATION: none
+}
+A.sch_title:active {
+	TEXT-DECORATION: none
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #333333; LINE-HEIGHT: 18px; FONT-FAMILY: "gulim"
+}
+INPUT {
+	BORDER-RIGHT: #cfcfcf 0px solid; BORDER-TOP: #cfcfcf 0px solid; FONT-SIZE: 12px; BORDER-LEFT: #cfcfcf 0px solid; COLOR: #767676; BORDER-BOTTOM: #cfcfcf 0px solid; HEIGHT: 16px
+}
+.input02 {
+	BORDER-RIGHT: #CCCCCC 1px solid; BORDER-TOP: #CCCCCC 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #CCCCCC 1px solid; COLOR: #434343; BORDER-BOTTOM: #CCCCCC 1px solid; HEIGHT: 70px; BACKGROUND-COLOR: #FAFAFA ;PADDING-TOP: 4px ;PADDING-left: 4px
+}
+INPUT.txtbox {
+	BORDER-RIGHT: #cfcfcf 1px solid; BORDER-TOP: #cfcfcf 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #cfcfcf 1px solid; COLOR: #767676; BORDER-BOTTOM: #cfcfcf 1px solid; HEIGHT: 20px ;PADDING-TOP: 4px
+}
+INPUT.txtbox02 {
+
+	BORDER-RIGHT: #CBCBCB 1px solid; BORDER-TOP: #CBCBCB 1px solid; BORDER-LEFT: #CBCBCB 1px solid; BORDER-BOTTOM: #CBCBCB 1px solid; HEIGHT: 20px ;PADDING-TOP: 4px; FONT-SIZE: 12px; COLOR: #333333;  BACKGROUND-COLOR: #FAFAFA
+}
+INPUT.calendar {
+	BEHAVIOR: url(htc_calendar3.htc)
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: #333333; FONT-FAMILY: "gulim"; HEIGHT: 16px; BACKGROUND-COLOR: white
+}
+IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+.body770 {
+	SCROLLBAR-FACE-COLOR: #f2f2f2; MARGIN: 0px; SCROLLBAR-HIGHLIGHT-COLOR: #999999; WIDTH: 770px; SCROLLBAR-SHADOW-COLOR: #999999; SCROLLBAR-3DLIGHT-COLOR: #ffffff; SCROLLBAR-ARROW-COLOR: #333333; SCROLLBAR-TRACK-COLOR: #f2f2f2; FONT-FAMILY: "gulim"; SCROLLBAR-DARKSHADOW-COLOR: #ffffff; HEIGHT: 500px
+}
+.body_if {
+	SCROLLBAR-FACE-COLOR: #f2f2f2; MARGIN: 5px 0px 0px 5px; SCROLLBAR-HIGHLIGHT-COLOR: #999999; SCROLLBAR-SHADOW-COLOR: #999999; SCROLLBAR-3DLIGHT-COLOR: #ffffff; SCROLLBAR-ARROW-COLOR: #333333; SCROLLBAR-TRACK-COLOR: #f2f2f2; FONT-FAMILY: "gulim"; SCROLLBAR-DARKSHADOW-COLOR: #ffffff
+}
+.t {
+	FONT-SIZE: 11px; COLOR: #666666; FONT-FAMILY: "Tahoma"
+}
+.textw {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #ffffff; LINE-HEIGHT: normal; FONT-FAMILY: "Tahoma"
+}
+.menu_black {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 16px; FONT-FAMILY: "gulim" "Arial"
+}
+.menu_gray1 {
+	FONT-SIZE: 12px; COLOR: #a0a0a0; LINE-HEIGHT: 16px; FONT-FAMILY: "gulim" "Arial"
+}
+.menu_big {
+	FONT-SIZE: 14px; COLOR: #000000; LINE-HEIGHT: 20px; FONT-FAMILY: "dotum" "Arial"
+}
+.menu_blue {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #3d679c; LINE-HEIGHT: 16px; FONT-FAMILY: "Tahoma"
+}
+.menu_gray {
+	FONT-SIZE: 12px; COLOR: #4b4b4b; LINE-HEIGHT: 16px; FONT-FAMILY: "Tahoma"
+}
+.menu_red {
+	FONT-SIZE: 12px; COLOR: #cc0000; LINE-HEIGHT: 16px; FONT-FAMILY: "Tahoma"
+}
+.menu_blueOver {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #3d679c; LINE-HEIGHT: 16px; FONT-FAMILY: Tahoma
+}
+.menu_blueTEXTover {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #3366cc; LINE-HEIGHT: 16px; FONT-FAMILY: "Tahoma"
+}
+.textwbig {
+	FONT-WEIGHT: normal; FONT-SIZE: 14px; COLOR: #ffffff; LINE-HEIGHT: normal; FONT-FAMILY: "Tahoma"
+}
+.textwhite {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #ffffff; LINE-HEIGHT: normal; FONT-FAMILY: Tahoma
+}
+.leftM_off {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #3A3A3A; LINE-HEIGHT: normal; FONT-FAMILY: Tahoma
+}
+.leftM_on {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #ffffff; LINE-HEIGHT: normal; FONT-FAMILY: Tahoma
+}
+.table_top {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #555555; LINE-HEIGHT: normal; FONT-FAMILY: "µ¸¿ò", "µ¸¿òÃ¼"
+}
+.red {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #CC0000; LINE-HEIGHT: normal; FONT-FAMILY: Arial, Arial Black
+}
+.Orange {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #FC9027; LINE-HEIGHT: normal; FONT-FAMILY: Arial, Arial Black
+}
+.Green {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #72B118; LINE-HEIGHT: normal; FONT-FAMILY: Arial, Arial Black
+}
+.Yellow {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #FFC600; LINE-HEIGHT: normal; FONT-FAMILY: Arial, Arial Black
+}
+.text_blue {
+	FONT-SIZE: 12px;
+	COLOR: #3366cc;
+	LINE-HEIGHT: normal;
+	FONT-FAMILY: "", "u";
+	font-weight: bold;
+}
+.BIG_title {
+
+	FONT-SIZE: 14px;
+	COLOR: #000000;
+	LINE-HEIGHT: normal;
+	FONT-FAMILY: "??", "???";
+	font-weight: normal;
+}
+.BIG_title02 {
+
+
+	FONT-SIZE: 13px;
+	COLOR: #414141;
+	LINE-HEIGHT: normal;
+	FONT-FAMILY: "??", "???";
+	font-weight: normal;
+}

@@ -1,0 +1,41 @@
+/* CSS Document */
+
+/* Calendar*/
+.calendar_week {font-family:"Tahoma"; font-Size: 10px ; color:#135054; font-weight: bold; vertical-align:bottom }
+
+.calendar_today {	font-size: 11px;  background-color: #BAD4D4; cursor:hand;}
+.calendar_today a:link {	font-size: 11px; text-decoration:none ; color:#111;}
+.calendar_today a:visited {	font-size: 11px; text-decoration:none ; color:#111;}
+.calendar_today a:active {	font-size: 11px; text-decoration:none ; color:#111;}
+.calendar_today a:hover {	font-size: 11px; text-decoration:none ; color:#111;}
+
+/* Calendar*/
+.calendar_title {	font-family: "Tahoma"; 	font-size: 11px;	color:#555;	font-weight:bold;}
+
+.calendar_num {	font-size: 11px; color:#111; cursor:hand; border:1px solid #FFFFFF;}
+.calendar_num a:link {	font-size: 11px; text-decoration:none ; color:#111;}
+.calendar_num a:visited {	font-size: 11px; text-decoration:none ; color:#111;}
+.calendar_num a:active {	font-size: 11px; text-decoration:none ; color:#111;}
+.calendar_num a:hover {	font-size: 11px; text-decoration:none ; color:#111;}
+
+.calendar_week_sun {font-family:"Tahoma"; font-Size: 10px ; color:#A53439; font-weight: bold; vertical-align:bottom }
+.calendar_week_sat {font-family:"Tahoma"; font-Size: 10px ; color:#0B4AAA; font-weight: bold; vertical-align:bottom }
+
+.calendar_sun { font-size: 11px; color:#A53439; cursor:hand; border:1px solid #FFFFFF;}
+.calendar_sun a:link {	font-size: 11px; text-decoration:none ; color:#A53439;}
+.calendar_sun a:visited {	font-size: 11px; text-decoration:none ; color:#A53439;}
+.calendar_sun a:active {	font-size: 11px; text-decoration:none ; color:#A53439;}
+.calendar_sun a:hover {	font-size: 11px; text-decoration:none ; color:#A53439;}
+ 
+.calendar_sat { font-size: 11px; color:#0B4AAA; cursor:hand;  border:1px solid #FFFFFF;}
+.calendar_sat a:link {	font-size: 11px; text-decoration:none ; color:#0B4AAA;}
+.calendar_sat a:visited {	font-size: 11px; text-decoration:none ; color:#0B4AAA;}
+.calendar_sat a:active {	font-size: 11px; text-decoration:none ; color:#0B4AAA;}
+.calendar_sat a:hover {	font-size: 11px; text-decoration:none ; color:#0B4AAA;}
+
+/* BG Color */
+.bg_light { background-color: #E1EDED; }
+.calendar_title_bg { background-color:#EDF4F4; }
+.bg_white { background-color: #FFFFFF; }
+.calendar_bg_line { background-color: #BAD4D4; }
+

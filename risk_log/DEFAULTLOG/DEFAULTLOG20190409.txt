@@ -1,0 +1,282 @@
+[2019년04월09일 11시52분50초] 
+ Exception 
+Error Message : javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(Unknown Source)
+	at javax.naming.InitialContext.getDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.lookup(Unknown Source)
+	at risk.DBconn.DBconn.getDBCPConnection(DBconn.java:108)
+	at risk.demon.getName.dd(getName.java:32)
+	at risk.demon.getName.main(getName.java:23)
+
+[2019년04월09일 11시53분55초] 
+ Exception 
+Error Message : javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(Unknown Source)
+	at javax.naming.InitialContext.getDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.lookup(Unknown Source)
+	at risk.DBconn.DBconn.getDBCPConnection(DBconn.java:108)
+	at risk.demon.getName.dd(getName.java:32)
+	at risk.demon.getName.main(getName.java:23)
+
+[2019년04월09일 11시56분25초] 
+ Exception 
+Error Message : javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(Unknown Source)
+	at javax.naming.InitialContext.getDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.lookup(Unknown Source)
+	at risk.DBconn.DBconn.getDBCPConnection(DBconn.java:108)
+	at risk.demon.getName.dd(getName.java:32)
+	at risk.demon.getName.main(getName.java:23)
+
+[2019년04월09일 13시07분15초] 
+ Exception 
+Error Message : javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(Unknown Source)
+	at javax.naming.InitialContext.getDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.lookup(Unknown Source)
+	at risk.DBconn.DBconn.getDBCPConnection(DBconn.java:108)
+	at risk.demon.getName.dd(getName.java:32)
+	at risk.demon.getName.main(getName.java:23)
+
+[2019년04월09일 13시35분28초] 
+ Exception 
+Error Message : javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(Unknown Source)
+	at javax.naming.InitialContext.getDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.lookup(Unknown Source)
+	at risk.DBconn.DBconn.getDBCPConnection(DBconn.java:108)
+	at risk.demon.getName.dd(getName.java:32)
+	at risk.demon.getName.main(getName.java:23)
+
+[2019년04월09일 13시39분53초] 
+ Exception 
+Error Message : java.lang.NullPointerException
+	at risk.demon.getName.dd(getName.java:33)
+	at risk.demon.getName.main(getName.java:26)
+
+[2019년04월09일 13시40분29초] 
+ Exception 
+Error Message : java.lang.NullPointerException
+	at risk.demon.getName.insertName(getName.java:33)
+	at risk.demon.getName.main(getName.java:26)
+
+[2019년04월09일 13시42분42초] 
+ Exception 
+Error Message : javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(Unknown Source)
+	at javax.naming.InitialContext.getDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.lookup(Unknown Source)
+	at risk.DBconn.DBconn.getDBCPConnection(DBconn.java:108)
+	at risk.demon.getName.insertName(getName.java:34)
+	at risk.demon.getName.main(getName.java:26)
+
+[2019년04월09일 13시43분10초] 
+ Exception 
+Error Message : javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or as an applet parameter, or in an application resource file:  java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(Unknown Source)
+	at javax.naming.InitialContext.getDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(Unknown Source)
+	at javax.naming.InitialContext.lookup(Unknown Source)
+	at risk.DBconn.DBconn.getDBCPConnection(DBconn.java:108)
+	at risk.demon.getName.insertName(getName.java:34)
+	at risk.demon.getName.main(getName.java:26)
+
+[2019년04월09일 13시44분27초] 
+ SQLException
+Oracle Error Code [1242]
+SQLState          [21000]
+<<-----------------------------------------------------------------------
+ INSERT INTO DAEGU_ASP.SB_SEQ_MAP 
+ (SB_SEQ, TPYE5, TYPE51, TYPE3, TYPE31)  
+ VALUES ( 
+ 2312621, 
+ (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '문화체육관광국' AND IC_CODE > 0 AND IC_USEYN = 'Y'), 
+ (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '문화콘텐츠과' AND IC_CODE > 0 AND IC_USEYN = 'Y'), 
+ (SELECT TYPE3 FROM KEYWORD_MAP_MANUAL  
+   WHERE TYPE5 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '문화체육관광국' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+   AND   TYPE51 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '문화콘텐츠과' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+ ), 
+ (SELECT TYPE31 FROM KEYWORD_MAP_MANUAL  
+   WHERE TYPE5 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '문화체육관광국' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+   AND   TYPE51 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '문화콘텐츠과' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+ ) 
+ ); 
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Subquery returns more than 1 row
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2537)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1564)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1485)
+	at risk.demon.getName.insertName(getName.java:236)
+	at risk.demon.getName.main(getName.java:26)
+
+[2019년04월09일 14시00분13초] 
+ SQLException
+Oracle Error Code [1048]
+SQLState          [23000]
+<<-----------------------------------------------------------------------
+ INSERT INTO DAEGU_ASP.SB_SEQ_MAP 
+ (SB_SEQ, TPYE5, TYPE51, TYPE3, TYPE31)  
+ VALUES ( 
+ 2312634, 
+ (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '보건복지국' AND IC_CODE > 0 AND IC_USEYN = 'Y'), 
+ (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '복지정책관실' AND IC_CODE > 0 AND IC_USEYN = 'Y'), 
+ (SELECT TYPE3 FROM KEYWORD_MAP_MANUAL  
+   WHERE TYPE5 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '보건복지국' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+   AND   TYPE51 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '복지정책관실' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+ ), 
+ (SELECT TYPE31 FROM KEYWORD_MAP_MANUAL  
+   WHERE TYPE5 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '보건복지국' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+   AND   TYPE51 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '복지정책관실' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+ ) 
+ ); 
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'TYPE51' cannot be null
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1016)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2537)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1564)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1485)
+	at risk.demon.getName.insertName(getName.java:236)
+	at risk.demon.getName.main(getName.java:26)
+
+[2019년04월09일 14시01분33초] 
+ SQLException
+Oracle Error Code [1048]
+SQLState          [23000]
+<<-----------------------------------------------------------------------
+ INSERT INTO DAEGU_ASP.SB_SEQ_MAP 
+ (SB_SEQ, TPYE5, TYPE51, TYPE3, TYPE31)  
+ VALUES ( 
+ 2312607, 
+ (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '여성가족정책국' AND IC_CODE > 0 AND IC_USEYN = 'Y'), 
+ (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '여성가족정책과' AND IC_CODE > 0 AND IC_USEYN = 'Y'), 
+ (SELECT TYPE3 FROM KEYWORD_MAP_MANUAL  
+   WHERE TYPE5 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '여성가족정책국' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+   AND   TYPE51 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '여성가족정책과' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+ ), 
+ (SELECT TYPE31 FROM KEYWORD_MAP_MANUAL  
+   WHERE TYPE5 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '여성가족정책국' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+   AND   TYPE51 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '여성가족정책과' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+ ) 
+ ); 
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'TPYE5' cannot be null
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1016)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2537)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1564)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1485)
+	at risk.demon.getName.insertName(getName.java:236)
+	at risk.demon.getName.main(getName.java:26)
+
+[2019년04월09일 14시04분11초] 
+ SQLException
+Oracle Error Code [1048]
+SQLState          [23000]
+<<-----------------------------------------------------------------------
+ INSERT INTO DAEGU_ASP.SB_SEQ_MAP 
+ (SB_SEQ, TPYE5, TYPE51, TYPE3, TYPE31)  
+ VALUES ( 
+ 2312607, 
+ (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '여성가족정책국' AND IC_CODE > 0 AND IC_USEYN = 'Y'), 
+ (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '여성가족정책과' AND IC_CODE > 0 AND IC_USEYN = 'Y'), 
+ (SELECT TYPE3 FROM KEYWORD_MAP_MANUAL  
+   WHERE TYPE5 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '여성가족정책국' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+   AND   TYPE51 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '여성가족정책과' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+ ), 
+ (SELECT TYPE31 FROM KEYWORD_MAP_MANUAL  
+   WHERE TYPE5 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '여성가족정책국' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+   AND   TYPE51 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '여성가족정책과' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+ ) 
+ ); 
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'TPYE5' cannot be null
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1016)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2537)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1564)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1485)
+	at risk.demon.getName.insertName(getName.java:236)
+	at risk.demon.getName.main(getName.java:26)
+
+[2019년04월09일 14시10분09초] 
+ SQLException
+Oracle Error Code [1242]
+SQLState          [21000]
+<<-----------------------------------------------------------------------
+ INSERT INTO DAEGU_ASP.SB_SEQ_MAP 
+ (SB_SEQ, TPYE5, TYPE51, TYPE3, TYPE31)  
+ VALUES ( 
+ 2312607, 
+ (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '여성가족청소년국' AND IC_CODE > 0 AND IC_USEYN = 'Y'), 
+ (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '여성가족정책과' AND IC_CODE > 0 AND IC_USEYN = 'Y'), 
+ (SELECT TYPE3 FROM KEYWORD_MAP_MANUAL  
+   WHERE TYPE5 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '여성가족청소년국' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+   AND   TYPE51 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '여성가족정책과' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+ ), 
+ (SELECT TYPE31 FROM KEYWORD_MAP_MANUAL  
+   WHERE TYPE5 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 5 AND IC_NAME = '여성가족청소년국' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+   AND   TYPE51 = (SELECT IC_CODE FROM ISSUE_CODE WHERE IC_TYPE = 51 AND IC_NAME = '여성가족정책과' AND IC_CODE > 0 AND IC_USEYN = 'Y') 
+ ) 
+ ); 
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Subquery returns more than 1 row
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2537)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1564)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1485)
+	at risk.demon.getName.insertName(getName.java:236)
+	at risk.demon.getName.main(getName.java:26)
+

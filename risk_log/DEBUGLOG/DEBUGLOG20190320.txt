@@ -1,0 +1,2840 @@
+[2019년03월20일 09시37분24초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 09시37분24초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 09시37분24초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 09시37분24초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3780579                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 09시37분24초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3780579                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 09시37분24초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 09시37분24초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3780579                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 09시37분24초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 09시50분05초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 09시50분06초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3780578  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 09시58분47초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 09시58분47초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       M.D_SEQ     ,                                    
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3780578  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 10시00분37초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시00분39초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시00분44초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시01분08초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시05분20초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시13분07초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시13분14초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시23분33초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 10시23분33초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-19 00:00:00' AND '2019-03-19 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-19 00:00:00' AND '2019-03-19 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 10시23분33초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3772426 AND 3779313                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 10시23분33초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3772426 AND 3779313                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 10시23분33초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 10시23분33초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3772426 AND 3779313                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 10시23분33초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 10시23분36초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시23분56초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시32분39초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시32분41초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시32분42초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 10시32분43초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 11시16분22초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 11시16분22초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 11시16분22초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 11시16분22초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3781366                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 11시16분22초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3781366                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 11시16분22초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 11시16분22초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3781366                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 11시16분22초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 11시32분19초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 11시32분28초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 11시32분28초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 11시32분28초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 11시32분28초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3781548                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 11시32분28초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3781548                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 11시32분28초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 11시32분28초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3781548                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 11시32분28초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 13시25분31초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 13시25분31초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 13시25분31초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 13시25분31초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782439                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 13시25분31초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782439                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 13시25분31초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 13시25분31초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782439                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 13시25분31초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 13시25분40초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 13시25분40초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3782439)	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3782439  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 13시27분21초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 13시27분21초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3782439) AS D_SEQ	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3782439  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 13시27분45초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 13시28분39초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 13시28분40초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-19 00:00:00' AND '2019-03-19 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-19 00:00:00' AND '2019-03-19 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 13시28분40초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3772426 AND 3779313                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 13시28분40초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3772426 AND 3779313                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 13시28분40초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 13시28분40초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3772426 AND 3779313                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 13시28분40초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 13시28분53초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 13시29분04초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                       
+       M.L_ALPHA       ,                                   
+       M.USER_ID       ,                                   
+       M.D_SEQ       ,                                   
+       M.USER_NICK                                        
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ IN (3779313,3779306)  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 13시29분11초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 13시29분13초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 13시30분00초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 13시30분01초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 13시30분01초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 13시30분02초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 13시30분02초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782459                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 13시30분02초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782459                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 13시30분02초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 13시30분02초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782459                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 13시30분02초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 13시30분06초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 13시30분06초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782459                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.L_ALPHA = 'KOR'                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 13시30분07초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782459                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 13시30분07초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 13시30분07초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782459                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.L_ALPHA = 'KOR'                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 60,20                                 
+ )A      
+
+[2019년03월20일 13시30분07초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 13시30분11초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 13시30분11초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3782260) AS D_SEQ	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3782260  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 13시30분28초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 13시31분39초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 14시04분56초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 14시04분56초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 14시04분56초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 14시04분56초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782765                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 14시04분56초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782765                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 14시04분56초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 14시04분56초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3782765                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 14시04분56초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 14시40분22초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 14시40분23초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-19 00:00:00' AND '2019-03-19 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-19 00:00:00' AND '2019-03-19 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 14시40분23초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3772426 AND 3779313                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 14시40분23초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3772426 AND 3779313                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 14시40분23초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 14시40분23초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3772426 AND 3779313                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 14시40분23초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 14시40분25초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 14시40분25초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3779313) AS D_SEQ	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3779313  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 14시48분30초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 14시48분30초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3779313) AS D_SEQ	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3779313  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 14시49분30초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 14시49분30초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3779313) AS D_SEQ	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3779313  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 14시50분20초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 14시50분20초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3779313) AS D_SEQ	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3779313  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 14시51분56초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 14시55분14초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 14시55분14초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 14시55분14초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 14시55분14초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3783233                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 14시55분14초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3783233                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 14시55분14초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 14시55분14초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3783233                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 14시55분14초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 14시55분16초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 14시55분16초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3783233) AS D_SEQ	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3783233  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 14시55분55초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 14시55분55초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3783233) AS D_SEQ	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3783233  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 16시47분11초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 16시47분11초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 16시47분11초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 16시47분11초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784321                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 16시47분11초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784321                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 16시47분11초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 16시47분11초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784321                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 16시47분11초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 16시47분15초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시34분32초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 17시34분32초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 17시34분33초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 17시34분33초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784731                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 17시34분33초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784731                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 17시34분33초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 17시34분34초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784731                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 17시34분34초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 17시34분36초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시34분36초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3784731) AS D_SEQ	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3784731  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 17시34분44초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시34분44초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3784731) AS D_SEQ	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3784731  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 17시34분49초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시34분49초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                     
+       M.L_ALPHA       ,                                    
+       M.USER_ID       ,                                    
+       M.USER_NICK     ,                                    
+       M.BLOG_VISIT_COUNT     ,                                    
+       M.CAFE_NAME     ,                                    
+       (SELECT IFNULL(D_SEQ, '') FROM MAP_META_SEQ WHERE MD_SEQ = 3784731) AS D_SEQ	, 
+       M.CAFE_MEMBER_COUNT                                         
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ = 3784731  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 17시35분24초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시35분32초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시35분34초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 17시35분34초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 17시35분35초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 17시35분35초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784751                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 17시35분35초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784751                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 17시35분35초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 17시35분35초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784751                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 17시35분35초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 17시35분42초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시36분54초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시38분20초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시38분46초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시39분26초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시40분51초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 17시40분51초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 17시40분53초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 17시40분53초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784806                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 17시40분53초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784806                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 17시40분53초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 17시40분54초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784806                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 17시40분54초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 17시43분56초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 17시43분56초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2019년03월20일 17시43분58초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2019-03-20 00:00:00' AND '2019-03-20 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2019년03월20일 17시43분58초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784815                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2019년03월20일 17시43분58초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784815                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2019년03월20일 17시43분58초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2019년03월20일 17시43분58초] 
+SELECT A.*    											
+     , FN_GET_KEYWORD(A.MD_SEQ) AS K_VALUE  					
+     , FN_GET_COMFIRM(2,A.MD_SEQ) AS COMFIRM  	
+, '' AS T_FOLLOWERS
+  FROM (  												
+                 SELECT 					                                     
+                        A.MD_SEQ         ,                                    
+                        A.SG_SEQ,                                           
+                        A.S_SEQ        ,                                    
+                        A.MD_SITE_NAME       ,                                    
+                        A.MD_MENU_NAME       ,                                    
+                        A.MD_TYPE       ,                                    
+                        DATE_FORMAT(A.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE, 						        
+                        A.MD_SAME_COUNT  ,                                    
+                        A.MD_PSEQ        ,                                    
+                        A.MD_TITLE       ,                                    
+                        A.MD_URL         ,                                    
+                        A.ISSUE_CHECK,                                 
+                        DATE_FORMAT(A.I_DELDATE,'%Y-%m-%d %H:%i:%s') AS I_DELDATE,  
+                        A.M_SEQ,   
+                        (SELECT M_NAME FROM MEMBER WHERE M_SEQ =A.M_SEQ)AS M_NAME, 
+                        A.MD_IMG  ,                                           
+                        B.MD_CONTENT                                             
+                   FROM (                                                    
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ ,B.S_SEQ ,B.MD_SITE_NAME ,B.MD_MENU_NAME ,B.MD_TYPE ,B.MD_DATE ,B.MD_IMG  
+                                ,B.MD_SAME_COUNT ,B.MD_PSEQ ,B.MD_TITLE ,B.MD_URL , SG_SEQ, ISSUE_CHECK, I_DELDATE, M_SEQ   
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 3779317 AND 3784815                            
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP   IN ( 1,2,3,4,5,6,7,8,9,10,12,19,20,15,16,17,11,13,14 )               
+                                 AND A.SG_SEQ IN (42,17,18,25,19,45,47,49)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+                        ) A ,                                                
+                        DATA B                                       
+                  WHERE                                   
+                        A.MD_SEQ = B.MD_SEQ                                    
+         	     ORDER BY MD_DATE DESC                                                 
+         		 LIMIT 0,20                                 
+ )A      
+
+[2019년03월20일 17시43분58초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2019년03월20일 17시44분02초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시44분55초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시45분21초] 
+SELECT M.MD_SEQ         ,                                   
+       M.S_SEQ        ,                                   
+       I.SG_SEQ        ,                                   
+       M.MD_SITE_NAME       ,                                   
+       M.MD_MENU_NAME       ,                                   
+       M.MD_TYPE       ,                                   
+       DATE_FORMAT(M.MD_DATE,'%Y-%m-%d %H:%i:%s') AS MD_DATE,          
+       M.MD_SAME_COUNT    ,                                   
+       M.MD_PSEQ        ,                                   
+       M.MD_TITLE      ,                                   
+       M.MD_URL        ,                                   
+       FN_GET_KEYWORD(M.MD_SEQ) AS K_VALUE,                  
+       M.MD_IMG        ,                                   
+       D.MD_CONTENT    ,                                       
+       M.L_ALPHA       ,                                   
+       M.USER_ID       ,                                   
+       M.D_SEQ       ,                                   
+       M.USER_NICK                                        
+  FROM META M, DATA D,(SELECT  MD_SEQ, SG_SEQ FROM IDX WHERE MD_SEQ IN (3784815,3784813)  GROUP BY MD_SEQ) I 
+ WHERE                           
+                             
+   	 M.MD_SEQ = D.MD_SEQ                         
+   	 AND M.MD_SEQ = I.MD_SEQ                          
+ ORDER BY M.MD_DATE ASC                                    
+
+[2019년03월20일 17시45분25초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+
+[2019년03월20일 17시45분47초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_USEYN='Y' ORDER BY IC_TYPE, IC_ORDER ASC 
+

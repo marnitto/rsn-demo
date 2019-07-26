@@ -1,0 +1,1818 @@
+[2018년03월23일 15시34분52초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A,                   	
+       MEMBER_GROUP B				
+ WHERE A.M_SEQ   = 2 
+       AND B.MG_SEQ   = 9 
+
+[2018년03월23일 15시34분58초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2018년03월23일 15시34분58초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-22 00:00:00' AND '2018-03-22 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 15시34분59초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11,12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2018년03월23일 15시34분59초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11,12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2018년03월23일 15시34분59초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 2,3,4,5,6,7,8,9,10,1,11,12 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2018년03월23일 15시34분59초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2018년03월23일 15시35분02초] 
+SELECT AS_SEQ                                                      
+     , AS_TITLE                                                    
+     , AS_CHK                                                      
+     , AS_TYPE                                                     
+     , AS_INFOTYPE                                                 
+     , K_XPS                                                       
+     , K_YPS                                                     
+     , SG_SEQS                                                     
+     , SD_GSNS                                                     
+     , MT_TYPES                                                    
+     , AS_SMS_KEY                                                  
+     , AS_SMS_EXKEY                                                
+     , AS_SMS_TIME                                                 
+     , AS_INTERVAL                                                 
+     , AS_LAST_SENDTIME                                            
+     , AS_SMS_DAY                                                  
+     , AS_SMS_STIME                                                
+     , AS_SMS_ETIME                                                
+     , AS_SAME_CNT                                                 
+     , AS_SAME_PERCENT                                             
+     , AS_LATER_SEND                                         	  
+     , IFNULL(AS_MONITOR_USE,'N') AS AS_MONITOR_USE                
+     , AS_MONITOR_MAX_M                                         	  
+     , AS_MONITOR_REPEAT_M                                         
+     , AS_MONITOR_INSPECTOR                                        
+     , AS_SAME_OP                                                 
+     , AS_LAST_NUM                                         	  	  
+  FROM ALIMI_SETTING                                               
+ ORDER BY AS_SEQ DESC                                              
+ LIMIT 0,10                                   
+
+[2018년03월23일 15시35분02초] 
+SELECT A.AS_SEQ	                    
+     , C.AB_SEQ                      
+     , C.AB_NAME                     
+     , C.AB_DEPT                     
+     , C.AB_POSITION                 
+     , C.AB_MOBILE                   
+     , C.AB_MAIL                     
+     , NULL AS K_XP                  
+     , NULL AS SG_SEQ                
+     , NULL AS MT_TYPE               
+     , NULL AS AB_ISSUE_DEPT         
+     , 0 AS AB_ISSUE_RECEIVECHK      
+     , C.AB_REPORT_DAY_CHK           
+     , C.AB_REPORT_WEEK_CHK          
+     , NULL AS AB_SMS_LIMIT          
+  FROM ALIMI_SETTING  A              
+     , ALIMI_RECEIVER B              
+     , ADDRESS_BOOK   C              
+ WHERE A.AS_SEQ = B.AS_SEQ	        
+   AND B.AB_SEQ = C.AB_SEQ           
+ORDER BY A.AS_SEQ ASC	                          
+
+[2018년03월23일 16시20분30초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+   AND K_XP IN (2,3,4,5,6,7,8,9,10,1,11,12)  
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 16시20분30초] 
+SELECT *                               
+FROM GMAIL_GROUP                               
+WHERE 1 = 1                                
+
+[2018년03월23일 16시20분40초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE 1=1		                
+   AND K_XP IN (12)  
+   AND K_ZP = 0  
+   AND K_YP > 0  
+   AND K_TYPE = 1  
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 16시20분49초] 
+UPDATE ALIMI_SETTING                  
+SET  SD_GSNS = '233'                               
+WHERE AS_SEQ =                                 
+
+[2018년03월23일 16시20분58초] 
+SELECT MD_SEQ FROM META ORDER BY MD_SEQ DESC LIMIT 1 
+
+[2018년03월23일 16시20분58초] 
+ INSERT INTO ALIMI_SETTING      
+ 	(                          
+ 	AS_TITLE,                  
+ 	AS_CHK,                    
+ 	AS_TYPE,                   
+ 	AS_INFOTYPE,                   
+ 	K_XPS,                     
+ 	K_YPS,                   
+ 	SG_SEQS,                   
+ 	SD_GSNS,                   
+ 	MT_TYPES,                  
+ 	AS_SMS_KEY,                
+ 	AS_SMS_EXKEY,              
+ 	AS_SMS_TIME,              
+ 	AS_INTERVAL,               
+ 	AS_LAST_SENDTIME,           
+ 	AS_LAST_NUM		           
+ 	,AS_SMS_DAY		           
+ 	,AS_SMS_STIME		           
+ 	,AS_SMS_ETIME		           
+ 	,AS_SAME_OP			           
+ 	,AS_SAME_CNT		           
+ 	,AS_SAME_PERCENT		           
+ 	,AS_LATER_SEND		       
+ 	,AS_MONITOR_USE		       
+ 	,AS_MONITOR_MAX_M		   
+ 	,AS_MONITOR_REPEAT_M	   
+ 	,AS_MONITOR_INSPECTOR	   
+ 	,AS_MONITOR_SEND_CNT	   
+ 	)                          
+ VALUES                         
+ 	(                          
+ 	'[알리미]테스트',                 
+ 	1,                   
+ 	3,                  
+ 	1,                  
+ 	'12',                    
+ 	'1',                    
+ 	'',               
+ 	'233',               
+ 	'1',                  
+ 	'',                 
+ 	'',             
+ 	'1,2',             
+ 	0,              
+ 	NOW(),              
+ 	              
+ 	,''             
+ 	,''             
+ 	,''             
+ 	,1             
+ 	,0             
+ 	,0             
+ 	,'N'            
+ 	,'N'           
+ 	,'0'         
+ 	,'0'      
+ 	,''		
+ 	,'0'      
+ 	)                          
+
+[2018년03월23일 16시20분58초] 
+SELECT AS_SEQ                                                      
+     , AS_TITLE                                                    
+     , AS_CHK                                                      
+     , AS_TYPE                                                     
+     , AS_INFOTYPE                                                 
+     , K_XPS                                                       
+     , K_YPS                                                     
+     , SG_SEQS                                                     
+     , SD_GSNS                                                     
+     , MT_TYPES                                                    
+     , AS_SMS_KEY                                                  
+     , AS_SMS_EXKEY                                                
+     , AS_SMS_TIME                                                 
+     , AS_INTERVAL                                                 
+     , AS_LAST_SENDTIME                                            
+     , AS_SMS_DAY                                                  
+     , AS_SMS_STIME                                                
+     , AS_SMS_ETIME                                                
+     , AS_SAME_CNT                                                 
+     , AS_SAME_PERCENT                                             
+     , AS_LATER_SEND                                         	  
+     , IFNULL(AS_MONITOR_USE,'N') AS AS_MONITOR_USE                
+     , AS_MONITOR_MAX_M                                         	  
+     , AS_MONITOR_REPEAT_M                                         
+     , AS_MONITOR_INSPECTOR                                        
+     , AS_SAME_OP                                                 
+     , AS_LAST_NUM                                         	  	  
+  FROM ALIMI_SETTING                                               
+ ORDER BY AS_SEQ DESC                                              
+ LIMIT 0,10                                   
+
+[2018년03월23일 16시20분58초] 
+SELECT A.AS_SEQ	                    
+     , C.AB_SEQ                      
+     , C.AB_NAME                     
+     , C.AB_DEPT                     
+     , C.AB_POSITION                 
+     , C.AB_MOBILE                   
+     , C.AB_MAIL                     
+     , NULL AS K_XP                  
+     , NULL AS SG_SEQ                
+     , NULL AS MT_TYPE               
+     , NULL AS AB_ISSUE_DEPT         
+     , 0 AS AB_ISSUE_RECEIVECHK      
+     , C.AB_REPORT_DAY_CHK           
+     , C.AB_REPORT_WEEK_CHK          
+     , NULL AS AB_SMS_LIMIT          
+  FROM ALIMI_SETTING  A              
+     , ALIMI_RECEIVER B              
+     , ADDRESS_BOOK   C              
+ WHERE A.AS_SEQ = B.AS_SEQ	        
+   AND B.AB_SEQ = C.AB_SEQ           
+ORDER BY A.AS_SEQ ASC	                          
+
+[2018년03월23일 16시21분58초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A,                   	
+       MEMBER_GROUP B				
+ WHERE A.M_SEQ   = 2 
+       AND B.MG_SEQ   = 9 
+
+[2018년03월23일 16시42분47초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2018년03월23일 16시42분47초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-22 00:00:00' AND '2018-03-22 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 16시42분47초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11,12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2018년03월23일 16시42분47초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11,12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2018년03월23일 16시42분47초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 2,3,4,5,6,7,8,9,10,1,11,12 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2018년03월23일 16시42분47초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2018년03월23일 16시42분54초] 
+SELECT AS_SEQ                                                      
+     , AS_TITLE                                                    
+     , AS_CHK                                                      
+     , AS_TYPE                                                     
+     , AS_INFOTYPE                                                 
+     , K_XPS                                                       
+     , K_YPS                                                     
+     , SG_SEQS                                                     
+     , SD_GSNS                                                     
+     , MT_TYPES                                                    
+     , AS_SMS_KEY                                                  
+     , AS_SMS_EXKEY                                                
+     , AS_SMS_TIME                                                 
+     , AS_INTERVAL                                                 
+     , AS_LAST_SENDTIME                                            
+     , AS_SMS_DAY                                                  
+     , AS_SMS_STIME                                                
+     , AS_SMS_ETIME                                                
+     , AS_SAME_CNT                                                 
+     , AS_SAME_PERCENT                                             
+     , AS_LATER_SEND                                         	  
+     , IFNULL(AS_MONITOR_USE,'N') AS AS_MONITOR_USE                
+     , AS_MONITOR_MAX_M                                         	  
+     , AS_MONITOR_REPEAT_M                                         
+     , AS_MONITOR_INSPECTOR                                        
+     , AS_SAME_OP                                                 
+     , AS_LAST_NUM                                         	  	  
+  FROM ALIMI_SETTING                                               
+ ORDER BY AS_SEQ DESC                                              
+ LIMIT 0,10                                   
+
+[2018년03월23일 16시42분54초] 
+SELECT A.AS_SEQ	                    
+     , C.AB_SEQ                      
+     , C.AB_NAME                     
+     , C.AB_DEPT                     
+     , C.AB_POSITION                 
+     , C.AB_MOBILE                   
+     , C.AB_MAIL                     
+     , NULL AS K_XP                  
+     , NULL AS SG_SEQ                
+     , NULL AS MT_TYPE               
+     , NULL AS AB_ISSUE_DEPT         
+     , 0 AS AB_ISSUE_RECEIVECHK      
+     , C.AB_REPORT_DAY_CHK           
+     , C.AB_REPORT_WEEK_CHK          
+     , NULL AS AB_SMS_LIMIT          
+  FROM ALIMI_SETTING  A              
+     , ALIMI_RECEIVER B              
+     , ADDRESS_BOOK   C              
+ WHERE A.AS_SEQ = B.AS_SEQ	        
+   AND B.AB_SEQ = C.AB_SEQ           
+ORDER BY A.AS_SEQ ASC	                          
+
+[2018년03월23일 16시42분55초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+   AND K_XP IN (2,3,4,5,6,7,8,9,10,1,11,12)  
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 16시42분55초] 
+SELECT *                               
+FROM GMAIL_GROUP                               
+WHERE 1 = 1                                
+
+[2018년03월23일 16시43분11초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE 1=1		                
+   AND K_XP IN (12)  
+   AND K_ZP = 0  
+   AND K_YP > 0  
+   AND K_TYPE = 1  
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 16시43분20초] 
+UPDATE ALIMI_SETTING                  
+SET  SD_GSNS = '233'                               
+WHERE AS_SEQ =                                 
+
+[2018년03월23일 16시43분52초] 
+SELECT MD_SEQ FROM META ORDER BY MD_SEQ DESC LIMIT 1 
+
+[2018년03월23일 16시43분52초] 
+ INSERT INTO ALIMI_SETTING      
+ 	(                          
+ 	AS_TITLE,                  
+ 	AS_CHK,                    
+ 	AS_TYPE,                   
+ 	AS_INFOTYPE,                   
+ 	K_XPS,                     
+ 	K_YPS,                   
+ 	SG_SEQS,                   
+ 	SD_GSNS,                   
+ 	MT_TYPES,                  
+ 	AS_SMS_KEY,                
+ 	AS_SMS_EXKEY,              
+ 	AS_SMS_TIME,              
+ 	AS_INTERVAL,               
+ 	AS_LAST_SENDTIME,           
+ 	AS_LAST_NUM		           
+ 	,AS_SMS_DAY		           
+ 	,AS_SMS_STIME		           
+ 	,AS_SMS_ETIME		           
+ 	,AS_SAME_OP			           
+ 	,AS_SAME_CNT		           
+ 	,AS_SAME_PERCENT		           
+ 	,AS_LATER_SEND		       
+ 	,AS_MONITOR_USE		       
+ 	,AS_MONITOR_MAX_M		   
+ 	,AS_MONITOR_REPEAT_M	   
+ 	,AS_MONITOR_INSPECTOR	   
+ 	,AS_MONITOR_SEND_CNT	   
+ 	)                          
+ VALUES                         
+ 	(                          
+ 	'[알리미]테스트',                 
+ 	1,                   
+ 	3,                  
+ 	1,                  
+ 	'12',                    
+ 	'1',                    
+ 	'',               
+ 	'233',               
+ 	'1',                  
+ 	'',                 
+ 	'',             
+ 	'1,2',             
+ 	0,              
+ 	NOW(),              
+ 	              
+ 	,''             
+ 	,''             
+ 	,''             
+ 	,1             
+ 	,0             
+ 	,0             
+ 	,'N'            
+ 	,'N'           
+ 	,'0'         
+ 	,'0'      
+ 	,''		
+ 	,'0'      
+ 	)                          
+
+[2018년03월23일 16시43분52초] 
+SELECT AS_SEQ                                                      
+     , AS_TITLE                                                    
+     , AS_CHK                                                      
+     , AS_TYPE                                                     
+     , AS_INFOTYPE                                                 
+     , K_XPS                                                       
+     , K_YPS                                                     
+     , SG_SEQS                                                     
+     , SD_GSNS                                                     
+     , MT_TYPES                                                    
+     , AS_SMS_KEY                                                  
+     , AS_SMS_EXKEY                                                
+     , AS_SMS_TIME                                                 
+     , AS_INTERVAL                                                 
+     , AS_LAST_SENDTIME                                            
+     , AS_SMS_DAY                                                  
+     , AS_SMS_STIME                                                
+     , AS_SMS_ETIME                                                
+     , AS_SAME_CNT                                                 
+     , AS_SAME_PERCENT                                             
+     , AS_LATER_SEND                                         	  
+     , IFNULL(AS_MONITOR_USE,'N') AS AS_MONITOR_USE                
+     , AS_MONITOR_MAX_M                                         	  
+     , AS_MONITOR_REPEAT_M                                         
+     , AS_MONITOR_INSPECTOR                                        
+     , AS_SAME_OP                                                 
+     , AS_LAST_NUM                                         	  	  
+  FROM ALIMI_SETTING                                               
+ ORDER BY AS_SEQ DESC                                              
+ LIMIT 0,10                                   
+
+[2018년03월23일 16시43분52초] 
+SELECT A.AS_SEQ	                    
+     , C.AB_SEQ                      
+     , C.AB_NAME                     
+     , C.AB_DEPT                     
+     , C.AB_POSITION                 
+     , C.AB_MOBILE                   
+     , C.AB_MAIL                     
+     , NULL AS K_XP                  
+     , NULL AS SG_SEQ                
+     , NULL AS MT_TYPE               
+     , NULL AS AB_ISSUE_DEPT         
+     , 0 AS AB_ISSUE_RECEIVECHK      
+     , C.AB_REPORT_DAY_CHK           
+     , C.AB_REPORT_WEEK_CHK          
+     , NULL AS AB_SMS_LIMIT          
+  FROM ALIMI_SETTING  A              
+     , ALIMI_RECEIVER B              
+     , ADDRESS_BOOK   C              
+ WHERE A.AS_SEQ = B.AS_SEQ	        
+   AND B.AB_SEQ = C.AB_SEQ           
+ORDER BY A.AS_SEQ ASC	                          
+
+[2018년03월23일 16시46분49초] 
+SELECT AS_SEQ                                                      
+     , AS_TITLE                                                    
+     , AS_CHK                                                      
+     , AS_TYPE                                                     
+     , AS_INFOTYPE                                                 
+     , K_XPS                                                       
+     , K_YPS                                                     
+     , SG_SEQS                                                     
+     , SD_GSNS                                                     
+     , MT_TYPES                                                    
+     , AS_SMS_KEY                                                  
+     , AS_SMS_EXKEY                                                
+     , AS_SMS_TIME                                                 
+     , AS_INTERVAL                                                 
+     , AS_LAST_SENDTIME                                            
+     , AS_SMS_DAY                                                  
+     , AS_SMS_STIME                                                
+     , AS_SMS_ETIME                                                
+     , AS_SAME_CNT                                                 
+     , AS_SAME_PERCENT                                             
+     , AS_LATER_SEND                                         	  
+     , IFNULL(AS_MONITOR_USE,'N') AS AS_MONITOR_USE                
+     , AS_MONITOR_MAX_M                                         	  
+     , AS_MONITOR_REPEAT_M                                         
+     , AS_MONITOR_INSPECTOR                                        
+     , AS_SAME_OP                                                 
+     , AS_LAST_NUM                                         	  	  
+  FROM ALIMI_SETTING                                               
+ ORDER BY AS_SEQ DESC                                              
+ LIMIT 0,10                                   
+
+[2018년03월23일 16시46분49초] 
+SELECT A.AS_SEQ	                    
+     , C.AB_SEQ                      
+     , C.AB_NAME                     
+     , C.AB_DEPT                     
+     , C.AB_POSITION                 
+     , C.AB_MOBILE                   
+     , C.AB_MAIL                     
+     , NULL AS K_XP                  
+     , NULL AS SG_SEQ                
+     , NULL AS MT_TYPE               
+     , NULL AS AB_ISSUE_DEPT         
+     , 0 AS AB_ISSUE_RECEIVECHK      
+     , C.AB_REPORT_DAY_CHK           
+     , C.AB_REPORT_WEEK_CHK          
+     , NULL AS AB_SMS_LIMIT          
+  FROM ALIMI_SETTING  A              
+     , ALIMI_RECEIVER B              
+     , ADDRESS_BOOK   C              
+ WHERE A.AS_SEQ = B.AS_SEQ	        
+   AND B.AB_SEQ = C.AB_SEQ           
+ORDER BY A.AS_SEQ ASC	                          
+
+[2018년03월23일 16시46분56초] 
+SELECT A.AB_SEQ 
+FROM ALIMI_RECEIVER A , ADDRESS_BOOK B 
+WHERE A.AB_SEQ = B.AB_SEQ
+      AND A.AS_SEQ = 1
+
+[2018년03월23일 16시46분56초] 
+SELECT AS_SEQ                                                      
+     , AS_TITLE                                                    
+     , AS_CHK                                                      
+     , AS_TYPE                                                     
+     , AS_INFOTYPE                                                 
+     , K_XPS                                                       
+     , K_YPS                                                     
+     , SG_SEQS                                                     
+     , SD_GSNS                                                     
+     , MT_TYPES                                                    
+     , AS_SMS_KEY                                                  
+     , AS_SMS_EXKEY                                                
+     , AS_SMS_TIME                                                 
+     , AS_INTERVAL                                                 
+     , AS_LAST_SENDTIME                                            
+     , AS_SMS_DAY                                                  
+     , AS_SMS_STIME                                                
+     , AS_SMS_ETIME                                                
+     , AS_SAME_CNT                                                 
+     , AS_SAME_PERCENT                                             
+     , AS_LATER_SEND                                         	  
+     , IFNULL(AS_MONITOR_USE,'N') AS AS_MONITOR_USE                
+     , AS_MONITOR_MAX_M                                         	  
+     , AS_MONITOR_REPEAT_M                                         
+     , AS_MONITOR_INSPECTOR                                        
+     , AS_SAME_OP                                                 
+     , AS_LAST_NUM                                         	  	  
+  FROM ALIMI_SETTING                                               
+ WHERE AS_SEQ = 1                                        
+
+[2018년03월23일 16시46분56초] 
+SELECT A.AS_SEQ	                    
+     , C.AB_SEQ                      
+     , C.AB_NAME                     
+     , C.AB_DEPT                     
+     , C.AB_POSITION                 
+     , C.AB_MOBILE                   
+     , C.AB_MAIL                     
+     , NULL AS K_XP                  
+     , NULL AS SG_SEQ                
+     , NULL AS MT_TYPE               
+     , NULL AS AB_ISSUE_DEPT         
+     , 0 AS AB_ISSUE_RECEIVECHK      
+     , C.AB_REPORT_DAY_CHK           
+     , C.AB_REPORT_WEEK_CHK          
+     , NULL AS AB_SMS_LIMIT          
+  FROM ALIMI_SETTING  A              
+     , ALIMI_RECEIVER B              
+     , ADDRESS_BOOK   C              
+ WHERE A.AS_SEQ = B.AS_SEQ	        
+   AND B.AB_SEQ = C.AB_SEQ           
+AND A.AS_SEQ = 1 
+ORDER BY A.AS_SEQ ASC	                          
+
+[2018년03월23일 16시46분56초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+   AND K_XP IN (2,3,4,5,6,7,8,9,10,1,11,12)  
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 16시46분56초] 
+SELECT *                               
+FROM GMAIL_GROUP                               
+WHERE 1 = 1                                
+
+[2018년03월23일 16시46분56초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE 1=1		                
+   AND K_XP IN (12)  
+   AND K_ZP = 0  
+   AND K_YP > 0  
+   AND K_TYPE = 1  
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 16시46분56초] 
+SELECT AS_SEQ                                                      
+     , AS_TITLE                                                    
+     , AS_CHK                                                      
+     , AS_TYPE                                                     
+     , AS_INFOTYPE                                                 
+     , K_XPS                                                       
+     , K_YPS                                                     
+     , SG_SEQS                                                     
+     , SD_GSNS                                                     
+     , MT_TYPES                                                    
+     , AS_SMS_KEY                                                  
+     , AS_SMS_EXKEY                                                
+     , AS_SMS_TIME                                                 
+     , AS_INTERVAL                                                 
+     , AS_LAST_SENDTIME                                            
+     , AS_SMS_DAY                                                  
+     , AS_SMS_STIME                                                
+     , AS_SMS_ETIME                                                
+     , AS_SAME_CNT                                                 
+     , AS_SAME_PERCENT                                             
+     , AS_LATER_SEND                                         	  
+     , IFNULL(AS_MONITOR_USE,'N') AS AS_MONITOR_USE                
+     , AS_MONITOR_MAX_M                                         	  
+     , AS_MONITOR_REPEAT_M                                         
+     , AS_MONITOR_INSPECTOR                                        
+     , AS_SAME_OP                                                 
+     , AS_LAST_NUM                                         	  	  
+  FROM ALIMI_SETTING                                               
+ WHERE AS_SEQ = 1                                        
+
+[2018년03월23일 16시46분56초] 
+SELECT A.AS_SEQ	                    
+     , C.AB_SEQ                      
+     , C.AB_NAME                     
+     , C.AB_DEPT                     
+     , C.AB_POSITION                 
+     , C.AB_MOBILE                   
+     , C.AB_MAIL                     
+     , NULL AS K_XP                  
+     , NULL AS SG_SEQ                
+     , NULL AS MT_TYPE               
+     , NULL AS AB_ISSUE_DEPT         
+     , 0 AS AB_ISSUE_RECEIVECHK      
+     , C.AB_REPORT_DAY_CHK           
+     , C.AB_REPORT_WEEK_CHK          
+     , NULL AS AB_SMS_LIMIT          
+  FROM ALIMI_SETTING  A              
+     , ALIMI_RECEIVER B              
+     , ADDRESS_BOOK   C              
+ WHERE A.AS_SEQ = B.AS_SEQ	        
+   AND B.AB_SEQ = C.AB_SEQ           
+AND A.AS_SEQ = 1 
+ORDER BY A.AS_SEQ ASC	                          
+
+[2018년03월23일 16시47분03초] 
+UPDATE ALIMI_SETTING                                     
+SET                                                  
+	AS_TITLE = '[알리미]테스트',                                
+	AS_CHK = 1,                                    
+	AS_TYPE = 3,                                  
+	AS_INFOTYPE = 1,                                  
+	K_XPS = '12',                                      
+	K_YPS = '1',                                      
+	SG_SEQS = '',                                  
+	SD_GSNS = '233',                                  
+	MT_TYPES = '1',                                
+	AS_SMS_KEY = '',                            
+	AS_SMS_EXKEY = '',                        
+	AS_SMS_TIME = '1,2',                          
+	AS_INTERVAL = 0,                          
+	AS_LAST_SENDTIME = NOW(),                          
+	AS_LAST_NUM = 0                          
+	,AS_SMS_DAY = ''                          
+	,AS_SMS_STIME = ''                          
+	,AS_SMS_ETIME = ''                          
+	,AS_SAME_OP = 1                          
+	,AS_SAME_CNT = 0                          
+	,AS_SAME_PERCENT = 0                          
+	,AS_LATER_SEND = 'N'                   
+	,AS_MONITOR_USE = 'N'                 
+	,AS_MONITOR_MAX_M = 0               
+	,AS_MONITOR_REPEAT_M = 0         
+	,AS_MONITOR_INSPECTOR = ''     
+	,AS_MONITOR_SEND_CNT = '0'       
+WHERE AS_SEQ = 1                               
+
+[2018년03월23일 16시47분03초] 
+DELETE FROM ALIMI_RECEIVER 
+WHERE AS_SEQ = 1 
+
+[2018년03월23일 16시47분03초] 
+INSERT INTO ALIMI_RECEIVER(AS_SEQ,AB_SEQ) 
+		  VALUES(1,5 ) 
+
+[2018년03월23일 16시47분04초] 
+SELECT AS_SEQ                                                      
+     , AS_TITLE                                                    
+     , AS_CHK                                                      
+     , AS_TYPE                                                     
+     , AS_INFOTYPE                                                 
+     , K_XPS                                                       
+     , K_YPS                                                     
+     , SG_SEQS                                                     
+     , SD_GSNS                                                     
+     , MT_TYPES                                                    
+     , AS_SMS_KEY                                                  
+     , AS_SMS_EXKEY                                                
+     , AS_SMS_TIME                                                 
+     , AS_INTERVAL                                                 
+     , AS_LAST_SENDTIME                                            
+     , AS_SMS_DAY                                                  
+     , AS_SMS_STIME                                                
+     , AS_SMS_ETIME                                                
+     , AS_SAME_CNT                                                 
+     , AS_SAME_PERCENT                                             
+     , AS_LATER_SEND                                         	  
+     , IFNULL(AS_MONITOR_USE,'N') AS AS_MONITOR_USE                
+     , AS_MONITOR_MAX_M                                         	  
+     , AS_MONITOR_REPEAT_M                                         
+     , AS_MONITOR_INSPECTOR                                        
+     , AS_SAME_OP                                                 
+     , AS_LAST_NUM                                         	  	  
+  FROM ALIMI_SETTING                                               
+ ORDER BY AS_SEQ DESC                                              
+ LIMIT 0,10                                   
+
+[2018년03월23일 16시47분04초] 
+SELECT A.AS_SEQ	                    
+     , C.AB_SEQ                      
+     , C.AB_NAME                     
+     , C.AB_DEPT                     
+     , C.AB_POSITION                 
+     , C.AB_MOBILE                   
+     , C.AB_MAIL                     
+     , NULL AS K_XP                  
+     , NULL AS SG_SEQ                
+     , NULL AS MT_TYPE               
+     , NULL AS AB_ISSUE_DEPT         
+     , 0 AS AB_ISSUE_RECEIVECHK      
+     , C.AB_REPORT_DAY_CHK           
+     , C.AB_REPORT_WEEK_CHK          
+     , NULL AS AB_SMS_LIMIT          
+  FROM ALIMI_SETTING  A              
+     , ALIMI_RECEIVER B              
+     , ADDRESS_BOOK   C              
+ WHERE A.AS_SEQ = B.AS_SEQ	        
+   AND B.AB_SEQ = C.AB_SEQ           
+ORDER BY A.AS_SEQ ASC	                          
+
+[2018년03월23일 16시47분06초] 
+SELECT AS_SEQ                                                      
+     , AS_TITLE                                                    
+     , AS_CHK                                                      
+     , AS_TYPE                                                     
+     , AS_INFOTYPE                                                 
+     , K_XPS                                                       
+     , K_YPS                                                     
+     , SG_SEQS                                                     
+     , SD_GSNS                                                     
+     , MT_TYPES                                                    
+     , AS_SMS_KEY                                                  
+     , AS_SMS_EXKEY                                                
+     , AS_SMS_TIME                                                 
+     , AS_INTERVAL                                                 
+     , AS_LAST_SENDTIME                                            
+     , AS_SMS_DAY                                                  
+     , AS_SMS_STIME                                                
+     , AS_SMS_ETIME                                                
+     , AS_SAME_CNT                                                 
+     , AS_SAME_PERCENT                                             
+     , AS_LATER_SEND                                         	  
+     , IFNULL(AS_MONITOR_USE,'N') AS AS_MONITOR_USE                
+     , AS_MONITOR_MAX_M                                         	  
+     , AS_MONITOR_REPEAT_M                                         
+     , AS_MONITOR_INSPECTOR                                        
+     , AS_SAME_OP                                                 
+     , AS_LAST_NUM                                         	  	  
+  FROM ALIMI_SETTING                                               
+ ORDER BY AS_SEQ DESC                                              
+ LIMIT 0,10                                   
+
+[2018년03월23일 16시47분06초] 
+SELECT A.AS_SEQ	                    
+     , C.AB_SEQ                      
+     , C.AB_NAME                     
+     , C.AB_DEPT                     
+     , C.AB_POSITION                 
+     , C.AB_MOBILE                   
+     , C.AB_MAIL                     
+     , NULL AS K_XP                  
+     , NULL AS SG_SEQ                
+     , NULL AS MT_TYPE               
+     , NULL AS AB_ISSUE_DEPT         
+     , 0 AS AB_ISSUE_RECEIVECHK      
+     , C.AB_REPORT_DAY_CHK           
+     , C.AB_REPORT_WEEK_CHK          
+     , NULL AS AB_SMS_LIMIT          
+  FROM ALIMI_SETTING  A              
+     , ALIMI_RECEIVER B              
+     , ADDRESS_BOOK   C              
+ WHERE A.AS_SEQ = B.AS_SEQ	        
+   AND B.AB_SEQ = C.AB_SEQ           
+ORDER BY A.AS_SEQ ASC	                          
+
+[2018년03월23일 16시47분21초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 16시47분21초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2018년03월23일 18시14분51초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시14분51초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2018년03월23일 18시15분51초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT K_XP, K_YP, K_ZP + 1, 2, K_POS, 1, '흑자 전환','2018-03-23 18:15:51' 
+   FROM (SELECT  K_XP, K_YP, K_ZP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 12 AND K_YP = 1  
+         ORDER BY K_ZP DESC LIMIT 1)m 
+  키워드 추가 :[2]
+[2018년03월23일 18시15분51초] 
+SELECT MAX(K_SEQ)AS PKEY FROM KEYWORD  키워드 추가 :[2]
+[2018년03월23일 18시15분51초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시15분51초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2018년03월23일 18시21분11초] 
+ DELETE FROM KEYWORD WHERE K_XP=12 AND K_YP=1 AND K_ZP=2   키워드  삭제 :[2]
+[2018년03월23일 18시21분11초] 
+ DELETE FROM IDX WHERE K_XP=12 AND K_YP=1 AND K_ZP=2   키워드  삭제 :[2]
+[2018년03월23일 18시21분11초] 
+SELECT K_SEQ AS PKEY FROM KEYWORD WHERE K_XP=12 AND K_YP=1 AND K_ZP=2 AND K_TYPE=2   키워드 추가 :[2]
+[2018년03월23일 18시21분11초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시21분11초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2018년03월23일 18시21분22초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT K_XP, K_YP, K_ZP + 1, 2, K_POS, 1, '임상 1상','2018-03-23 18:21:22' 
+   FROM (SELECT  K_XP, K_YP, K_ZP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 12 AND K_YP = 1  
+         ORDER BY K_ZP DESC LIMIT 1)m 
+  키워드 추가 :[2]
+[2018년03월23일 18시21분23초] 
+SELECT MAX(K_SEQ)AS PKEY FROM KEYWORD  키워드 추가 :[2]
+[2018년03월23일 18시21분23초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시21분23초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2018년03월23일 18시21분32초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT K_XP, K_YP, K_ZP + 1, 2, K_POS, 1, '임상2상','2018-03-23 18:21:32' 
+   FROM (SELECT  K_XP, K_YP, K_ZP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 12 AND K_YP = 1  
+         ORDER BY K_ZP DESC LIMIT 1)m 
+  키워드 추가 :[2]
+[2018년03월23일 18시21분32초] 
+SELECT MAX(K_SEQ)AS PKEY FROM KEYWORD  키워드 추가 :[2]
+[2018년03월23일 18시21분32초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시21분32초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2018년03월23일 18시21분39초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT K_XP, K_YP, K_ZP + 1, 2, K_POS, 1, '임상 3상','2018-03-23 18:21:39' 
+   FROM (SELECT  K_XP, K_YP, K_ZP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 12 AND K_YP = 1  
+         ORDER BY K_ZP DESC LIMIT 1)m 
+  키워드 추가 :[2]
+[2018년03월23일 18시21분39초] 
+SELECT MAX(K_SEQ)AS PKEY FROM KEYWORD  키워드 추가 :[2]
+[2018년03월23일 18시21분39초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시21분39초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2018년03월23일 18시22분06초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT K_XP, K_YP, K_ZP + 1, 2, K_POS, 1, '치료 성공','2018-03-23 18:22:06' 
+   FROM (SELECT  K_XP, K_YP, K_ZP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 12 AND K_YP = 1  
+         ORDER BY K_ZP DESC LIMIT 1)m 
+  키워드 추가 :[2]
+[2018년03월23일 18시22분06초] 
+SELECT MAX(K_SEQ)AS PKEY FROM KEYWORD  키워드 추가 :[2]
+[2018년03월23일 18시22분06초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시22분06초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2018년03월23일 18시22분12초] 
+ DELETE FROM KEYWORD WHERE K_XP=12 AND K_YP=1 AND K_ZP=3   키워드  삭제 :[2]
+[2018년03월23일 18시22분12초] 
+ DELETE FROM IDX WHERE K_XP=12 AND K_YP=1 AND K_ZP=3   키워드  삭제 :[2]
+[2018년03월23일 18시22분12초] 
+SELECT K_SEQ AS PKEY FROM KEYWORD WHERE K_XP=12 AND K_YP=1 AND K_ZP=3 AND K_TYPE=2   키워드 추가 :[2]
+[2018년03월23일 18시22분12초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시22분12초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2018년03월23일 18시22분17초] 
+INSERT INTO KEYWORD( K_XP, K_YP, K_ZP, K_TYPE, K_POS, K_OP, K_VALUE, K_REGDATE) 
+   SELECT K_XP, K_YP, K_ZP + 1, 2, K_POS, 1, '임상 2상','2018-03-23 18:22:17' 
+   FROM (SELECT  K_XP, K_YP, K_ZP, K_POS 
+         FROM KEYWORD 
+         WHERE K_XP = 12 AND K_YP = 1  
+         ORDER BY K_ZP DESC LIMIT 1)m 
+  키워드 추가 :[2]
+[2018년03월23일 18시22분17초] 
+SELECT MAX(K_SEQ)AS PKEY FROM KEYWORD  키워드 추가 :[2]
+[2018년03월23일 18시22분17초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시22분17초] 
+ SELECT K_XP, K_YP, K_ZP,K_OP, K_VALUE, K_OP, K_USEYN  	
+ FROM KEYWORD 						
+ WHERE K_TYPE < 3 					
+ ORDER BY K_XP, K_YP, K_ZP 	
+
+[2018년03월23일 18시22분23초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2018년03월23일 18시22분23초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2018년03월23일 18시22분23초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시22분23초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11,12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2018년03월23일 18시22분23초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11,12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2018년03월23일 18시22분23초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 2,3,4,5,6,7,8,9,10,1,11,12 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2018년03월23일 18시22분23초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2018년03월23일 18시22분32초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시22분32초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2018년03월23일 18시22분32초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2018년03월23일 18시22분32초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 12 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2018년03월23일 18시22분32초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2018년03월23일 18시22분33초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시22분33초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (12)               
+                                 AND A.K_YP    = 1               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2018년03월23일 18시22분33초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (12)               
+                                 AND A.K_YP    = 1               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2018년03월23일 18시22분33초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 12 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+        UNION                                                    
+        SELECT '' , K_VALUE MAIN , ''                            
+          FROM KEYWORD                                           
+         WHERE K_XP = 12                               
+           AND K_YP = 1                               
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2018년03월23일 18시22분33초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2018년03월23일 18시22분34초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시22분34초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2018년03월23일 18시22분34초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2018년03월23일 18시22분34초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 12 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2018년03월23일 18시22분34초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2018년03월23일 18시22분49초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 18시22분49초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 18시22분53초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 18시22분54초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 18시22분55초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 18시22분58초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 18시22분58초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 18시22분59초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 18시23분00초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 18시23분01초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 18시23분11초] 
+SELECT K_SEQ     ,               
+       K_XP      ,               
+       K_YP      ,               
+       K_ZP      ,               
+       K_TYPE    ,               
+       K_POS     ,               
+       K_OP      ,               
+       K_VALUE                   
+  FROM KEYWORD                   
+ WHERE K_YP = 0                  
+   AND K_TYPE = 1                
+   AND K_USEYN='Y'                
+ ORDER BY K_SEQ                  
+
+[2018년03월23일 18시24분25초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2018년03월23일 18시24분25초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2018년03월23일 18시24분25초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시24분25초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11,12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2018년03월23일 18시24분25초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11,12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2018년03월23일 18시24분25초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 2,3,4,5,6,7,8,9,10,1,11,12 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2018년03월23일 18시24분25초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+
+[2018년03월23일 18시26분15초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2018년03월23일 18시26분15초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       SG_SEQ_AL,                    
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       M_SEQ,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A, MEMBER_GROUP B                     
+ WHERE A.M_SEQ IN (SELECT M_SEQ                       
+                   FROM MEMBER                       
+                   WHERE M_ID = 'devel' )  
+       AND B.MG_SEQ IN (SELECT MG_SEQ                      
+                        FROM MEMBER                       
+                        WHERE M_ID = 'devel' )  
+
+[2018년03월23일 18시26분15초] 
+ SELECT (SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE ASC LIMIT 1) MIN_NO 
+        ,(SELECT MD_SEQ FROM META WHERE MD_DATE BETWEEN '2018-03-23 00:00:00' AND '2018-03-23 23:59:59' ORDER BY MD_DATE DESC LIMIT 1) MAX_NO 
+
+[2018년03월23일 18시26분15초] 
+  SELECT                                     
+         COUNT(1) AS TOTAL_CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11,12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_PSEQ                                  
+  			)RESULT                              
+
+[2018년03월23일 18시26분15초] 
+SELECT A.SG_SEQ 																
+     , (SELECT SG_NAME FROM SITE_GROUP WHERE SG_SEQ = A.SG_SEQ) AS SG_NAME	
+     , A.CNT																	
+FROM (																		
+  SELECT A.SG_SEQ                                    
+       , COUNT(1) AS CNT                              
+  FROM   (                              
+                           SELECT				                               
+                                MIN(DISTINCT A.MD_SEQ) AS MD_SEQ                     
+                                , MIN(A.SG_SEQ) AS SG_SEQ                     		
+                           FROM IDX A, META B		                   
+                           WHERE A.MD_SEQ BETWEEN 0 AND 999999999                             
+                                 AND A.MD_SEQ = B.MD_SEQ                            
+                                 AND A.K_XP    IN (2,3,4,5,6,7,8,9,10,1,11,12)               
+                                 AND A.SG_SEQ  IN (42,17,18,25,19,45,47)                   
+                                 AND B.MD_SEQ = B.MD_SEQ                   
+                                  AND (A.I_STATUS = 'N' AND A.M_SEQ <> 2)                   
+                        GROUP BY B.MD_SEQ                                  
+  			)A GROUP BY A.SG_SEQ    )A                         
+             , IC_S_RELATION B WHERE A.SG_SEQ = B.S_SEQ ORDER BY B.IC_ORDER		
+
+[2018년03월23일 18시26분15초] 
+SELECT MAX(MAIN) MAIN , MAX(MIDLE) MIDLE, MAX(BOTTOM) BOTTOM     
+  FROM (                                                         
+        SELECT K_VALUE AS  MAIN , '' AS MIDLE , '' AS BOTTOM     
+          FROM KEYWORD                                           
+         WHERE K_XP in ( 2,3,4,5,6,7,8,9,10,1,11,12 )                               
+           AND K_YP = 0                                          
+           AND K_ZP = 0                                          
+           AND K_TYPE < 3                                        
+  		  AND K_USEYN='Y'                                              
+       )TEMP                                                     
+
+[2018년03월23일 18시26분15초] 
+ SELECT * FROM ISSUE_CODE WHERE IC_CODE > 0 AND IC_USEYN='Y' ORDER BY IC_TYPE, IC_CODE, IC_ORDER ASC  
+

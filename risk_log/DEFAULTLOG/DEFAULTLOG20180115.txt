@@ -1,0 +1,492 @@
+[2018년01월15일 09시45분42초] 
+ SQLException
+Oracle Error Code [0]
+SQLState          [08S01]
+<<-----------------------------------------------------------------------
+ ## 주요 연관키워드																																				
+	 	SELECT                                                                                                         
+	 	      BB.PAT_SEQ                                                                                               
+	 	      ,(SELECT WORD_NM FROM ANA_TOPIC_DICTIONARY WHERE PAT_SEQ = BB.PAT_SEQ ) AS WORD_NAME      	           
+	 	      ,COUNT(0) AS CNT ,COUNT(DISTINCT(AA.ID_SEQ)) AS KEY_CNT                                                                                         
+	 	      ,SUM(IF(AA.IC_CODE = 1, 1, 0)) AS POS                                                                    
+	 	      ,SUM(IF(AA.IC_CODE = 2, 1, 0)) AS NEG                                                                    
+	 	      ,SUM(IF(AA.IC_CODE = 3, 1, 0)) AS NEU                                                                    
+	 	FROM                                                                                                           
+	 	(                                                                                                              
+	 	SELECT                                                                                                         
+	 	        A.ID_SEQ ,D.IC_CODE                                                                                    
+	 	FROM ISSUE_DATA A INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ = B.ID_SEQ AND B.IC_TYPE = 1       
+	 	                  INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ = C.ID_SEQ AND C.IC_TYPE = 6     
+	 	                  INNER JOIN ISSUE_DATA_CODE D ON A.ID_SEQ = D.ID_SEQ AND D.IC_TYPE = 9     
+	 	                  INNER JOIN ISSUE_DATA_CODE E ON A.ID_SEQ = E.ID_SEQ AND E.IC_TYPE = 4 AND E.IC_CODE = 42    
+	 	WHERE A.MD_DATE BETWEEN '2018-01-09 00:00:00' AND '2018-01-15 23:59:59'               
+	 	) AA INNER JOIN ISSUE_RELATION_KEYWORD BB ON AA.ID_SEQ = BB.ID_SEQ                          
+	 	GROUP BY BB.PAT_SEQ                                                                         
+	 	ORDER BY CNT DESC                                                                           
+	 LIMIT 10																			
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 201803 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2873)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2763)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3299)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.mrt.MrtMgr.getRelationKeywordData(MrtMgr.java:770)
+	at org.apache.jsp.dashboard.mrt.mrtDao_jsp._jspService(mrtDao_jsp.java:98)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:606)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2332)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2774)
+	... 29 more
+
+[2018년01월15일 10시43분11초] 
+ SQLException
+Oracle Error Code [0]
+SQLState          [08S01]
+<<-----------------------------------------------------------------------
+	## 주요 시정 채널 별 성향 ( 왼쪽차트 )																							
+	## 서울시장 채널 별 성향	( 왼쪽차트 )																							
+	  SELECT																						
+	      COUNT(0) AS CNT,																	
+	      IFNULL(SUM(IF(B.IC_CODE=1, 1, 0)), 0) AS POS,																
+	      IFNULL(SUM(IF(B.IC_CODE=2, 1, 0)), 0) AS NEG,																
+	      IFNULL(SUM(IF(B.IC_CODE=3, 1, 0)), 0) AS NEU																
+	    FROM ISSUE_DATA A, ISSUE_DATA_CODE B, ISSUE_DATA_CODE C, ISSUE_DATA_CODE D			
+	    WHERE A.MD_DATE BETWEEN '2018-01-09 00:00:00' AND '2018-01-15 23:59:59' 						
+	      AND A.ID_SEQ = B.ID_SEQ																								
+	      AND B.IC_TYPE = 9																										
+	      AND A.ID_SEQ = C.ID_SEQ 																								
+	      AND C.IC_TYPE = 6																										
+	      AND A.ID_SEQ = D.ID_SEQ																								
+	    AND D.IC_TYPE = 1 AND D.IC_CODE = 2																			
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 141118 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2873)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2763)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3299)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getChannelSentiData01(SummaryMgr.java:182)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:143)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:606)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2332)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2774)
+	... 29 more
+
+[2018년01월15일 10시43분20초] 
+ SQLException
+Oracle Error Code [0]
+SQLState          [08S01]
+<<-----------------------------------------------------------------------
+	## 주요 시정 채널 별 성향 ( 왼쪽차트 )																							
+	## 서울시장 채널 별 성향	( 왼쪽차트 )																							
+	  SELECT																						
+	      COUNT(0) AS CNT,																	
+	      IFNULL(SUM(IF(B.IC_CODE=1, 1, 0)), 0) AS POS,																
+	      IFNULL(SUM(IF(B.IC_CODE=2, 1, 0)), 0) AS NEG,																
+	      IFNULL(SUM(IF(B.IC_CODE=3, 1, 0)), 0) AS NEU																
+	    FROM ISSUE_DATA A, ISSUE_DATA_CODE B, ISSUE_DATA_CODE C, ISSUE_DATA_CODE D			
+	    WHERE A.MD_DATE BETWEEN '2018-01-09 00:00:00' AND '2018-01-15 23:59:59' 						
+	      AND A.ID_SEQ = B.ID_SEQ																								
+	      AND B.IC_TYPE = 9																										
+	      AND A.ID_SEQ = C.ID_SEQ 																								
+	      AND C.IC_TYPE = 6																										
+	      AND A.ID_SEQ = D.ID_SEQ																								
+	    AND D.IC_TYPE = 4																										
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 150701 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2873)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2763)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3299)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getChannelSentiData01(SummaryMgr.java:182)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:138)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:606)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2332)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2774)
+	... 29 more
+
+[2018년01월15일 10시58분13초] 
+ SQLException
+Oracle Error Code [0]
+SQLState          [08S01]
+<<-----------------------------------------------------------------------
+ ## 주요 연관키워드																																				
+	 	SELECT                                                                                                         
+	 	      BB.PAT_SEQ                                                                                               
+	 	      ,(SELECT WORD_NM FROM ANA_TOPIC_DICTIONARY WHERE PAT_SEQ = BB.PAT_SEQ ) AS WORD_NAME      	           
+	 	      ,COUNT(0) AS CNT ,COUNT(DISTINCT(AA.ID_SEQ)) AS KEY_CNT                                                                                         
+	 	      ,SUM(IF(AA.IC_CODE = 1, 1, 0)) AS POS                                                                    
+	 	      ,SUM(IF(AA.IC_CODE = 2, 1, 0)) AS NEG                                                                    
+	 	      ,SUM(IF(AA.IC_CODE = 3, 1, 0)) AS NEU                                                                    
+	 	FROM                                                                                                           
+	 	(                                                                                                              
+	 	SELECT                                                                                                         
+	 	        A.ID_SEQ ,D.IC_CODE                                                                                    
+	 	FROM ISSUE_DATA A INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ = B.ID_SEQ AND B.IC_TYPE = 1       
+	 	                  INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ = C.ID_SEQ AND C.IC_TYPE = 6     
+	 	                  INNER JOIN ISSUE_DATA_CODE D ON A.ID_SEQ = D.ID_SEQ AND D.IC_TYPE = 9     
+	 	                  INNER JOIN ISSUE_DATA_CODE E ON A.ID_SEQ = E.ID_SEQ AND E.IC_TYPE = 4 AND E.IC_CODE = 42    
+	 	WHERE A.MD_DATE BETWEEN '2018-01-09 00:00:00' AND '2018-01-15 23:59:59'               
+	 	) AA INNER JOIN ISSUE_RELATION_KEYWORD BB ON AA.ID_SEQ = BB.ID_SEQ                          
+	 	GROUP BY BB.PAT_SEQ                                                                         
+	 	ORDER BY CNT DESC                                                                           
+	 LIMIT 10																			
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 67245 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2873)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2763)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3299)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.mrt.MrtMgr.getRelationKeywordData(MrtMgr.java:718)
+	at org.apache.jsp.dashboard.mrt.mrtDao_jsp._jspService(mrtDao_jsp.java:96)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:606)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2332)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2774)
+	... 29 more
+
+[2018년01월15일 10시58분13초] 
+ SQLException
+Oracle Error Code [0]
+SQLState          [08S01]
+<<-----------------------------------------------------------------------
+ ## 주요 연관키워드																																				
+	 	SELECT                                                                                                         
+	 	      BB.PAT_SEQ                                                                                               
+	 	      ,(SELECT WORD_NM FROM ANA_TOPIC_DICTIONARY WHERE PAT_SEQ = BB.PAT_SEQ ) AS WORD_NAME      	           
+	 	      ,COUNT(0) AS CNT ,COUNT(DISTINCT(AA.ID_SEQ)) AS KEY_CNT                                                                                         
+	 	      ,SUM(IF(AA.IC_CODE = 1, 1, 0)) AS POS                                                                    
+	 	      ,SUM(IF(AA.IC_CODE = 2, 1, 0)) AS NEG                                                                    
+	 	      ,SUM(IF(AA.IC_CODE = 3, 1, 0)) AS NEU                                                                    
+	 	FROM                                                                                                           
+	 	(                                                                                                              
+	 	SELECT                                                                                                         
+	 	        A.ID_SEQ ,D.IC_CODE                                                                                    
+	 	FROM ISSUE_DATA A INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ = B.ID_SEQ AND B.IC_TYPE = 1       
+	 	                  INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ = C.ID_SEQ AND C.IC_TYPE = 6     
+	 	                  INNER JOIN ISSUE_DATA_CODE D ON A.ID_SEQ = D.ID_SEQ AND D.IC_TYPE = 9     
+	 	                  INNER JOIN ISSUE_DATA_CODE E ON A.ID_SEQ = E.ID_SEQ AND E.IC_TYPE = 4 AND E.IC_CODE = 2    
+	 	WHERE A.MD_DATE BETWEEN '2018-01-09 00:00:00' AND '2018-01-15 23:59:59'               
+	 	) AA INNER JOIN ISSUE_RELATION_KEYWORD BB ON AA.ID_SEQ = BB.ID_SEQ                          
+	 	GROUP BY BB.PAT_SEQ                                                                         
+	 	ORDER BY CNT DESC                                                                           
+	 LIMIT 10																			
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 360505 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2873)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2763)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3299)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.mrt.MrtMgr.getRelationKeywordData(MrtMgr.java:718)
+	at org.apache.jsp.dashboard.mrt.mrtDao_jsp._jspService(mrtDao_jsp.java:98)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:606)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2332)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2774)
+	... 29 more
+
+[2018년01월15일 10시58분13초] 
+ SQLException
+Oracle Error Code [0]
+SQLState          [08S01]
+<<-----------------------------------------------------------------------
+ ## 주요 연관키워드																																				
+	 	SELECT                                                                                                         
+	 	      BB.PAT_SEQ                                                                                               
+	 	      ,(SELECT WORD_NM FROM ANA_TOPIC_DICTIONARY WHERE PAT_SEQ = BB.PAT_SEQ ) AS WORD_NAME      	           
+	 	      ,COUNT(0) AS CNT ,COUNT(DISTINCT(AA.ID_SEQ)) AS KEY_CNT                                                                                         
+	 	      ,SUM(IF(AA.IC_CODE = 1, 1, 0)) AS POS                                                                    
+	 	      ,SUM(IF(AA.IC_CODE = 2, 1, 0)) AS NEG                                                                    
+	 	      ,SUM(IF(AA.IC_CODE = 3, 1, 0)) AS NEU                                                                    
+	 	FROM                                                                                                           
+	 	(                                                                                                              
+	 	SELECT                                                                                                         
+	 	        A.ID_SEQ ,D.IC_CODE                                                                                    
+	 	FROM ISSUE_DATA A INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ = B.ID_SEQ AND B.IC_TYPE = 1       
+	 	                  INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ = C.ID_SEQ AND C.IC_TYPE = 6     
+	 	                  INNER JOIN ISSUE_DATA_CODE D ON A.ID_SEQ = D.ID_SEQ AND D.IC_TYPE = 9     
+	 	                  INNER JOIN ISSUE_DATA_CODE E ON A.ID_SEQ = E.ID_SEQ AND E.IC_TYPE = 4 AND E.IC_CODE = 2    
+	 	WHERE A.MD_DATE BETWEEN '2018-01-09 00:00:00' AND '2018-01-15 23:59:59'               
+	 	) AA INNER JOIN ISSUE_RELATION_KEYWORD BB ON AA.ID_SEQ = BB.ID_SEQ                          
+	 	GROUP BY BB.PAT_SEQ                                                                         
+	 	ORDER BY CNT DESC                                                                           
+	 LIMIT 10																			
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 136655 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2873)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2763)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3299)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.mrt.MrtMgr.getRelationKeywordData(MrtMgr.java:718)
+	at org.apache.jsp.dashboard.mrt.mrtDao_jsp._jspService(mrtDao_jsp.java:96)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:606)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2332)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2774)
+	... 29 more
+
+[2018년01월15일 10시58분41초] 
+ SQLException
+Oracle Error Code [0]
+SQLState          [08S01]
+<<-----------------------------------------------------------------------
+ ## 주요 연관키워드																																				
+	 	SELECT                                                                                                         
+	 	      BB.PAT_SEQ                                                                                               
+	 	      ,(SELECT WORD_NM FROM ANA_TOPIC_DICTIONARY WHERE PAT_SEQ = BB.PAT_SEQ ) AS WORD_NAME      	           
+	 	      ,COUNT(0) AS CNT ,COUNT(DISTINCT(AA.ID_SEQ)) AS KEY_CNT                                                                                         
+	 	      ,SUM(IF(AA.IC_CODE = 1, 1, 0)) AS POS                                                                    
+	 	      ,SUM(IF(AA.IC_CODE = 2, 1, 0)) AS NEG                                                                    
+	 	      ,SUM(IF(AA.IC_CODE = 3, 1, 0)) AS NEU                                                                    
+	 	FROM                                                                                                           
+	 	(                                                                                                              
+	 	SELECT                                                                                                         
+	 	        A.ID_SEQ ,D.IC_CODE                                                                                    
+	 	FROM ISSUE_DATA A INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ = B.ID_SEQ AND B.IC_TYPE = 1       
+	 	                  INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ = C.ID_SEQ AND C.IC_TYPE = 6     
+	 	                  INNER JOIN ISSUE_DATA_CODE D ON A.ID_SEQ = D.ID_SEQ AND D.IC_TYPE = 9     
+	 	                  INNER JOIN ISSUE_DATA_CODE E ON A.ID_SEQ = E.ID_SEQ AND E.IC_TYPE = 4 AND E.IC_CODE = 2    
+	 	WHERE A.MD_DATE BETWEEN '2018-01-09 00:00:00' AND '2018-01-15 23:59:59'               
+	 	) AA INNER JOIN ISSUE_RELATION_KEYWORD BB ON AA.ID_SEQ = BB.ID_SEQ                          
+	 	GROUP BY BB.PAT_SEQ                                                                         
+	 	ORDER BY CNT DESC                                                                           
+	 LIMIT 10																			
+
+----------------------------------------------------------------------->>
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+Last packet sent to the server was 6395 ms ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1074)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2873)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2763)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3299)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.mrt.MrtMgr.getRelationKeywordData(MrtMgr.java:718)
+	at org.apache.jsp.dashboard.mrt.mrtDao_jsp._jspService(mrtDao_jsp.java:96)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:861)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:606)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:2332)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:2774)
+	... 29 more
+

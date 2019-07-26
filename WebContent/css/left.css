@@ -1,0 +1,20 @@
+body {background:url('../images/common/bg.gif');margin:0px;}
+image {border:0px;}
+.menu {background:url('../images/common/icon_dot.gif')10px 40% no-repeat; border-bottom:1px dotted #CCCCCC; height:32px;font-size:12px;padding-left:15px;}
+.menu_select {background:url('../images/common/icon_dot.gif')10px 40% no-repeat;border-bottom:1px dotted #0d50bf; height:32px;font-size:12px;padding-left:15px;font-weight:bold;}
+
+a:link    {color:#313131;text-decoration:none;}
+a:visited {color:#313131;text-decoration:none;}
+a:active  {color:#000000;font-weight:bold;text-decoration:none;}
+a:hover   {color:#0d50bf;font-weight:bold;text-decoration:none;}
+
+.iframe {
+width:205px;height:250px;overflow-y:auto;
+scrollbar-face-color:#eeeeee;
+scrollbar-shadow-color:#e4e4e4;
+scrollbar-highlight-color:#d7d7d7;
+scrollbar-3dlight-color:#f7f7f7;
+scrollbar-darkshadow-color:#f7f7f7;
+scrollbar-track-color:#f7f7f7;
+scrollbar-arrow-color:#666666;
+}

@@ -1,0 +1,1430 @@
+[2017년12월20일 13시07분48초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 주요 시정 채널 별 성향 ( 왼쪽차트 )																							
+	## 서울시장 채널 별 성향	( 왼쪽차트 )																							
+	  SELECT																						
+	      COUNT(0) AS CNT,																	
+	      IFNULL(SUM(IF(B.IC_CODE=1, 1, 0)), 0) AS POS,																
+	      IFNULL(SUM(IF(B.IC_CODE=2, 1, 0)), 0) AS NEG,																
+	      IFNULL(SUM(IF(B.IC_CODE=3, 1, 0)), 0) AS NEU																
+	    FROM ISSUE_DATA A, ISSUE_DATA_CODE B, ISSUE_DATA_CODE C, ISSUE_DATA_CODE D			
+	    WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 						
+	      AND A.ID_SEQ = B.ID_SEQ																								
+	      AND B.IC_TYPE = 9																										
+	      AND A.ID_SEQ = C.ID_SEQ 																								
+	      AND C.IC_TYPE = 6																										
+	      AND A.ID_SEQ = D.ID_SEQ																								
+	    AND D.IC_TYPE = 4																										
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getChannelSentiData01(SummaryMgr.java:182)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:138)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시07분48초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 주요 시정 채널 별 성향 ( 오른쪽차트 )																							
+	## 서울시장 채널 별 성향	( 오른쪽차트 )																							
+	SELECT AA.IC_CODE																									
+		        ,AA.IC_NAME																								
+		        ,IFNULL(BB.CNT, 0) AS TOTAL																			
+		        ,IFNULL(BB.POS, 0) AS POS																				
+		        ,IFNULL(BB.NEG, 0) AS NEG																				
+		        ,IFNULL(BB.NEU, 0) AS NEU																				
+	   FROM (SELECT IC_CODE, IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 6 AND IC_USEYN = 'Y' AND IC_CODE > 0 ORDER BY IC_ORDER ASC ) AA			
+	LEFT OUTER JOIN																																											
+	  ( SELECT B.IC_CODE																																										
+	  ,(SELECT IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 6 AND IC_CODE = B.IC_CODE) AS IC_NAME																	
+	  , COUNT(B.IC_CODE) AS CNT 																																							
+	  ,SUM(IF(C.IC_CODE =1 , 1, 0)) AS POS																																				
+		,SUM(IF(C.IC_CODE =2 , 1, 0)) AS NEG																																				
+		,SUM(IF(C.IC_CODE =3 , 1, 0)) AS NEU																																				
+	FROM ISSUE_DATA A																																										
+	    INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ=B.ID_SEQ AND B.IC_TYPE=6																								
+	    INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ=C.ID_SEQ AND C.IC_TYPE=9																								
+	    INNER JOIN ISSUE_DATA_CODE D ON A.ID_SEQ=D.ID_SEQ AND D.IC_TYPE=4																							
+	WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'  																						
+	GROUP BY B.IC_CODE ) BB ON AA.IC_CODE = BB.IC_CODE
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getChannelSentiData02(SummaryMgr.java:258)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:139)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시07분53초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 온라인 동향																								
+		 SELECT																									
+		      DATE_FORMAT(AA.CATEGORY_DATE, '%Y-%m-%d') AS MD_DATE						
+		      ,DATE_FORMAT(AA.CATEGORY_DATE, '%m/%d') AS DATE								
+		      ,IFNULL(BB.TOTAL, 0) AS TOTAL																
+		      ,IFNULL(BB.CNT1, 0) AS CNT1																	
+		      ,IFNULL(BB.CNT2, 0) AS CNT2																	
+		 FROM																									
+		  (																											
+		  SELECT DATE_FORMAT(A.DATE, '%Y/%m/%d') AS CATEGORY_DATE						
+			FROM (                                                                                                                                                                                                         																						
+			    SELECT '2017-09-25' - INTERVAL (A.A + (10 * B.A) + (100 * C.A)) DAY AS DATE                                                                                                                                  																
+			    FROM (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS A        	
+			    CROSS JOIN (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS B 	
+			    CROSS JOIN (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS C 	
+			) A                                                                            							               			
+			WHERE A.DATE BETWEEN '2017-09-19' AND '2017-09-25'                    								
+		  )AA LEFT OUTER JOIN																										
+		  (																																	
+		  SELECT STRAIGHT_JOIN																										
+		          DATE_FORMAT(A.MD_DATE, '%Y/%m/%d') AS MD_DATE														
+		          ,COUNT(A.ID_SEQ) AS TOTAL																						
+		          ,SUM(IF(B.IC_CODE=1, 1, 0)) AS CNT1																			
+		          ,SUM(IF(B.IC_CODE=2, 1, 0)) AS CNT2																			
+		  FROM ISSUE_DATA A, ISSUE_DATA_CODE B							 													
+		  WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 							
+		  AND A.ID_SEQ = B.ID_SEQ																									
+		  AND B.IC_TYPE = 1																											
+		  GROUP BY DATE_FORMAT(A.MD_DATE, '%Y/%m/%d') ) BB ON AA.CATEGORY_DATE = BB.MD_DATE		
+		  ORDER BY AA.CATEGORY_DATE ASC																						
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getOnlineTrendData(SummaryMgr.java:111)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:135)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분09초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 주요 시정 채널 별 성향 ( 왼쪽차트 )																							
+	## 서울시장 채널 별 성향	( 왼쪽차트 )																							
+	  SELECT																						
+	      COUNT(0) AS CNT,																	
+	      IFNULL(SUM(IF(B.IC_CODE=1, 1, 0)), 0) AS POS,																
+	      IFNULL(SUM(IF(B.IC_CODE=2, 1, 0)), 0) AS NEG,																
+	      IFNULL(SUM(IF(B.IC_CODE=3, 1, 0)), 0) AS NEU																
+	    FROM ISSUE_DATA A, ISSUE_DATA_CODE B, ISSUE_DATA_CODE C, ISSUE_DATA_CODE D			
+	    WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 						
+	      AND A.ID_SEQ = B.ID_SEQ																								
+	      AND B.IC_TYPE = 9																										
+	      AND A.ID_SEQ = C.ID_SEQ 																								
+	      AND C.IC_TYPE = 6																										
+	      AND A.ID_SEQ = D.ID_SEQ																								
+	    AND D.IC_TYPE = 4																										
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getChannelSentiData01(SummaryMgr.java:182)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:138)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분09초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 온라인 동향																								
+		 SELECT																									
+		      DATE_FORMAT(AA.CATEGORY_DATE, '%Y-%m-%d') AS MD_DATE						
+		      ,DATE_FORMAT(AA.CATEGORY_DATE, '%m/%d') AS DATE								
+		      ,IFNULL(BB.TOTAL, 0) AS TOTAL																
+		      ,IFNULL(BB.CNT1, 0) AS CNT1																	
+		      ,IFNULL(BB.CNT2, 0) AS CNT2																	
+		 FROM																									
+		  (																											
+		  SELECT DATE_FORMAT(A.DATE, '%Y/%m/%d') AS CATEGORY_DATE						
+			FROM (                                                                                                                                                                                                         																						
+			    SELECT '2017-09-25' - INTERVAL (A.A + (10 * B.A) + (100 * C.A)) DAY AS DATE                                                                                                                                  																
+			    FROM (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS A        	
+			    CROSS JOIN (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS B 	
+			    CROSS JOIN (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS C 	
+			) A                                                                            							               			
+			WHERE A.DATE BETWEEN '2017-09-19' AND '2017-09-25'                    								
+		  )AA LEFT OUTER JOIN																										
+		  (																																	
+		  SELECT STRAIGHT_JOIN																										
+		          DATE_FORMAT(A.MD_DATE, '%Y/%m/%d') AS MD_DATE														
+		          ,COUNT(A.ID_SEQ) AS TOTAL																						
+		          ,SUM(IF(B.IC_CODE=1, 1, 0)) AS CNT1																			
+		          ,SUM(IF(B.IC_CODE=2, 1, 0)) AS CNT2																			
+		  FROM ISSUE_DATA A, ISSUE_DATA_CODE B							 													
+		  WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 							
+		  AND A.ID_SEQ = B.ID_SEQ																									
+		  AND B.IC_TYPE = 1																											
+		  GROUP BY DATE_FORMAT(A.MD_DATE, '%Y/%m/%d') ) BB ON AA.CATEGORY_DATE = BB.MD_DATE		
+		  ORDER BY AA.CATEGORY_DATE ASC																						
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getOnlineTrendData(SummaryMgr.java:111)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:135)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분09초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 주요 시정 채널 별 성향 ( 오른쪽차트 )																							
+	## 서울시장 채널 별 성향	( 오른쪽차트 )																							
+	SELECT AA.IC_CODE																									
+		        ,AA.IC_NAME																								
+		        ,IFNULL(BB.CNT, 0) AS TOTAL																			
+		        ,IFNULL(BB.POS, 0) AS POS																				
+		        ,IFNULL(BB.NEG, 0) AS NEG																				
+		        ,IFNULL(BB.NEU, 0) AS NEU																				
+	   FROM (SELECT IC_CODE, IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 6 AND IC_USEYN = 'Y' AND IC_CODE > 0 ORDER BY IC_ORDER ASC ) AA			
+	LEFT OUTER JOIN																																											
+	  ( SELECT B.IC_CODE																																										
+	  ,(SELECT IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 6 AND IC_CODE = B.IC_CODE) AS IC_NAME																	
+	  , COUNT(B.IC_CODE) AS CNT 																																							
+	  ,SUM(IF(C.IC_CODE =1 , 1, 0)) AS POS																																				
+		,SUM(IF(C.IC_CODE =2 , 1, 0)) AS NEG																																				
+		,SUM(IF(C.IC_CODE =3 , 1, 0)) AS NEU																																				
+	FROM ISSUE_DATA A																																										
+	    INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ=B.ID_SEQ AND B.IC_TYPE=6																								
+	    INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ=C.ID_SEQ AND C.IC_TYPE=9																								
+	    INNER JOIN ISSUE_DATA_CODE D ON A.ID_SEQ=D.ID_SEQ AND D.IC_TYPE=4																							
+	WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'  																						
+	GROUP BY B.IC_CODE ) BB ON AA.IC_CODE = BB.IC_CODE
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getChannelSentiData02(SummaryMgr.java:258)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:139)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분31초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 주간 정보량 추이																						
+		 SELECT																									
+		      DATE_FORMAT(AA.CATEGORY_DATE, '%Y-%m-%d') AS MD_DATE						
+		      ,DATE_FORMAT(AA.CATEGORY_DATE, '%m/%d') AS DATE								
+		      ,IFNULL(BB.POS, 0) AS POS																		
+		      ,IFNULL(BB.NEG, 0) AS NEG																		
+		      ,IFNULL(BB.NEU, 0) AS NEU																		
+		      ,IFNULL(BB.TOTAL, 0) AS TOTAL																
+		 FROM																									
+		  (																											
+		  SELECT DATE_FORMAT(A.DATE, '%Y/%m/%d') AS CATEGORY_DATE						
+			FROM (                                                                                                                                                                                                         																						
+			    SELECT '2017-09-25' - INTERVAL (A.A + (10 * B.A) + (100 * C.A)) DAY AS DATE                                                                                                                                  																
+			    FROM (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS A        	
+			    CROSS JOIN (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS B 	
+			    CROSS JOIN (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS C 	
+			) A                                                                            							               			
+			WHERE A.DATE BETWEEN '2017-09-19' AND '2017-09-25'                    								
+		  )AA LEFT OUTER JOIN																										
+		  (																																	
+		  SELECT STRAIGHT_JOIN																										
+		          DATE_FORMAT(A.MD_DATE, '%Y/%m/%d') AS MD_DATE														
+		          ,IFNULL(SUM(IF(B.IC_CODE = 1, 1, 0)),0) AS POS																
+		          ,IFNULL(SUM(IF(B.IC_CODE = 2, 1, 0)),0) AS NEG																
+		          ,IFNULL(SUM(IF(B.IC_CODE = 3, 1, 0)),0) AS NEU																
+		          ,COUNT(A.ID_SEQ) AS TOTAL																						
+		  FROM ISSUE_DATA A, ISSUE_DATA_CODE B, ISSUE_DATA_CODE C 													
+		  WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 							
+		  AND A.ID_SEQ = B.ID_SEQ																									
+		  AND B.IC_TYPE = 9																											
+		  AND A.ID_SEQ = C.ID_SEQ																									
+		  AND C.IC_TYPE = 1 AND C.IC_CODE = 2		## 분류체계-구분-박원순 서울시장									
+		  GROUP BY DATE_FORMAT(A.MD_DATE, '%Y/%m/%d') ) BB ON AA.CATEGORY_DATE = BB.MD_DATE		
+		  ORDER BY AA.CATEGORY_DATE ASC																						
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.opinion.OpinionMgr.getWeekData(OpinionMgr.java:175)
+	at org.apache.jsp.dashboard.opinion.opinionDao_jsp._jspService(opinionDao_jsp.java:89)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분31초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 주요이슈 별 정보량																																
+		   SELECT																																			
+		   		C.IC_CODE																																
+		        ,(SELECT IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 4 AND IC_CODE = C.IC_CODE  AND IC_USEYN='Y') AS IC_NAME					
+		        ,COUNT(A.ID_SEQ) AS CNT																											
+		        , SUM(IF(B.IC_CODE=1, 1, 0)) AS POS																								
+	         	, SUM(IF(B.IC_CODE=2, 1, 0)) AS NEG																								
+	          	, SUM(IF(B.IC_CODE=3, 1, 0)) AS NEU  																								
+		   FROM ISSUE_DATA A																														
+		        INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ = B.ID_SEQ AND B.IC_TYPE = 9											
+		        INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ = C.ID_SEQ AND C.IC_TYPE = 4 AND C.IC_CODE NOT IN (19)											
+		        INNER JOIN ISSUE_CODE C2 ON C.IC_TYPE = C2.IC_TYPE AND C.IC_CODE = C2.IC_CODE AND C2.IC_USEYN='Y'               
+		        INNER JOIN ISSUE_DATA_CODE D ON A.ID_SEQ = D.ID_SEQ AND D.IC_TYPE = 1 AND D.IC_CODE = 2  ## 분류체계-구분-박원순 서울시장			
+		   WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'  																				
+		  GROUP BY C.IC_CODE																																								
+		  ORDER BY CNT DESC																																								
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.opinion.OpinionMgr.getMainIssueCountData(OpinionMgr.java:331)
+	at org.apache.jsp.dashboard.opinion.opinionDao_jsp._jspService(opinionDao_jsp.java:93)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분31초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	  ## 정보량 현황																			
+	  SELECT																						
+	      COUNT(0) AS CNT,																	
+	      IFNULL(SUM(IF(B.IC_CODE=1, 1, 0)), 0) AS POS,												
+	      IFNULL(SUM(IF(B.IC_CODE=2, 1, 0)), 0) AS NEG,												
+	      IFNULL(SUM(IF(B.IC_CODE=3, 1, 0)), 0) AS NEU												
+	    FROM ISSUE_DATA A, ISSUE_DATA_CODE B, ISSUE_DATA_CODE C			
+	    WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 						
+	      AND A.ID_SEQ = B.ID_SEQ																								
+	      AND B.IC_TYPE = 9																										
+	      AND A.ID_SEQ = C.ID_SEQ 																								
+	      AND C.IC_TYPE = 1 AND C.IC_CODE = 2  ## 분류체계-구분-박원순 서울시장									
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.opinion.OpinionMgr.getinfoCountData(OpinionMgr.java:95)
+	at org.apache.jsp.dashboard.opinion.opinionDao_jsp._jspService(opinionDao_jsp.java:87)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분32초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+ ## 주요 매체 현황 - 언론																														
+  SELECT 																																			
+          A.S_SEQ																																	
+          ,D.CIRCULATION																														
+          ,A.MD_SITE_NAME AS NAME																					 					
+          ,B.IC_CODE			 																													
+          ,SUM(IF(C.IC_CODE = 1 , 1, 0)) AS POS																							
+          ,SUM(IF(C.IC_CODE = 2 , 1, 0)) AS NEG																							
+          ,SUM(IF(C.IC_CODE = 3 , 1, 0)) AS NEU    																						
+          ,COUNT(0) AS CNT																													
+   FROM ISSUE_DATA A, ISSUE_DATA_CODE B, ISSUE_DATA_CODE C, PRESS_CIRCULATION D, ISSUE_DATA_CODE E			
+   WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'    										
+     AND A.MD_TYPE = 1																														
+     AND A.ID_SEQ = B.ID_SEQ																													
+     AND B.IC_TYPE = 6																															
+     AND B.IC_CODE = 1																														
+     AND A.ID_SEQ = C.ID_SEQ																												
+     AND C.IC_TYPE = 9  																														
+     AND A.S_SEQ = D.S_SEQ																													
+     AND A.ID_SEQ = E.ID_SEQ AND E.IC_TYPE=1 AND E.IC_CODE=2	## 분류체계-구분-박원순 서울시장						
+   GROUP BY A.S_SEQ																															
+   ORDER BY D.CIRCULATION DESC																											
+	 LIMIT 0, 10																																
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.opinion.OpinionMgr.getMainMediaData(OpinionMgr.java:554)
+	at org.apache.jsp.dashboard.opinion.opinionDao_jsp._jspService(opinionDao_jsp.java:97)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분32초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 관련정보 - COUNT																														
+	SELECT COUNT(DISTINCT A.MD_PSEQ) AS TOTAL																					
+	     FROM ISSUE_DATA A, ISSUE_DATA_CODE B, ISSUE_DATA_CODE D, ISSUE_DATA_CODE E 								
+	 WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 										
+	     AND A.ID_SEQ = B.ID_SEQ																											
+	     AND B.IC_TYPE = 9																													
+	     AND B.IC_CODE = 1																										
+	     AND A.ID_SEQ = D.ID_SEQ																											
+	     AND D.IC_TYPE = 6																													
+	     AND A.ID_SEQ = E.ID_SEQ AND E.IC_TYPE=1 AND E.IC_CODE=2	## 분류체계-구분-박원순 서울시장					
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.opinion.OpinionMgr.getRelaltionInfoList(OpinionMgr.java:796)
+	at org.apache.jsp.dashboard.opinion.opinionDao_jsp._jspService(opinionDao_jsp.java:108)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분32초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+   SELECT                                                                                                            
+         BB.PAT_SEQ                                                                                                  
+         ,(SELECT WORD_NM FROM ANA_TOPIC_DICTIONARY WHERE PAT_SEQ = BB.PAT_SEQ ) AS WORD_NAME      	                
+         ,COUNT(0) AS CNT                                                                                            
+   FROM                                                                                                              
+   (                                                                                                                 
+   SELECT                                                                                                            
+           A.ID_SEQ                                                                                                  
+   FROM ISSUE_DATA A INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ = B.ID_SEQ AND B.IC_TYPE = 9 AND B.IC_CODE = 1       
+   WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'                                           
+   ) AA INNER JOIN ISSUE_RELATION_KEYWORD BB ON AA.ID_SEQ = BB.ID_SEQ                                                
+   GROUP BY BB.PAT_SEQ                                                                                               
+   ORDER BY CNT DESC                                                                                                 
+   LIMIT 10                                                                                                          
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.opinion.OpinionMgr.getRelationKeywordSentiData(OpinionMgr.java:733)
+	at org.apache.jsp.dashboard.opinion.opinionDao_jsp._jspService(opinionDao_jsp.java:103)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분32초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 관련정보 - COUNT																														
+	SELECT COUNT(DISTINCT A.MD_PSEQ) AS TOTAL																					
+	     FROM ISSUE_DATA A, ISSUE_DATA_CODE B, ISSUE_DATA_CODE D, ISSUE_DATA_CODE E 								
+	 WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 										
+	     AND A.ID_SEQ = B.ID_SEQ																											
+	     AND B.IC_TYPE = 9																													
+	     AND B.IC_CODE = 2																										
+	     AND A.ID_SEQ = D.ID_SEQ																											
+	     AND D.IC_TYPE = 6																													
+	     AND A.ID_SEQ = E.ID_SEQ AND E.IC_TYPE=1 AND E.IC_CODE=2	## 분류체계-구분-박원순 서울시장					
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.opinion.OpinionMgr.getRelaltionInfoList(OpinionMgr.java:796)
+	at org.apache.jsp.dashboard.opinion.opinionDao_jsp._jspService(opinionDao_jsp.java:110)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분32초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+   SELECT                                                                                                            
+         BB.PAT_SEQ                                                                                                  
+         ,(SELECT WORD_NM FROM ANA_TOPIC_DICTIONARY WHERE PAT_SEQ = BB.PAT_SEQ ) AS WORD_NAME      	                
+         ,COUNT(0) AS CNT                                                                                            
+   FROM                                                                                                              
+   (                                                                                                                 
+   SELECT                                                                                                            
+           A.ID_SEQ                                                                                                  
+   FROM ISSUE_DATA A INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ = B.ID_SEQ AND B.IC_TYPE = 9 AND B.IC_CODE = 2       
+   WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'                                           
+   ) AA INNER JOIN ISSUE_RELATION_KEYWORD BB ON AA.ID_SEQ = BB.ID_SEQ                                                
+   GROUP BY BB.PAT_SEQ                                                                                               
+   ORDER BY CNT DESC                                                                                                 
+   LIMIT 10                                                                                                          
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.opinion.OpinionMgr.getRelationKeywordSentiData(OpinionMgr.java:733)
+	at org.apache.jsp.dashboard.opinion.opinionDao_jsp._jspService(opinionDao_jsp.java:104)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분32초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+   SELECT                                                                                                            
+         BB.PAT_SEQ                                                                                                  
+         ,(SELECT WORD_NM FROM ANA_TOPIC_DICTIONARY WHERE PAT_SEQ = BB.PAT_SEQ ) AS WORD_NAME      	                
+         ,COUNT(0) AS CNT                                                                                            
+   FROM                                                                                                              
+   (                                                                                                                 
+   SELECT                                                                                                            
+           A.ID_SEQ                                                                                                  
+   FROM ISSUE_DATA A INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ = B.ID_SEQ AND B.IC_TYPE = 9 AND B.IC_CODE = 3       
+   WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'                                           
+   ) AA INNER JOIN ISSUE_RELATION_KEYWORD BB ON AA.ID_SEQ = BB.ID_SEQ                                                
+   GROUP BY BB.PAT_SEQ                                                                                               
+   ORDER BY CNT DESC                                                                                                 
+   LIMIT 10                                                                                                          
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.opinion.OpinionMgr.getRelationKeywordSentiData(OpinionMgr.java:733)
+	at org.apache.jsp.dashboard.opinion.opinionDao_jsp._jspService(opinionDao_jsp.java:105)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분33초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+## 주요 시정 확산 목록 - COUNT 																							
+SELECT COUNT(AA.IC_CODE) AS TOTAL																					
+	FROM																															
+ (	SELECT STRAIGHT_JOIN																									
+      B.IC_CODE																													
+FROM ISSUE_DATA A , ISSUE_DATA_CODE B, ISSUE_DATA_CODE C, ISSUE_DATA_CODE D				
+  , 	ISSUE_CODE_FLAG E																									
+WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'							
+  AND A.ID_SEQ = B.ID_SEQ																									
+  AND B.IC_TYPE = 4																											
+  AND A.ID_SEQ = C.ID_SEQ																									
+  AND C.IC_TYPE = 6																											
+  AND A.ID_SEQ = D.ID_SEQ																									
+  AND D.IC_TYPE = 9																											
+  AND B.IC_TYPE = E.IC_TYPE																								
+  AND B.IC_CODE = E.IC_CODE																							
+  AND E.IC_FLAG IN (1)																						
+  GROUP BY B.IC_CODE	 ) AA																								
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.mrt.MrtMgr.getMainIssueData(MrtMgr.java:107)
+	at org.apache.jsp.dashboard.mrt.mrtDao_jsp._jspService(mrtDao_jsp.java:84)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분34초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 온라인 동향																								
+		 SELECT																									
+		      DATE_FORMAT(AA.CATEGORY_DATE, '%Y-%m-%d') AS MD_DATE						
+		      ,DATE_FORMAT(AA.CATEGORY_DATE, '%m/%d') AS DATE								
+		      ,IFNULL(BB.TOTAL, 0) AS TOTAL																
+		      ,IFNULL(BB.CNT1, 0) AS CNT1																	
+		      ,IFNULL(BB.CNT2, 0) AS CNT2																	
+		 FROM																									
+		  (																											
+		  SELECT DATE_FORMAT(A.DATE, '%Y/%m/%d') AS CATEGORY_DATE						
+			FROM (                                                                                                                                                                                                         																						
+			    SELECT '2017-09-25' - INTERVAL (A.A + (10 * B.A) + (100 * C.A)) DAY AS DATE                                                                                                                                  																
+			    FROM (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS A        	
+			    CROSS JOIN (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS B 	
+			    CROSS JOIN (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS C 	
+			) A                                                                            							               			
+			WHERE A.DATE BETWEEN '2017-09-19' AND '2017-09-25'                    								
+		  )AA LEFT OUTER JOIN																										
+		  (																																	
+		  SELECT STRAIGHT_JOIN																										
+		          DATE_FORMAT(A.MD_DATE, '%Y/%m/%d') AS MD_DATE														
+		          ,COUNT(A.ID_SEQ) AS TOTAL																						
+		          ,SUM(IF(B.IC_CODE=1, 1, 0)) AS CNT1																			
+		          ,SUM(IF(B.IC_CODE=2, 1, 0)) AS CNT2																			
+		  FROM ISSUE_DATA A, ISSUE_DATA_CODE B							 													
+		  WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 							
+		  AND A.ID_SEQ = B.ID_SEQ																									
+		  AND B.IC_TYPE = 1																											
+		  GROUP BY DATE_FORMAT(A.MD_DATE, '%Y/%m/%d') ) BB ON AA.CATEGORY_DATE = BB.MD_DATE		
+		  ORDER BY AA.CATEGORY_DATE ASC																						
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getOnlineTrendData(SummaryMgr.java:111)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:135)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분34초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 주요 시정 채널 별 성향 ( 왼쪽차트 )																							
+	## 서울시장 채널 별 성향	( 왼쪽차트 )																							
+	  SELECT																						
+	      COUNT(0) AS CNT,																	
+	      IFNULL(SUM(IF(B.IC_CODE=1, 1, 0)), 0) AS POS,																
+	      IFNULL(SUM(IF(B.IC_CODE=2, 1, 0)), 0) AS NEG,																
+	      IFNULL(SUM(IF(B.IC_CODE=3, 1, 0)), 0) AS NEU																
+	    FROM ISSUE_DATA A, ISSUE_DATA_CODE B, ISSUE_DATA_CODE C, ISSUE_DATA_CODE D			
+	    WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 						
+	      AND A.ID_SEQ = B.ID_SEQ																								
+	      AND B.IC_TYPE = 9																										
+	      AND A.ID_SEQ = C.ID_SEQ 																								
+	      AND C.IC_TYPE = 6																										
+	      AND A.ID_SEQ = D.ID_SEQ																								
+	    AND D.IC_TYPE = 4																										
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getChannelSentiData01(SummaryMgr.java:182)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:138)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분34초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 주요 시정 채널 별 성향 ( 오른쪽차트 )																							
+	## 서울시장 채널 별 성향	( 오른쪽차트 )																							
+	SELECT AA.IC_CODE																									
+		        ,AA.IC_NAME																								
+		        ,IFNULL(BB.CNT, 0) AS TOTAL																			
+		        ,IFNULL(BB.POS, 0) AS POS																				
+		        ,IFNULL(BB.NEG, 0) AS NEG																				
+		        ,IFNULL(BB.NEU, 0) AS NEU																				
+	   FROM (SELECT IC_CODE, IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 6 AND IC_USEYN = 'Y' AND IC_CODE > 0 ORDER BY IC_ORDER ASC ) AA			
+	LEFT OUTER JOIN																																											
+	  ( SELECT B.IC_CODE																																										
+	  ,(SELECT IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 6 AND IC_CODE = B.IC_CODE) AS IC_NAME																	
+	  , COUNT(B.IC_CODE) AS CNT 																																							
+	  ,SUM(IF(C.IC_CODE =1 , 1, 0)) AS POS																																				
+		,SUM(IF(C.IC_CODE =2 , 1, 0)) AS NEG																																				
+		,SUM(IF(C.IC_CODE =3 , 1, 0)) AS NEU																																				
+	FROM ISSUE_DATA A																																										
+	    INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ=B.ID_SEQ AND B.IC_TYPE=6																								
+	    INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ=C.ID_SEQ AND C.IC_TYPE=9																								
+	    INNER JOIN ISSUE_DATA_CODE D ON A.ID_SEQ=D.ID_SEQ AND D.IC_TYPE=4																							
+	WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'  																						
+	GROUP BY B.IC_CODE ) BB ON AA.IC_CODE = BB.IC_CODE
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getChannelSentiData02(SummaryMgr.java:258)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:139)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분36초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 매체 별 정보량 (검색조건) 																						
+	## 매체 별 성향 현황 (검색조건)																						
+	SELECT AA.IC_CODE																									
+		        ,AA.IC_NAME																								
+		        ,IFNULL(BB.CNT, 0) AS TOTAL																			
+		        ,IFNULL(BB.POS, 0) AS POS																				
+		        ,IFNULL(BB.NEG, 0) AS NEG																				
+		        ,IFNULL(BB.NEU, 0) AS NEU																				
+	   FROM (SELECT IC_CODE, IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 6 AND IC_USEYN = 'Y' AND IC_CODE > 0 ORDER BY IC_ORDER ASC ) AA			
+	LEFT OUTER JOIN																																											
+	  ( SELECT B.IC_CODE																																										
+	  ,(SELECT IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 6 AND IC_CODE = B.IC_CODE) AS IC_NAME																	
+	  , COUNT(B.IC_CODE) AS CNT 																																							
+	  ,SUM(IF(C.IC_CODE =1 , 1, 0)) AS POS																																				
+		,SUM(IF(C.IC_CODE =2 , 1, 0)) AS NEG																																				
+		,SUM(IF(C.IC_CODE =3 , 1, 0)) AS NEU																																				
+	FROM ISSUE_DATA A																																										
+	    INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ=B.ID_SEQ AND B.IC_TYPE=6																								
+	    INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ=C.ID_SEQ AND C.IC_TYPE=9																								
+	    INNER JOIN ISSUE_DATA_CODE D ON A.ID_SEQ=D.ID_SEQ AND D.IC_TYPE=1 AND D.IC_CODE=2	## 분류체계-구분-박원순 서울시장							
+	WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'  																						
+	GROUP BY B.IC_CODE ) BB ON AA.IC_CODE = BB.IC_CODE
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.opinion.OpinionMgr.getMediaData(OpinionMgr.java:401)
+	at org.apache.jsp.dashboard.opinion.opinionDao_jsp._jspService(opinionDao_jsp.java:95)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시08분41초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	##  정보구분 별 정보량																																
+	   SELECT																																					
+	   		B.IC_CODE																																		
+	        ,(SELECT IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 2 AND IC_CODE = B.IC_CODE) AS IC_NAME						
+	        ,COUNT(A.ID_SEQ) AS CNT																													
+	        ,SUM(IF(C.IC_CODE = 1 , 1,0)) AS POS				
+	        ,SUM(IF(C.IC_CODE = 2 , 1,0)) AS NEG				
+	        ,SUM(IF(C.IC_CODE = 3 , 1,0)) AS NEU				
+	   FROM ISSUE_DATA A										
+	        INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ = B.ID_SEQ AND B.IC_TYPE = 2  			
+	        INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ = C.ID_SEQ AND C.IC_TYPE = 9									
+	        INNER JOIN ISSUE_DATA_CODE E ON A.ID_SEQ = E.ID_SEQ AND E.IC_TYPE = 1 AND E.IC_CODE = 2  ## 분류체계-구분-박원순 서울시장					
+	   WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'  															
+	  GROUP BY B.IC_CODE																					
+	  ORDER BY B.IC_CODE ASC																					
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.opinion.OpinionMgr.getInfoDivCountData(OpinionMgr.java:267)
+	at org.apache.jsp.dashboard.opinion.opinionDao_jsp._jspService(opinionDao_jsp.java:91)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시10분40초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 온라인 동향																								
+		 SELECT																									
+		      DATE_FORMAT(AA.CATEGORY_DATE, '%Y-%m-%d') AS MD_DATE						
+		      ,DATE_FORMAT(AA.CATEGORY_DATE, '%m/%d') AS DATE								
+		      ,IFNULL(BB.TOTAL, 0) AS TOTAL																
+		      ,IFNULL(BB.CNT1, 0) AS CNT1																	
+		      ,IFNULL(BB.CNT2, 0) AS CNT2																	
+		 FROM																									
+		  (																											
+		  SELECT DATE_FORMAT(A.DATE, '%Y/%m/%d') AS CATEGORY_DATE						
+			FROM (                                                                                                                                                                                                         																						
+			    SELECT '2017-09-25' - INTERVAL (A.A + (10 * B.A) + (100 * C.A)) DAY AS DATE                                                                                                                                  																
+			    FROM (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS A        	
+			    CROSS JOIN (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS B 	
+			    CROSS JOIN (SELECT 0 AS A UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) AS C 	
+			) A                                                                            							               			
+			WHERE A.DATE BETWEEN '2017-09-19' AND '2017-09-25'                    								
+		  )AA LEFT OUTER JOIN																										
+		  (																																	
+		  SELECT STRAIGHT_JOIN																										
+		          DATE_FORMAT(A.MD_DATE, '%Y/%m/%d') AS MD_DATE														
+		          ,COUNT(A.ID_SEQ) AS TOTAL																						
+		          ,SUM(IF(B.IC_CODE=1, 1, 0)) AS CNT1																			
+		          ,SUM(IF(B.IC_CODE=2, 1, 0)) AS CNT2																			
+		  FROM ISSUE_DATA A, ISSUE_DATA_CODE B							 													
+		  WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 							
+		  AND A.ID_SEQ = B.ID_SEQ																									
+		  AND B.IC_TYPE = 1																											
+		  GROUP BY DATE_FORMAT(A.MD_DATE, '%Y/%m/%d') ) BB ON AA.CATEGORY_DATE = BB.MD_DATE		
+		  ORDER BY AA.CATEGORY_DATE ASC																						
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getOnlineTrendData(SummaryMgr.java:111)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:135)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시10분40초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 주요 시정 채널 별 성향 ( 왼쪽차트 )																							
+	## 서울시장 채널 별 성향	( 왼쪽차트 )																							
+	  SELECT																						
+	      COUNT(0) AS CNT,																	
+	      IFNULL(SUM(IF(B.IC_CODE=1, 1, 0)), 0) AS POS,																
+	      IFNULL(SUM(IF(B.IC_CODE=2, 1, 0)), 0) AS NEG,																
+	      IFNULL(SUM(IF(B.IC_CODE=3, 1, 0)), 0) AS NEU																
+	    FROM ISSUE_DATA A, ISSUE_DATA_CODE B, ISSUE_DATA_CODE C, ISSUE_DATA_CODE D			
+	    WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59' 						
+	      AND A.ID_SEQ = B.ID_SEQ																								
+	      AND B.IC_TYPE = 9																										
+	      AND A.ID_SEQ = C.ID_SEQ 																								
+	      AND C.IC_TYPE = 6																										
+	      AND A.ID_SEQ = D.ID_SEQ																								
+	    AND D.IC_TYPE = 4																										
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getChannelSentiData01(SummaryMgr.java:182)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:138)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+
+[2017년12월20일 13시10분40초] 
+ SQLException
+Oracle Error Code [145]
+SQLState          [HY000]
+<<-----------------------------------------------------------------------
+	## 주요 시정 채널 별 성향 ( 오른쪽차트 )																							
+	## 서울시장 채널 별 성향	( 오른쪽차트 )																							
+	SELECT AA.IC_CODE																									
+		        ,AA.IC_NAME																								
+		        ,IFNULL(BB.CNT, 0) AS TOTAL																			
+		        ,IFNULL(BB.POS, 0) AS POS																				
+		        ,IFNULL(BB.NEG, 0) AS NEG																				
+		        ,IFNULL(BB.NEU, 0) AS NEU																				
+	   FROM (SELECT IC_CODE, IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 6 AND IC_USEYN = 'Y' AND IC_CODE > 0 ORDER BY IC_ORDER ASC ) AA			
+	LEFT OUTER JOIN																																											
+	  ( SELECT B.IC_CODE																																										
+	  ,(SELECT IC_NAME FROM ISSUE_CODE WHERE IC_TYPE = 6 AND IC_CODE = B.IC_CODE) AS IC_NAME																	
+	  , COUNT(B.IC_CODE) AS CNT 																																							
+	  ,SUM(IF(C.IC_CODE =1 , 1, 0)) AS POS																																				
+		,SUM(IF(C.IC_CODE =2 , 1, 0)) AS NEG																																				
+		,SUM(IF(C.IC_CODE =3 , 1, 0)) AS NEU																																				
+	FROM ISSUE_DATA A																																										
+	    INNER JOIN ISSUE_DATA_CODE B ON A.ID_SEQ=B.ID_SEQ AND B.IC_TYPE=6																								
+	    INNER JOIN ISSUE_DATA_CODE C ON A.ID_SEQ=C.ID_SEQ AND C.IC_TYPE=9																								
+	    INNER JOIN ISSUE_DATA_CODE D ON A.ID_SEQ=D.ID_SEQ AND D.IC_TYPE=4																							
+	WHERE A.MD_DATE BETWEEN '2017-09-19 00:00:00' AND '2017-09-25 23:59:59'  																						
+	GROUP BY B.IC_CODE ) BB ON AA.IC_CODE = BB.IC_CODE
+
+----------------------------------------------------------------------->>
+java.sql.SQLException: Table './GJCITY_ASP/ISSUE_DATA' is marked as crashed and should be repaired
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1056)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3376)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3308)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1837)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1961)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2543)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1737)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1888)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+	at risk.dashboard.summary.SummaryMgr.getChannelSentiData02(SummaryMgr.java:258)
+	at org.apache.jsp.dashboard.summary.summaryDao_jsp._jspService(summaryDao_jsp.java:139)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:321)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:267)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:610)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:503)
+	at java.lang.Thread.run(Unknown Source)
+

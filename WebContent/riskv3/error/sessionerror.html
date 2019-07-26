@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>NCS System</title>
+</head>
+<body>
+<%
+HttpSession sess = request.getSession(true);
+         out.print("<b>[Requested Session유효여부]:</b>" +  request.isRequestedSessionIdValid() + "<BR>");
+         out.print("<b>[Session 쿠키사용여부]:</b>" + request.isRequestedSessionIdFromCookie() + "<BR>"); 
+         out.print("<b>[Session URL사용여부]:</b>" + request.isRequestedSessionIdFromURL() + "<BR>"); 
+         out.print("<b>[Requested Session Id]:</b>" + request.getRequestedSessionId() + "<BR>");
+         out.print("<b>[Session ID]:</b>" + sess.getId());
+%>
+</br>
+</br>
+</br>
+
+<h2 align="center">
+세션에서 사용자 정보를 찾을수 없습니다.
+</h2>
+
+</br>
+<center>
+NCS 시스템에 다시 접속하시기 바랍니다.
+</center>
+</body>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+	window.setTimeout("document.location.href = '../../index.jsp'", 1000);
+//-->
+</SCRIPT>
+</html>

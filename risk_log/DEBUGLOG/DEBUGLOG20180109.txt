@@ -1,0 +1,54 @@
+[2018년01월09일 10시33분07초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A,                   	
+       MEMBER_GROUP B				
+ WHERE A.M_SEQ   = 139 
+       AND B.MG_SEQ   = 9 
+
+[2018년01월09일 15시16분11초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A,                   	
+       MEMBER_GROUP B				
+ WHERE A.M_SEQ   = 139 
+       AND B.MG_SEQ   = 9 
+
+[2018년01월09일 15시24분55초] 
+SELECT ST_SEQ,                       
+       K_XP,                         
+       ST_INTERVAL_DAY,              
+       MD_TYPE,                      
+       SG_SEQ,                       
+       ST_RELOAD_TIME,               
+       ST_LIST_CNT,                  
+       ST_MENU,                      
+       MG_SEQ,                       
+       MG_XP,                        
+       MG_SITE,                      
+       MG_MENU                       
+  FROM SETTING A,                   	
+       MEMBER_GROUP B				
+ WHERE A.M_SEQ   = 139 
+       AND B.MG_SEQ   = 9 
+

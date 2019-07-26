@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* RSN R&D Team LHS(GUNI) 20141010 */
+
+/* DEFAULT */
+*{margin:0;padding:0;font-family:돋움,Dotum,AppleGothic,Sans-serif,Tahoma;-webkit-text-size-adjust:none}
+header,footer,section,article,aside,nav,hgroup,details,menu,figure,figcaption{display:block}
+html{width:100%;height:100%;padding:0;margin:0;border:0}
+body{width:100%;height:100%;color:#666666;font-size:12px;line-height:1}
+ul,ol{list-style:none}
+h1{font-size:2em}
+h2{font-size:1.5em}
+h3{font-size:1.333em}
+h4{font-size:1.167em}
+h5{font-size:1.083em}
+h6{font-size:11px}
+a{color:inherit;text-overflow:ellipsis;-o-text-overflow:ellipsis}
+a:link{color:inherit;text-decoration:none}
+a:visited{color:inherit;text-decoration:none}
+a:focus,a:active{color:inherit;text-decoration:none}
+a:hover{color:inherit;text-decoration:none}
+button,input,img{vertical-align:top}
+img,fieldset,iframe{border:0}
+hr{display:none}
+em,address,cite{font-style:normal}
+table{border-collapse:separate;*border-collapse:collapse;border-spacing:0;table-layout:fixed}
+caption,legend{display:none;width:0;height:0;overflow:hidden;font-size:0;line-height:0;text-indent:-9999px}
+input{color:#666666;padding:0;margin:0}
+select{-webkit-appearance:menu-list;align-items:center;white-space:pre;vertical-align:top;color:#666666}
+textarea{display:block;padding:0;margin:0;font-size:11px;line-height:16px;resize:none}
+label{color:#666666}
+
+/* COMMON */
+.disabled{opacity:0.4;cursor:default !important;pointer-events:none !important}
+.invisible{position:absolute;width:0;height:0;font-size:0;overflow:hidden;visibility:hidden}
+.al{text-align:left !important}
+.ac{text-align:center !important}
+.ar{text-align:right !important}
+.floatbox{position:relative}
+.floatbox:after{display:block;clear:both;content:''}
+.floatbox_left{position:relative;float:left}
+.floatbox_right{position:relative;float:right}
+.valign_m{vertical-align:middle !important}
+.valign_t{vertical-align:top !important}
+.valign_b{vertical-align:bottom !important}
+.nowrap{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fs11{font-size:11px !important;line-height:1 !important}
+*::-webkit-input-placeholder{color:#cccccc}
+*:-moz-placeholder{color:#cccccc;opacity:1}
+*::-moz-placeholder{color:#cccccc;opacity:1}
+*:-ms-input-placeholder{color:#cccccc !important}
+
+/* UI */
+.chart_area{width:100%;height:100%}
+.wid_auto{width:auto !important}
+.hgt_auto{height:auto !important}
+.ui_hidden{position:relative;height:22px;padding:0 5px;border:none;background:none;outline:none;z-index:10}
+.ui_shadow_00{-moz-box-shadow:1px 1px 1px 1px rgba(0,0,0,0.1);-webkit-box-shadow:1px 1px 1px 1px rgba(0,0,0,0.1);box-shadow:1px 1px 1px 1px rgba(0,0,0,0.1)}
+.ui_input_00{display:inline-block;width:100%;height:20px;border:1px solid #707070;text-align:center;outline:none}
+.ui_input_00[readonly]{border:none}
+.ui_input_01{width:214px;height:27px;padding:0;border:1px solid #cdcdcd;border-radius:3px;background:#ffffff;line-height:26px;text-indent:5px;outline:none}
+
+/* LAYOUT */
+.article{position:relative}
+.content_wrap{margin:0 auto}
+#wrap{position:relative}
+#header{display:block;position:relative;height:51px;background:url(../img/header_bg.gif);z-index:10}
+#container{display:block;position:relative}
+#aside{display:block;position:absolute;width:295px;padding-left:5px;z-index:10}
+#content{display:block;position:relative;padding-left:300px;padding-top:20px}
+
+/* CONTENT - Login */
+#wrap.login{background:url(../img/login_bg.gif);text-align:center}
+#wrap.login .c_top{display:block;position:relative;max-width:540px;height:240px;margin:0 auto;background:url(../img/login_img_01.gif) no-repeat right top;background-size:auto 115px;text-align:left}
+#wrap.login .c_top > h1{display:block;height:47px;padding-top:52px;background-size:auto 47px;text-align:left;text-indent:-9999px}
+#wrap.login .c_top > h2{display:block;position:absolute;bottom:26px;left:20px;width:300px;height:50px;background:url(../img/login_img_00.png) no-repeat 0 0;background-size:auto 50px;text-align:left;text-indent:-9999px}
+#wrap.login .c_mid{display:block;position:relative;max-width:500px;height:154px;padding:40px 20px 0 20px;margin:0 auto}
+#wrap.login .c_mid .rows{display:block;position:relative;height:29px;padding-right:115px;text-align:left;white-space:nowrap}
+#wrap.login .c_mid .rows input.ui_input_01{width:100%}
+#wrap.login .c_mid .rows:first-child{margin-bottom:4px}
+#wrap.login .c_mid .rows.shared{padding-top:12px}
+#wrap.login .c_mid .rows.shared label{padding-left:5px;color:#b2c3d6;font-size:11px}
+#wrap.login .c_mid .ui_login{display:block;position:absolute;top:40px;right:20px;width:110px;height:62px;border:1px solid #0a285a;border-radius:5px;background:url(../img/btn_login.gif) no-repeat;background-size:auto 100%;text-indent:-9999px;cursor:pointer;outline:none}
+
+@media screen and (min-width:0\0) { /* IE */
+  .ui_shadow_00{box-shadow:1px 1px 1px 1px rgba(0,0,0,0.1)}
+  /*a{border-radius:0px !important}  IE일 경우 전체 버튼 라운드 제거 */  
+}

@@ -1,0 +1,4 @@
+[2018년10월23일 17시01분05초] 
+SMTP setting :: smtp.gmail.com
+[2018년10월23일 17시15분04초] 
+SMTP setting :: smtp.gmail.com
