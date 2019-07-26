@@ -32,7 +32,7 @@
 	.textbox2 {height:22px; line-height:22px; border-top:1px #c0c0c0 solid; border-left:1px #c0c0c0 solid; border-bottom:1px #d3d3d3 solid; border-right:1px #d3d3d3 solid; font-size:12px;}
 
 	/*.body_bg_top {width:860px; background:url('../images/common/bg_top.gif') repeat-x; text-align:center;}*/
-	.body_bg_top {width:860px; repeat-x; text-align:center;}
+	.body_bg_top {width:860px; text-align:center;}
 
 	.navi_home {font-size:11px;color:#b1b1b1;background:url('../images/common/navi_home.gif') 1px 40% no-repeat; padding-left:11px;}
 	.navi_arrow {font-size:11px;color:#b1b1b1;background:url('../images/common/navi_arrow.gif') 8px 50% no-repeat; padding-left:20px;}
